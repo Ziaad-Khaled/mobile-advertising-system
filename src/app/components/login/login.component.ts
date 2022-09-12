@@ -45,10 +45,14 @@ export class LoginComponent implements OnInit {
     this.user = this.userForm.value;
     console.log(this.user);
 
-    let validUser:boolean = true;
+    
     //authenticate the user
+    let validUser:boolean = false;
+    validUser = this.authenticationService.authenticate(this.user);
+
     if(validUser)
       this.router.navigateByUrl('/home');
+
     this.userForm.reset();
   }
 };
