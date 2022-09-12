@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { User } from '../shared/user';
-
 import { Router } from '@angular/router';
+import { AuthenticationService } from './services/authentication.service';
+
 
 
 
@@ -23,7 +24,7 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  constructor(private fb: FormBuilder, private router: Router) {
+  constructor(private fb: FormBuilder, private router: Router, private authenticationService: AuthenticationService) {
     this.createForm();
    }
 

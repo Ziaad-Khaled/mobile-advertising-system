@@ -1,3 +1,4 @@
+import { AuthenticationService } from './components/login/services/authentication.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -40,7 +41,7 @@ import { HeaderHomeComponent } from './components/home/header/header.component';
     ReactiveFormsModule
 
   ],
-  providers: [],
+  providers: [AuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
