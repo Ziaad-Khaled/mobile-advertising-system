@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
-import { NewCampaignComponent } from './components/bulk-campaign/new-campaign/new-campaign.component';
+import { NewBulkCampaignComponent } from './components/new-bulk-campaign/new-bulk-campaign.component';
 
 const routes: Routes = [
   {
@@ -14,8 +14,8 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path:'bulk/new-campaign',
-    component: NewCampaignComponent
+    path:'new-bulk-campaign',
+    component: NewBulkCampaignComponent
   }
 ];
 

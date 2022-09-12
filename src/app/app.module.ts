@@ -4,6 +4,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HomeComponent } from './components/home/home.component';
+import { HeaderHomeComponent } from './components/home/header/header.component';
+import { HeaderComponent } from './components/bulk-campaign/header/header.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 import 'hammerjs';
@@ -14,10 +18,15 @@ import { MatListModule} from '@angular/material/list';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
-import { LoginComponent } from './components/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HomeComponent } from './components/home/home.component';
-import { HeaderHomeComponent } from './components/home/header/header.component';
+import {MatExpansionModule} from '@angular/material/expansion';
+import { NewBulkCampaignComponent } from './components/new-bulk-campaign/new-bulk-campaign.component'; 
+import {MatIconModule} from '@angular/material/icon'; 
+import {MatFormFieldModule} from '@angular/material/form-field'; 
+import {MatDatepickerModule} from '@angular/material/datepicker'; 
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatInputModule } from '@angular/material/input';
+
 
 
 @NgModule({
@@ -25,7 +34,9 @@ import { HeaderHomeComponent } from './components/home/header/header.component';
     AppComponent,
     LoginComponent,
     HomeComponent,
-    HeaderHomeComponent
+    HeaderHomeComponent,
+    HeaderComponent,
+    NewBulkCampaignComponent
   ],
   imports: [
     BrowserModule,
@@ -37,8 +48,13 @@ import { HeaderHomeComponent } from './components/home/header/header.component';
     MatGridListModule,
     MatCardModule,
     MatButtonModule,
-
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatExpansionModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatInputModule
 
   ],
   providers: [AuthenticationService],
