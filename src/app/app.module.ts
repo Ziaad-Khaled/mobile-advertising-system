@@ -15,12 +15,16 @@ import {MatCardModule} from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { LoginComponent } from './components/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HomeComponent } from './components/home/home.component';
+import { HeaderHomeComponent } from './components/home/header/header.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    HomeComponent,
+    HeaderHomeComponent
   ],
   imports: [
     BrowserModule,

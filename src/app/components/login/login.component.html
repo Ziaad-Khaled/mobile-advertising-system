@@ -16,11 +16,12 @@
             <form novalidate [formGroup]="userForm" (ngSubmit)="onSubmit()">
                 <div class = "username">
                     <img class="username-icon" src="../../../assets/icons/general/username.svg">
-                    <input  matInput formControlName="username" type="text" id="username" name="username" class="input" placeholder="Username"><br>
+                    <input  matInput formControlName="username" type="text" id="username" name="username" class="input" ng-model="username" placeholder="Username" required><br>
                 </div>
+                
                 <div class = "password">
                     <img class="username-icon" src="../../../assets/icons/general/password.svg">
-                    <input  matInput formControlName="password"  type="password" id="password" name="password" class="input" placeholder="Password">
+                    <input  matInput formControlName="password"  type="password" id="password" name="password" class="input" placeholder="Password" required>
                 </div>
 
                 <button class="login">
