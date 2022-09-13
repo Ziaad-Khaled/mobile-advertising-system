@@ -1,3 +1,15 @@
+mat-toolbar{
+  background-color: black;
+}
+
+
+.orange-logo {
+  height: 40px;
+  margin-left: 10px;
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
 .example-action-buttons {
     padding-bottom: 20px;
     color: black;
@@ -11,3 +23,35 @@
   .example-headers-align .mat-form-field + .mat-form-field {
     margin-left: 8px;
   }
+
+.selection-criteria{
+  margin-top: 50px;
+  margin-left: 250px;
+  margin-right:250px;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+//////////////////////////////////// user activity
+.example-section {
+  margin: 12px 0;
+}
+
+.example-margin {
+  margin: 0 12px;
+}
+
+ul {
+  list-style-type: none;
+  margin-top: 4px;
+}
+////////////////////////////////////////////////
+

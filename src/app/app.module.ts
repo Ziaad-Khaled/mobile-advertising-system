@@ -9,6 +9,7 @@ import { HeaderHomeComponent } from './components/home/header/header.component';
 import { HeaderComponent } from './components/bulk-campaign/header/header.component';
 import { LoginComponent } from './components/login/login.component';
 
+import { FormsModule } from '@angular/forms';
 
 import 'hammerjs';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -26,6 +27,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDatepickerModule} from '@angular/material/datepicker'; 
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
 
@@ -54,7 +57,10 @@ import { MatInputModule } from '@angular/material/input';
     MatFormFieldModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatInputModule
+    MatInputModule,
+    MatAutocompleteModule,
+    MatCheckboxModule,
+    FormsModule
 
   ],
   providers: [AuthenticationService],
