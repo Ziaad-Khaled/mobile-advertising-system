@@ -38,12 +38,14 @@ export class NewBulkCampaignComponent implements OnInit {
 
   //user activity
   task: Task = {
-    name: 'Indeterminate',
+    name: 'Select All',
     completed: false,
     subtasks: [
-      {name: 'Primary', completed: false},
-      {name: 'Accent', completed: false},
-      {name: 'Warn', completed: false},
+      {name: 'Using Data', completed: false},
+      {name: 'Was Roaming', completed: false},
+      {name: 'First Class', completed: false},
+      {name: 'USIM', completed: false},
+      {name: 'Orange Cash', completed: false},
     ],
   };
   allComplete: boolean = false;
