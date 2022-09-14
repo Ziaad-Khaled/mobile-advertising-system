@@ -1,7 +1,13 @@
 mat-toolbar{
   background-color: black;
 }
-
+.icon {
+  background-color: white;
+  margin-right: 5px;
+}
+.reset-icon{
+  width:25px;
+}
 
 .orange-logo {
   height: 40px;
@@ -70,6 +76,12 @@ ul {
 .next-button-container { 
   margin-top: 20px;
   margin-bottom:20px;
+  display: flex;  
+  justify-content: center;  
+  align-items: center;  
+}
+
+.input-container {
   display: flex;  
   justify-content: center;  
   align-items: center;  

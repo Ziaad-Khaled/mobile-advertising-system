@@ -29,6 +29,8 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatSelectModule} from '@angular/material/select'; 
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 
 
@@ -60,7 +62,9 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatInputModule,
     MatAutocompleteModule,
     MatCheckboxModule,
-    FormsModule
+    FormsModule, 
+    MatSelectModule,
+    MatTooltipModule
 
   ],
   providers: [AuthenticationService],

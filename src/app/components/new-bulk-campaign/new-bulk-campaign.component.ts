@@ -24,7 +24,19 @@ export interface Task {
 export class NewBulkCampaignComponent implements OnInit {
   
   @ViewChild(MatAccordion) accordion!: MatAccordion;
+  
+  //Location
 
+  governorates = new FormControl('');
+  governorateList: string[] = ['Cairo', 'Giza', 'Alex'];
+
+  adminSections = new FormControl('');
+  adminSectionList: string[] = ['الحوامدية', 'الساحل الشمالي', 'ظهير صحراوي البحيرة'];
+
+  sheiakhas = new FormControl('');
+  sheiakhaList: string[] = ['مركز الخانكة - مدينة الخانكة', 'مركز المناصرة - شياخة المناصرة', 'مركز ابشواي - مدينة ابشواي'];
+
+  ////////////////////////////////////////////////////////////////////////////////////////
   myControl = new FormControl<string | User>('');
   options: User[] = [{name: 'Mary'}, {name: 'Shelley'}, {name: 'Igor'}];
 
@@ -67,6 +79,9 @@ export class NewBulkCampaignComponent implements OnInit {
   //ARPU
   minARPU = 0;
   maxARPU = 5000;
+  selectedMinARPU = 'Clear me';
+  selectedMaxARPU = 'Clear me';
+////////////////////////////////////////////////////////////////////////////////////////////
 
   constructor() { }
 
