@@ -50,6 +50,23 @@ export class NewBulkCampaignComponent implements OnInit {
   };
   allComplete: boolean = false;
   ////////////////////////////////////////////////////////////////////////////////////
+  //user plan
+
+  corporate = false;
+  personal = false;
+  hybrid = false;
+  prePaid = false;
+  postPaid = false;
+  others = false;
+
+  toppings = new FormControl('');
+  toppingList: string[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
+
+
+  ////////////////////////////////////////////////////////////////////////////////////
+  //ARPU
+  minARPU = 0;
+  maxARPU = 5000;
 
   constructor() { }
 
