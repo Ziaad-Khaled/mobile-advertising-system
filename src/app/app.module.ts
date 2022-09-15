@@ -31,6 +31,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSelectModule} from '@angular/material/select'; 
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { BulkCampaignSubmissionComponent } from './components/bulk-campaign-submission/bulk-campaign-submission.component';
 
 
 
@@ -41,7 +42,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     HomeComponent,
     HeaderHomeComponent,
     HeaderComponent,
-    NewBulkCampaignComponent
+    NewBulkCampaignComponent,
+    BulkCampaignSubmissionComponent
   ],
   imports: [
     BrowserModule,
