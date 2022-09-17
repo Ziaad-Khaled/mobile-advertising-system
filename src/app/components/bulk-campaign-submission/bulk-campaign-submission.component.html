@@ -1,90 +1,136 @@
 <!DOCTYPE html>
 <html>
-<head>                  
+<head>
+  
 </head>
 <body>
-<form> 
-<label for="SMS">Campagin SMS Sender Name:</label>
-<br>
-<select  name="SMS" >
-  <option value="CPA">CPA</option>
-  <option value="saab">Saab</option>
-  <option value="fiat">Fiat</option>
-  <option value="audi">Audi</option>
-</select>
-<br>
-<br>
-<label for="SMS">Campagin SMS Body:</label>
-<br>
+  
+
+
+
+
+<div class="frame">
+    <div class="nav"></div><br>
+
+    <form>
+        <div class="con">
+            
+            <div class="con1">
+                <label for="SMS">Campagin SMS Sender Name:</label>
+                <br>
+                <select class="select" name="SMS">
+                    <option value="CPA">CPA</option>
+                    <option value="saab">Saab</option>
+                    <option value="fiat">Fiat</option>
+                    <option value="audi">Audi</option>
+                </select>
+            </div>
+            <div class="con2">
+                <label for="SMS">Campagin Location:</label>
+                <br>
+                <select class="select1" name="SMS">
+                    <option value="CPA">Cairo</option>
+                    <option value="saab">S</option>
+                    <option value="fiat">F</option>
+                    <option value="audi">A</option>
+                </select>
+            </div>
+        </div>
+       
+<div class="contant">
+    <div class="contant1">
+        <label for="SMS">Campagin SMS Body:</label>
+            <br>
 <textarea name="message" rows="20" cols="30"></textarea>
-<br>
-<br>
-<label for="SMS">Campagin Description:</label>
-<br>
+    </div>
+    <div class="contant2">
+        <label for="SMS">Campagin Start At:</label>
+            <br>
+            <input class="select1" type="date" size="30">
+            <br>
+            <br>
+            <label for="SMS">Campagin end At:</label>
+            <br>
+            <input class="select1" type="date" size="30">
+            <br>
+            <br>
+            <label for="SMS">Campagin include:</label>
+            <br>
+            <select class="select1" name="SMS">
+                <option value="CPA">Cairo</option>
+                <option value="saab">S</option>
+                <option value="fiat">F</option>
+                <option value="audi">A</option>
+            </select>
+            <br> <br>
+            <label for="SMS">Campagin exclude:</label>
+            <br>
+            <select class="select1" name="SMS">
+                <option value="CPA">Cairo</option>
+                <option value="saab">S</option>
+                <option value="fiat">F</option>
+                <option value="audi">A</option>
+            </select>
+            <br><br>
+            <div class="quota">
+                <label for="SMS">Quota:</label>
+                <br>
+            <input class="qd"  type="text" size="5">
+            </div>
+            <div class="limit">
+                <label for="SMS">Daily Limit:</label>
+                <br>
+            <input class="qd" type="text" size="5">
+            </div>
+    </div>
+</div>
+
+
+<div class="last">
+    <div class="last1">
+        <label for="SMS">Campagin Description:</label>
+            <br>
 <textarea name="message" rows="4" cols="30"></textarea>
-<br>
-<br>
-<label for="SMS">Test Dial:</label>
-<br>
-<input type="text" size="30">
-<br>
-<br>
-<label for="SMS">Campagin Location:</label>
-<br>
-<select  name="SMS">
-  <option value="CPA">Cairo</option>
-  <option value="saab">S</option>
-  <option value="fiat">F</option>
-  <option value="audi">A</option>
-</select>
-<br>
-<br>
-<label for="SMS">Campagin Start At:</label>
-<br>
-<input type="date" size="30">
-<br>
-<br>
-<label for="SMS">Campagin end At:</label>
-<br>
-<input type="date" size="30">
-<br>
-<br>
-<label for="SMS">Campagin exclude:</label>
-<br>
-<select  name="SMS">
-  <option value="CPA">Cairo</option>
-  <option value="saab">S</option>
-  <option value="fiat">F</option>
-  <option value="audi">A</option>
-</select>
+            <br>
+            <label for="SMS">Test Dial:</label>
+            <br>
+            <input type="text" size="30">
+            <div class="next-button-container">
+                
+                <br>
+                <button mat-button>Test SMS!</button>
+            </div>
+    </div>
+    <div class="last2">
+        <label for="SMS">Fraquancy:</label>
+            <br>
+            <input type="text" size="5">
+            <br><br>
+            <h4>Exclude Commuters? :</h4>
+            <label for="students">yes</label>
+            <input type="radio" name="state" value="male">
+
+            <label for="students">no</label>
+            <input type="radio" name="state" value="female">
+            <br>
+    </div>
+    <div class="last3">
+        <i class="fa-regular fa-floppy-disk"></i>
+    </div>
+</div>
+        
+    </form>
+    <br><br>
+    <div class="end">
+        <h4>SMS Encoding: <span>Ascll(160/SMS)</span></h4>
+        <h4>Characters Count:<span>0/160</span></h4>
+        <h4>Message Count:<span>1</span></h4>
 
 
-<br>
-<br>
-<label for="SMS">Campagin include:</label>
-<br>
-<select  name="SMS">
-  <option value="CPA">Cairo</option>
-  <option value="saab">S</option>
-  <option value="fiat">F</option>
-  <option value="audi">A</option>
-</select>
+    </div>
+</div>
 
-<br>
-<br>
-<label for="SMS">Quota:</label>
-<br>
-<input type="text" size="5">
-<br>
-<br>
-<label for="SMS">Daily Limit:</label>
-<br>
-<input type="text" size="5">
-<br>
-<br>
-<label for="SMS">Fraquancy:</label>
-<br>
-<input type="text" size="5">
-</form>
+
+
 </body>
 </html>
