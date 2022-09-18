@@ -4,8 +4,8 @@
    
 }
 .frame{
-    width: 50%;
-    height: 95vh;
+    width: 60%;
+    height: 120vh;
     border-radius: 10px;
     border: 5px solid orange;
     margin: auto;
@@ -108,3 +108,6 @@ button{
 span{
     color: red;
 }
+mat-form-field {
+    margin-right: 12px;
+  }

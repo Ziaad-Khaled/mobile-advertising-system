@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,NgZone, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-bulk-campaign-submission',

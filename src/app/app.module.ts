@@ -6,8 +6,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderHomeComponent } from './components/home/header/header.component';
-import { HeaderComponent } from './components/bulk-campaign/header/header.component';
 import { LoginComponent } from './components/login/login.component';
+import { BulkReportComponent } from './components/bulk-report/bulk-report.component';
+
 
 import { FormsModule } from '@angular/forms';
 
@@ -32,6 +33,9 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSelectModule} from '@angular/material/select'; 
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { BulkCampaignSubmissionComponent } from './components/bulk-campaign-submission/bulk-campaign-submission.component';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
 
 
 
@@ -41,9 +45,9 @@ import { BulkCampaignSubmissionComponent } from './components/bulk-campaign-subm
     LoginComponent,
     HomeComponent,
     HeaderHomeComponent,
-    HeaderComponent,
     NewBulkCampaignComponent,
-    BulkCampaignSubmissionComponent
+    BulkCampaignSubmissionComponent,
+    BulkReportComponent
   ],
   imports: [
     BrowserModule,
@@ -66,7 +70,10 @@ import { BulkCampaignSubmissionComponent } from './components/bulk-campaign-subm
     MatCheckboxModule,
     FormsModule, 
     MatSelectModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatRadioModule,
+    MatPaginatorModule,
+    MatTableModule
 
   ],
   providers: [AuthenticationService],

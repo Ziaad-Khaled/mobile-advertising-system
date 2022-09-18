@@ -4,6 +4,7 @@ import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { NewBulkCampaignComponent } from './components/new-bulk-campaign/new-bulk-campaign.component';
 import { BulkCampaignSubmissionComponent } from './components/bulk-campaign-submission/bulk-campaign-submission.component';
+import { BulkReportComponent } from './components/bulk-report/bulk-report.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path:'bulk-campaign-submission',
     component: BulkCampaignSubmissionComponent
+  },
+  {
+    path: 'bulk-report',
+    component: BulkReportComponent
   }
 ];
 
