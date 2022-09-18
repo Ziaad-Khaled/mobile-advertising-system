@@ -1,113 +1,71 @@
-*{
-    margin: 0%;
-    padding: 0%;
-   
-}
-.frame{
-    width: 60%;
-    height: 120vh;
-    border-radius: 10px;
-    border: 5px solid orange;
-    margin: auto;
-    margin-top: 20px;
-
-}
-.nav{
-    width: 90%;
-    height: 30px;
-    background-color: rgb(255, 177, 148);
-    margin: auto;
-    border-radius: 10px;
-    margin-top: 30px;
-}
-.nav h2{
-    text-align: center;
-    color: orangered;
-}
-.con{
-    width: 95%;
-    margin: auto;
-}
-.con1{
-width: 40%;
-display: inline-block;
-}
-.select{
-    width: 80%;
-}
-.con2{
-display: inline-block;
-width: 50%;
-}
-.select1{
-    width: 100%;
-}
-.contant{
-    width: 95%;
-    margin: auto;
-
-}
-.contant1{
-    width: 40%;
-display: inline-block;
-}
-.contant2{
-    width: 50%;
-display: inline-block;
-}
-.quota{
-    display: inline-block;
-}
-.limit{
-    display: inline-block;
-
-}
-.qd{
-    width: 100%;
-}
-.limit{
-    margin-left: 55%;
-}
-.last{
-    width: 95%;
-    margin: auto;
-}
-.last1{
-    width: 40%;
-    display: inline-block;
-}
-.last2{
-    display: inline-block;
-    width: 35%;
-}
-.last3 {
-    display: inline-block;
-    margin-bottom: 10px;
- 
-    
-}
-.last3 i{
-    font-size: 70px;
-    color: orangered;
-
-    
-}
-button{
-    width: 85%;
-    padding: 5px;
- 
-}
-
-.end{
-    width: 90%;
-    background-color: rgb(255, 177, 148);
-    margin: auto;
-    border-radius: 10px;
-    padding: 10px;
-}
-span{
-    color: red;
-}
-mat-form-field {
-    margin-right: 12px;
+mat-toolbar{
+    background-color: black;
   }
+  .icon {
+    background-color: white;
+    margin-right: 5px;
+  }
+  .reset-icon{
+    width:25px;
+  }
+  
+  .orange-logo {
+    height: 40px;
+    margin-left: 10px;
+    margin-right: 20px;
+  }
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  .example-action-buttons {
+      padding-bottom: 20px;
+      color: black;
+    }
+    
+    .example-headers-align .mat-expansion-panel-header-description {
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .example-headers-align .mat-form-field + .mat-form-field {
+      margin-left: 8px;
+    }
+/////////////////////////////////////////////////////////////////////////////////
+
+mat-card-title{
+    margin-bottom: 25px;
+    margin-top: 5px;
+}
+
+
+.cards-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+
+.card {
+    max-width: 800px;
+    min-width: 800px;
+    margin-bottom: 50px;
+  }
+
+.form-field-full{
+    width:100%;
+}
+
+.form-field-half{
+    margin-right: 10px;
+}
+
+
+.form-field-one-third{
+    margin-right: 10px;
+}
+
+
+
+

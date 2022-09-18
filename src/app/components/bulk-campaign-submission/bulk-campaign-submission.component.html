@@ -4,210 +4,130 @@
   
 </head>
 <body>
-  
-
-
-
-
-<div class="frame">
-    <div class="nav"></div><br>
-
-    <form>
-        <div class="con">
-            
-            <div class="con1">
-
-
-                <mat-form-field appearance="fill">
+    <mat-toolbar>
+        <img class="orange-logo" src= "../../../../assets/icons/orange_logo.svg">
+        <label style="color :white;">Mobile Advertising System - Bulk Campaign Submission </label>
+        <span class="example-spacer"></span>
+    </mat-toolbar>
+    
+    <div class= "cards-container"  fxLayoutGap="10px" fxLayoutGap.xs="0" >
+        <mat-card fxFlexAlign="center"  [fxFlex] class="card">
+            <mat-card-title>Sender Data</mat-card-title>
+            <mat-card-content>
+                <mat-form-field  class="col-lg-5" class ="form-field-full" appearance="fill">
                     <mat-label>Campagin SMS Sender Name:</mat-label>
-                    <mat-select disableRipple>
+                    <mat-select style = "width: 100%;" disableRipple>
                       <mat-option value="CPA">CPA</mat-option>
                       <mat-option value="saad">Saad</mat-option>
                       <mat-option value="fiat">Fiat</mat-option>
                       <mat-option value="audi">Audi</mat-option>
 
                     </mat-select>
-                  </mat-form-field>
-               
-            </div>
-            <div class="con2" >
-                <mat-form-field appearance="fill">
-                    <mat-label>Campagin Location:</mat-label>
-                    <mat-select disableRipple>
-                      <mat-option value="CPA">Cario</mat-option>
-                      <mat-option value="saad">S</mat-option>
-                      <mat-option value="fiat">F</mat-option>
-                      <mat-option value="audi">A</mat-option>
+                </mat-form-field>
+                  
+            </mat-card-content> 
+        </mat-card>
 
+
+
+        <mat-card fxFlexAlign="center" class="card">
+            <mat-card-title>Campagin Details</mat-card-title>
+            <mat-card-content style= "display: flex;flex-direction: row;flex-wrap: wrap; justify-content: center;align-items: center;">
+                <mat-form-field style="flex: 1 0 100%" class="col-lg-5" class ="form-field-full" appearance="fill">
+                    <mat-label>Campagin Location:</mat-label>
+                    <mat-select style = "width: 100%;" disableRipple>
+                      <mat-option value="cairo"> Cairo</mat-option>
+                      <mat-option value="giza">Giza</mat-option>
+                      <mat-option value="alex">Alex</mat-option>
                     </mat-select>
                 </mat-form-field>
-            </div>
-        </div>
-       
-<div class="contant">
-    <div class="contant1">
-        <div   >
-            <mat-form-field   appearance="fill">
-                <mat-label>Campagin SMS Body</mat-label>
-                <textarea matInput
-                style="margin: 0px;"
-                          cdkTextareaAutosize
-                          #autosize="cdkTextareaAutosize"
-                          cdkAutosizeMinRows="20"
-                          cdkAutosizeMaxRows="50"></textarea>
-              </mat-form-field>
-              </div>
-        
-            <br>
-    </div>
-    <div class="contant2" >
-        <div>  
-            <label for="SMS">Campagin Start At:</label>
-            <input matInput [matDatepicker]="picker">
-            <mat-hint>MM/DD/YYYY</mat-hint>
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
-        </div>
-       
-        <br>
 
-        <div>
-            <label for="SMS">Campagin end At:</label>
-           <input matInput [matDatepicker]="picker1">
-           <mat-hint>MM/DD/YYYY</mat-hint>
-           <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
-           <mat-datepicker #picker1></mat-datepicker>
-        </div>
-           
-        <br>
-        <div >
-            <mat-form-field appearance="fill">
-                
-                <mat-label>Campagin include:</mat-label>
-                <mat-select disableRipple>
-                  <mat-option value="CPA">Cario</mat-option>
-                  <mat-option value="saad">S</mat-option>
-                  <mat-option value="fiat">F</mat-option>
-                  <mat-option value="audi">A</mat-option>
+                <div style="flex: 1 0 50%" class = "date-picker">  
+                    <label for="SMS">Campagin Start At:</label>
+                    <input matInput [matDatepicker]="picker">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </div>
 
-                </mat-select>
-            </mat-form-field>
-    </div>
-            
-            <br> <br>
-    <div  >
-            <mat-form-field appearance="fill">
-                <mat-label>Campagin exclude:</mat-label>
-                <mat-select disableRipple>
-                  <mat-option value="CPA">Cario</mat-option>
-                  <mat-option value="saad">S</mat-option>
-                  <mat-option value="fiat">F</mat-option>
-                  <mat-option value="audi">A</mat-option>
 
-                </mat-select>
-            </mat-form-field>
-            </div>
-           
-            <br><br>
-            <div class="quota"  >
-                <mat-form-field  appearance="fill">
+                <div style="flex:1 0 50%" class= "date-picker">  
+                    <label for="SMS">Campagin Ends At:</label>
+                    <input matInput [matDatepicker]="picker1">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
+                </div>
+
+                <mat-form-field style="flex: 1 0 45%" class="col-lg-5" class ="form-field-half" appearance="fill">
+                    <mat-label>Campagin Includes:</mat-label>
+                    <mat-select style = "width: 100%;" disableRipple>
+                      <mat-option value="cairo"> Cairo</mat-option>
+                      <mat-option value="giza">Giza</mat-option>
+                      <mat-option value="alex">Alex</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field style="flex: 1 0 45%" class="col-lg-5" class ="form-field-half" appearance="fill">
+                    <mat-label>Campagin Excludes:</mat-label>
+                    <mat-select style = "width: 100%;" disableRipple>
+                      <mat-option value="cairo"> Cairo</mat-option>
+                      <mat-option value="giza">Giza</mat-option>
+                      <mat-option value="alex">Alex</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field style="flex: 1 0 30%" class="col-lg-5" class ="form-field-one-third" appearance="fill">
                     <mat-label>Quota</mat-label>
                     <textarea matInput
                               cdkTextareaAutosize
                               #autosize="cdkTextareaAutosize"
                               cdkAutosizeMinRows="1"
                               cdkAutosizeMaxRows="5"></textarea>
-                  </mat-form-field>
-                <br>
-          
-            </div>
-            <div class="limit"    >
-                <mat-form-field  appearance="fill">
-                    <mat-label>Daily Limit:</mat-label>
+                </mat-form-field>
+
+                <mat-form-field style="flex: 1 0 30%" class="col-lg-5" class ="form-field-one-third" appearance="fill">
+                    <mat-label>Daily Limit</mat-label>
                     <textarea matInput
                               cdkTextareaAutosize
                               #autosize="cdkTextareaAutosize"
                               cdkAutosizeMinRows="1"
                               cdkAutosizeMaxRows="5"></textarea>
                 </mat-form-field>
-               
-            </div>
-    </div>
-</div>
 
 
-<div class="last">
-    <div class="last1">
-        <div  >
-        <mat-form-field  [style.fontSize]="30" appearance="fill">
-            <mat-label>Campagin Description</mat-label>
-            <textarea matInput
-                      cdkTextareaAutosize
-                      #autosize="cdkTextareaAutosize"
-                      cdkAutosizeMinRows="1"
-                      cdkAutosizeMaxRows="10"></textarea>
-          </mat-form-field>
-        </div>
-            <br>
-            <div   >
-            <mat-form-field   appearance="fill">
-                <mat-label>Test Dial</mat-label>
-                <textarea matInput
-                style="margin: 0px;"
-                          cdkTextareaAutosize
-                          #autosize="cdkTextareaAutosize"
-                          cdkAutosizeMinRows="1"
-                          cdkAutosizeMaxRows="10"></textarea>
-              </mat-form-field>
-              </div>
-            
-            <br>
-            <br>
-            <div class="example-button-row">
-                
-  <button mat-flat-button>Test SMS!</button>
-              </div>
-            
-    </div>
-    <div class="last2">
-        <div  >
-            <mat-form-field   appearance="fill">
-                <mat-label>Fraquancy</mat-label>
-                <textarea matInput
-                style="margin: 0px;"
-                          cdkTextareaAutosize
-                          #autosize="cdkTextareaAutosize"
-                          cdkAutosizeMinRows="1"
-                          cdkAutosizeMaxRows="10"></textarea>
-              </mat-form-field>
-              </div>
-            <br>
-          
-            <br><br>
-            <h4>Exclude Commuters? :</h4>
-            <mat-radio-group aria-label="Select an option">
-                <mat-radio-button style="margin-right:10px;" value="1">Yes</mat-radio-button>
-                <mat-radio-button value="2">No</mat-radio-button>
-            </mat-radio-group>
-            <br>
-    </div>
-    <div class="last3">
-        <i class="fa-regular fa-floppy-disk"></i>
-    </div>
-</div>
+                <mat-form-field style="flex: 1 0 30%" class="col-lg-5" class ="form-field-one-third" appearance="fill">
+                    <mat-label>Frequency</mat-label>
+                    <textarea matInput
+                              cdkTextareaAutosize
+                              #autosize="cdkTextareaAutosize"
+                              cdkAutosizeMinRows="1"
+                              cdkAutosizeMaxRows="5"></textarea>
+                </mat-form-field>
+            </mat-card-content>
+        </mat-card>
+
+
+        <mat-card fxFlexAlign="center"  [fxFlex] class="card">
+            <mat-card-title>SMS Message Details</mat-card-title>
+            <mat-card-content>
+                <mat-form-field  class="col-lg-5" class ="form-field-full" appearance="fill">
+                    <mat-label>Campagin SMS Sender Name:</mat-label>
+                    <mat-select style = "width: 100%;" disableRipple>
+                      <mat-option value="CPA">CPA</mat-option>
+                      <mat-option value="saad">Saad</mat-option>
+                      <mat-option value="fiat">Fiat</mat-option>
+                      <mat-option value="audi">Audi</mat-option>
+
+                    </mat-select>
+                </mat-form-field>
+                  
+            </mat-card-content> 
+        </mat-card>
+
+
         
-    </form>
-    <br><br>
-    <div class="end">
-        <h4>SMS Encoding: <span>Ascll(160/SMS)</span></h4>
-        <h4>Characters Count:<span>0/160</span></h4>
-        <h4>Message Count:<span>1</span></h4>
-
-
     </div>
-</div>
-
-
 
 </body>
 </html>
