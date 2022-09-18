@@ -25,6 +25,12 @@
   margin-top: 20px;
 }
 
+.form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .title{
   margin-top: 20px;
@@ -53,6 +59,12 @@
   display: flex;
   flex-direction: row;
   border-radius: 8px;
+  margin-top: 20px;
+}
+
+.icon-container
+{
+  height:40px;
 }
 
 .username-icon,
@@ -62,6 +74,7 @@
   padding-right: 4px;
   padding-left: 10px;
   padding-bottom: 4px;
+  padding-top: 10px;
 }
 
 .input{
@@ -84,12 +97,22 @@
 .login{
   width: 120px;
   height: 35px;
+  margin-top: 20px;
   margin-bottom: 20px;
   color:black;
   font-weight: bold;
   border-radius: 8px;
   border: none;
   cursor: pointer;
+}
+
+.login:disabled,
+.login:disabled:hover,
+.login:disabled:active,
+.login:disabled:hover:active {
+  background-color: grey;
+  color: white;
+  cursor: default;
 }
 
 .login:hover{
