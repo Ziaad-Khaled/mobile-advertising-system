@@ -37,7 +37,8 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import { MatSidenavModule } from '@angular/material/sidenav'; 
-import { MatSortModule } from '@angular/material/sort'; 
+import { MatSortModule } from '@angular/material/sort';
+import { SidenavComponent } from './components/sidenav/sidenav.component'; 
 
 
 
@@ -50,7 +51,8 @@ import { MatSortModule } from '@angular/material/sort';
     HeaderHomeComponent,
     NewBulkCampaignComponent,
     BulkCampaignSubmissionComponent,
-    BulkReportComponent
+    BulkReportComponent,
+    SidenavComponent
   ],
   imports: [
     BrowserModule,
