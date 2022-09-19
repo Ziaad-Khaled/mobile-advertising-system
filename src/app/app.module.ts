@@ -36,7 +36,8 @@ import { BulkCampaignSubmissionComponent } from './components/bulk-campaign-subm
 import {MatRadioModule} from '@angular/material/radio';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
-import { MatSidenavModule } from '@angular/material/sidenav';  
+import { MatSidenavModule } from '@angular/material/sidenav'; 
+import { MatSortModule } from '@angular/material/sort'; 
 
 
 
@@ -76,7 +77,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     MatRadioModule,
     MatPaginatorModule,
     MatTableModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatSortModule
 
   ],
   providers: [AuthenticationService],
