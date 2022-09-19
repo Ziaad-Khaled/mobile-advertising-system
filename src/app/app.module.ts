@@ -36,14 +36,8 @@ import { BulkCampaignSubmissionComponent } from './components/bulk-campaign-subm
 import {MatRadioModule} from '@angular/material/radio';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
-<<<<<<< Updated upstream
 import { MatSidenavModule } from '@angular/material/sidenav'; 
 import { MatSortModule } from '@angular/material/sort'; 
-=======
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { SidenavComponent } from './components/sidenav/sidenav.component';
-import { Report1Component } from './components/report1/report1.component';  
->>>>>>> Stashed changes
 
 
 
@@ -56,9 +50,7 @@ import { Report1Component } from './components/report1/report1.component';
     HeaderHomeComponent,
     NewBulkCampaignComponent,
     BulkCampaignSubmissionComponent,
-    BulkReportComponent,
-    SidenavComponent,
-    Report1Component
+    BulkReportComponent
   ],
   imports: [
     BrowserModule,

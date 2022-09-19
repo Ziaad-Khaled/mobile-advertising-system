@@ -5,7 +5,6 @@ import { HomeComponent } from './components/home/home.component';
 import { NewBulkCampaignComponent } from './components/new-bulk-campaign/new-bulk-campaign.component';
 import { BulkCampaignSubmissionComponent } from './components/bulk-campaign-submission/bulk-campaign-submission.component';
 import { BulkReportComponent } from './components/bulk-report/bulk-report.component';
-import { SidenavComponent } from './components/sidenav/sidenav.component';
 
 const routes: Routes = [
   {
@@ -27,12 +26,7 @@ const routes: Routes = [
   {
     path: 'bulk-report',
     component: BulkReportComponent
-  },
-  {
-    path:'sidenav',
-    component:SidenavComponent
   }
-
 ];
 
 @NgModule({
