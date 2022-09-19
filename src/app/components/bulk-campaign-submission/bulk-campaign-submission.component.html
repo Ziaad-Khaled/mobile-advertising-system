@@ -77,7 +77,7 @@
                     </mat-select>
                 </mat-form-field>
 
-                <mat-form-field style="flex: 1 0 30%" class="col-lg-5" class ="form-field-one-third" appearance="fill">
+                <mat-form-field style="flex: 1 0 45%" class="col-lg-5" class ="form-field-one-third" appearance="fill">
                     <mat-label>Quota</mat-label>
                     <textarea matInput
                               cdkTextareaAutosize
@@ -86,7 +86,7 @@
                               cdkAutosizeMaxRows="5"></textarea>
                 </mat-form-field>
 
-                <mat-form-field style="flex: 1 0 30%" class="col-lg-5" class ="form-field-one-third" appearance="fill">
+                <mat-form-field style="flex: 1 0 45%" class="col-lg-5" class ="form-field-one-third" appearance="fill">
                     <mat-label>Daily Limit</mat-label>
                     <textarea matInput
                               cdkTextareaAutosize
@@ -96,7 +96,7 @@
                 </mat-form-field>
 
 
-                <mat-form-field style="flex: 1 0 30%" class="col-lg-5" class ="form-field-one-third" appearance="fill">
+                <mat-form-field style="flex: 1 0 45%" class="col-lg-5" class ="form-field-one-third" appearance="fill">
                     <mat-label>Frequency</mat-label>
                     <textarea matInput
                               cdkTextareaAutosize
@@ -104,29 +104,53 @@
                               cdkAutosizeMinRows="1"
                               cdkAutosizeMaxRows="5"></textarea>
                 </mat-form-field>
+
+                <div style="flex: 1 0 45%" class="col-lg-5" class ="form-field-one-third">
+                    <mat-label>Exclude Commuters: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</mat-label>
+                    <mat-radio-group aria-label="Select an option">
+                        <mat-radio-button style="margin-right:30px;" value="1">Yes</mat-radio-button>
+                        <mat-radio-button value="2">No</mat-radio-button>
+                    </mat-radio-group>
+                </div>
             </mat-card-content>
         </mat-card>
 
 
-        <mat-card fxFlexAlign="center"  [fxFlex] class="card">
+        <mat-card fxFlexAlign="center" [fxFlex] class="card" >
             <mat-card-title>SMS Message Details</mat-card-title>
-            <mat-card-content>
-                <mat-form-field  class="col-lg-5" class ="form-field-full" appearance="fill">
-                    <mat-label>Campagin SMS Sender Name:</mat-label>
-                    <mat-select style = "width: 100%;" disableRipple>
-                      <mat-option value="CPA">CPA</mat-option>
-                      <mat-option value="saad">Saad</mat-option>
-                      <mat-option value="fiat">Fiat</mat-option>
-                      <mat-option value="audi">Audi</mat-option>
-
-                    </mat-select>
+            <mat-card-content fxLayout="column" fxFlexAlign="center">
+                <mat-form-field  fxFlexAlign="stretch" appearance="fill">
+                    <mat-label>Campagin SMS Body</mat-label>
+                        <textarea  matInput
+                        style="margin: 0px;"
+                                  cdkTextareaAutosize
+                                  #autosize="cdkTextareaAutosize"
+                                  cdkAutosizeMinRows="10"
+                                  cdkAutosizeMaxRows="40"></textarea>
                 </mat-form-field>
-                  
+                
+                <mat-form-field  fxFlexAlign="stretch" appearance="fill">
+                    <mat-label>Campagin Description</mat-label>
+                    <textarea  matInput
+                                fxFlexAlign="stretch"
+                                cdkTextareaAutosize
+                                #autosize="cdkTextareaAutosize"
+                                cdkAutosizeMinRows="2"
+                                cdkAutosizeMaxRows="10"></textarea>
+                    </mat-form-field>
             </mat-card-content> 
-        </mat-card>
 
+            <mat-card-actions class="sms-message-criteria" fxLayout="row" fxfxFlexAllign="center" style="text-align: center;">
+                <h4 class="sms-message-criteria-font" fxfxFlexAllign="center" >SMS Enconding: ASCII(160/SMS)</h4>
+                <h4 class="sms-message-criteria-font" fxfxFlexAllign="center" >Characters Count: 0/160</h4>
+                <h4 class="sms-message-criteria-font" fxfxFlexAllign="center" >Messages Count: 1</h4>
+                
+            </mat-card-actions>
+        </mat-card>   
+    </div>
 
-        
+    <div style="margin-bottom: 20px;text-align: center;" > 
+        <button fxfxFlexAllign="center" mat-button [routerLink]="'/home'">Test SMS!</button>
     </div>
 
 </body>
