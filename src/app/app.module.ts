@@ -38,7 +38,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import { MatSidenavModule } from '@angular/material/sidenav'; 
 import { MatSortModule } from '@angular/material/sort';
-import { SidenavComponent } from './components/sidenav/sidenav.component'; 
+import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { NewRealTimeCampaignComponent } from './components/new-real-time-campaign/new-real-time-campaign.component'; 
 
 
 
@@ -52,7 +53,8 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
     NewBulkCampaignComponent,
     BulkCampaignSubmissionComponent,
     BulkReportComponent,
-    SidenavComponent
+    SidenavComponent,
+    NewRealTimeCampaignComponent
   ],
   imports: [
     BrowserModule,

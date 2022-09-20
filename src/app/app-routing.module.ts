@@ -6,6 +6,8 @@ import { NewBulkCampaignComponent } from './components/new-bulk-campaign/new-bul
 import { BulkCampaignSubmissionComponent } from './components/bulk-campaign-submission/bulk-campaign-submission.component';
 import { BulkReportComponent } from './components/bulk-report/bulk-report.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { NewRealTimeCampaignComponent } from './components/new-real-time-campaign/new-real-time-campaign.component';
+
 
 const routes: Routes = [
   {
@@ -31,6 +33,10 @@ const routes: Routes = [
   {
     path: 'sidenav',
     component: SidenavComponent
+  },
+  {
+    path: 'new-real-time-campaign',
+    component: NewRealTimeCampaignComponent
   }
 ];
 
