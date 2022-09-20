@@ -54,7 +54,7 @@ const NAMES: string[] = [
 
 export class BulkReportComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'name', 'progress', 'fruit'];
+  displayedColumns: string[] = ['id', 'name', 'progress', 'fruit', 'action'];
   dataSource: MatTableDataSource<UserData>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
