@@ -12,6 +12,7 @@ export class NewRealTimeCampaignComponent implements OnInit {
   originally bred for hunting.`;
 
   constructor() { }
+  public selectedMoment = new Date();
 
   ngOnInit(): void {
   }
