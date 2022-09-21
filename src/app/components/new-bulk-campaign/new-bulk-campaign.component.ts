@@ -27,6 +27,8 @@ export class NewBulkCampaignComponent implements OnInit {
   
   //Location
 
+  value = '';
+
   governorates = new FormControl('');
   governorateList: string[] = ['Cairo', 'Giza', 'Alex'];
 

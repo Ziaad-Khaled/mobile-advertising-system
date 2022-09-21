@@ -36,45 +36,59 @@
           <mat-icon> location_on</mat-icon>
         </mat-panel-description>
       </mat-expansion-panel-header>
+
+
+
+      <div class="expansion-panel-content" style="display:flex;flex-direction:row;flex-wrap: wrap; justify-content: center;align-items: center;"> 
+        <mat-form-field class="example-form-field" appearance="fill" style="flex: 1 0 100%">
+          <mat-label>Search for a location</mat-label>
+          <input matInput type="text" [(ngModel)]="value">
+          <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>      
+    
+        <mat-form-field appearance="fill">
+          <mat-label>Governorate</mat-label>
+          <mat-select [formControl]="governorates" multiple>
+            <mat-select-trigger>
+              {{governorates.value?.[0] || ''}}
+              <span *ngIf="(governorates.value?.length || 0) > 1" class="example-additional-selection">
+                (+{{(governorates.value?.length || 0) - 1}} {{governorates.value?.length === 2 ? 'other' : 'others'}})
+              </span>
+            </mat-select-trigger>
+            <mat-option *ngFor="let governorate of governorateList" [value]="governorate">{{governorate}}</mat-option>
+          </mat-select>
+        </mat-form-field>
   
-      <mat-form-field appearance="fill">
-        <mat-label>Governorate</mat-label>
-        <mat-select [formControl]="governorates" multiple>
-          <mat-select-trigger>
-            {{governorates.value?.[0] || ''}}
-            <span *ngIf="(governorates.value?.length || 0) > 1" class="example-additional-selection">
-              (+{{(governorates.value?.length || 0) - 1}} {{governorates.value?.length === 2 ? 'other' : 'others'}})
-            </span>
-          </mat-select-trigger>
-          <mat-option *ngFor="let governorate of governorateList" [value]="governorate">{{governorate}}</mat-option>
-        </mat-select>
-      </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Admin Section</mat-label>
+          <mat-select [formControl]="adminSections" multiple>
+            <mat-select-trigger>
+              {{adminSections.value?.[0] || ''}}
+              <span *ngIf="(adminSections.value?.length || 0) > 1" class="example-additional-selection">
+                (+{{(adminSections.value?.length || 0) - 1}} {{adminSections.value?.length === 2 ? 'other' : 'others'}})
+              </span>
+            </mat-select-trigger>
+            <mat-option *ngFor="let adminSection of adminSectionList" [value]="adminSection">{{adminSection}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Sheiakha</mat-label>
+          <mat-select [formControl]="toppings" multiple>
+            <mat-select-trigger>
+              {{sheiakhas.value?.[0] || ''}}
+              <span *ngIf="(sheiakhas.value?.length || 0) > 1" class="example-additional-selection">
+                (+{{(sheiakhas.value?.length || 0) - 1}} {{sheiakhas.value?.length === 2 ? 'other' : 'others'}})
+              </span>
+            </mat-select-trigger>
+            <mat-option *ngFor="let sheiakha of sheiakhaList" [value]="sheiakha">{{sheiakha}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
 
-      <mat-form-field appearance="fill">
-        <mat-label>Admin Section</mat-label>
-        <mat-select [formControl]="adminSections" multiple>
-          <mat-select-trigger>
-            {{adminSections.value?.[0] || ''}}
-            <span *ngIf="(adminSections.value?.length || 0) > 1" class="example-additional-selection">
-              (+{{(adminSections.value?.length || 0) - 1}} {{adminSections.value?.length === 2 ? 'other' : 'others'}})
-            </span>
-          </mat-select-trigger>
-          <mat-option *ngFor="let adminSection of adminSectionList" [value]="adminSection">{{adminSection}}</mat-option>
-        </mat-select>
-      </mat-form-field>
-
-      <mat-form-field appearance="fill">
-        <mat-label>Sheiakha</mat-label>
-        <mat-select [formControl]="toppings" multiple>
-          <mat-select-trigger>
-            {{sheiakhas.value?.[0] || ''}}
-            <span *ngIf="(sheiakhas.value?.length || 0) > 1" class="example-additional-selection">
-              (+{{(sheiakhas.value?.length || 0) - 1}} {{sheiakhas.value?.length === 2 ? 'other' : 'others'}})
-            </span>
-          </mat-select-trigger>
-          <mat-option *ngFor="let sheiakha of sheiakhaList" [value]="sheiakha">{{sheiakha}}</mat-option>
-        </mat-select>
-      </mat-form-field>
+      
       
       
     </mat-expansion-panel>
