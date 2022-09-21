@@ -8,6 +8,8 @@ import { HomeComponent } from './components/home/home.component';
 import { HeaderHomeComponent } from './components/home/header/header.component';
 import { LoginComponent } from './components/login/login.component';
 import { BulkReportComponent } from './components/bulk-report/bulk-report.component';
+import { NewRealTimeCampaignComponent } from './components/new-real-time-campaign/new-real-time-campaign.component'; 
+
 
 
 import { FormsModule } from '@angular/forms';
@@ -39,7 +41,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSidenavModule } from '@angular/material/sidenav'; 
 import { MatSortModule } from '@angular/material/sort';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
-import { NewRealTimeCampaignComponent } from './components/new-real-time-campaign/new-real-time-campaign.component'; 
+import {MatTabsModule} from '@angular/material/tabs'; 
 
 
 
@@ -82,7 +84,8 @@ import { NewRealTimeCampaignComponent } from './components/new-real-time-campaig
     MatPaginatorModule,
     MatTableModule,
     MatSidenavModule,
-    MatSortModule
+    MatSortModule,
+    MatTabsModule
 
   ],
   providers: [AuthenticationService],
