@@ -7,8 +7,6 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderHomeComponent } from './components/home/header/header.component';
 import { LoginComponent } from './components/login/login.component';
-import { BulkReportComponent } from './components/bulk-report/bulk-report.component';
-import { NewRealTimeCampaignComponent } from './components/new-real-time-campaign/new-real-time-campaign.component'; 
 
 
 
@@ -24,7 +22,6 @@ import {MatCardModule} from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatExpansionModule} from '@angular/material/expansion';
-import { NewBulkCampaignComponent } from './components/new-bulk-campaign/new-bulk-campaign.component'; 
 import {MatIconModule} from '@angular/material/icon'; 
 import {MatFormFieldModule} from '@angular/material/form-field'; 
 import {MatDatepickerModule} from '@angular/material/datepicker'; 
@@ -41,8 +38,11 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSidenavModule } from '@angular/material/sidenav'; 
 import { MatSortModule } from '@angular/material/sort';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
-import {MatTabsModule} from '@angular/material/tabs'; 
+import {MatTabsModule} from '@angular/material/tabs';
 
+import { BulkReportComponent } from './components/report/report.component';
+import { NewBulkCampaignComponent } from './components/bulk-new-campaign/bulk-new-campaign.component';
+import { RealTimeNewCampaignComponent } from './components/real-time-new-campaign/real-time-new-campaign.component';
 
 
 
@@ -52,11 +52,14 @@ import {MatTabsModule} from '@angular/material/tabs';
     LoginComponent,
     HomeComponent,
     HeaderHomeComponent,
-    NewBulkCampaignComponent,
     BulkCampaignSubmissionComponent,
-    BulkReportComponent,
     SidenavComponent,
-    NewRealTimeCampaignComponent
+
+    
+    BulkReportComponent,
+   NewBulkCampaignComponent,
+   RealTimeNewCampaignComponent,
+
   ],
   imports: [
     BrowserModule,

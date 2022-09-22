@@ -18,8 +18,8 @@ export interface Task {
 
 @Component({
   selector: 'app-new-bulk-campaign',
-  templateUrl: './new-bulk-campaign.component.html',
-  styleUrls: ['./new-bulk-campaign.component.scss']
+  templateUrl: './bulk-new-campaign.component.html',
+  styleUrls: ['./bulk-new-campaign.component.scss']
 })
 export class NewBulkCampaignComponent implements OnInit {
   

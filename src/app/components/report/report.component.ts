@@ -48,8 +48,8 @@ const NAMES: string[] = [
 
 @Component({
   selector: 'app-bulk-report',
-  templateUrl: './bulk-report.component.html',
-  styleUrls: ['./bulk-report.component.scss']
+  templateUrl: './Report.component.html',
+  styleUrls: ['./Report.component.scss']
 })
 
 export class BulkReportComponent implements OnInit {

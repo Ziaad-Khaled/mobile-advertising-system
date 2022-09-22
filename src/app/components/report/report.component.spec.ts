@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BulkReportComponent } from './bulk-report.component';
+import { ReportComponent } from './report.component';
 
-describe('BulkReportComponent', () => {
-  let component: BulkReportComponent;
-  let fixture: ComponentFixture<BulkReportComponent>;
+describe('ReportComponent', () => {
+  let component: ReportComponent;
+  let fixture: ComponentFixture<ReportComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BulkReportComponent ]
+      declarations: [ ReportComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(BulkReportComponent);
+    fixture = TestBed.createComponent(ReportComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

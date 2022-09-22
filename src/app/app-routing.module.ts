@@ -2,13 +2,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
-import { NewBulkCampaignComponent } from './components/new-bulk-campaign/new-bulk-campaign.component';
+import { NewBulkCampaignComponent } from './components/bulk-new-campaign/bulk-new-campaign.component';
 import { BulkCampaignSubmissionComponent } from './components/bulk-campaign-submission/bulk-campaign-submission.component';
-import { BulkReportComponent } from './components/bulk-report/bulk-report.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
-import { NewRealTimeCampaignComponent } from './components/new-real-time-campaign/new-real-time-campaign.component';
-
-
+import { BulkReportComponent } from './components/report/report.component';
+import { RealTimeNewCampaignComponent } from './components/real-time-new-campaign/real-time-new-campaign.component';
 const routes: Routes = [
   {
     path: '',
@@ -27,16 +25,17 @@ const routes: Routes = [
     component: BulkCampaignSubmissionComponent
   },
   {
-    path: 'bulk-report',
+    path: 'Report',
     component: BulkReportComponent
   },
   {
     path: 'sidenav',
     component: SidenavComponent
   },
+ 
   {
-    path: 'new-real-time-campaign',
-    component: NewRealTimeCampaignComponent
+    path: 'real-time-newcampaign',
+    component: RealTimeNewCampaignComponent
   }
 ];
 
