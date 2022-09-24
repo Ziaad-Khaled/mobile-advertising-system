@@ -44,16 +44,32 @@ const NAMES: string[] = [
   'Elizabeth',
 ];
 
+///////////////////////////////////////////////////////////////////
+///cells table
 
+export interface PeriodicElement {
+  position: number;
+}
+
+const ELEMENT_DATA: PeriodicElement[] = [
+  {position: 1, },
+  {position: 2,},
+  {position: 3, },
+  {position: 4, },
+  {position: 5, },
+  {position: 6, },
+  {position: 7, },
+  {position: 8, },
+  {position: 9, },
+  {position: 10, },
+];
 
 @Component({
-  selector: 'app-bulk-report',
-  templateUrl: './Report.component.html',
-  styleUrls: ['./Report.component.scss']
+  selector: 'app-real-time-locations',
+  templateUrl: './real-time-locations.component.html',
+  styleUrls: ['./real-time-locations.component.scss']
 })
-
-export class ReportComponent implements OnInit {
-
+export class RealTimeLocationsComponent implements OnInit {
   displayedColumns: string[] = ['id', 'name', 'progress', 'fruit', 'action'];
   dataSource: MatTableDataSource<UserData>;
 
@@ -86,6 +102,11 @@ export class ReportComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
+  
+  ////////////////////////////////////////////////////////////////////////////////
+  ///CELLS
+  displayedColumns2: string[] = ['position'];
+  dataSource2 = ELEMENT_DATA;
 }
 
 /** Builds and returns a new User. */
@@ -102,4 +123,7 @@ function createNewUser(id: number): UserData {
     progress: Math.round(Math.random() * 100).toString(),
     fruit: FRUITS[Math.round(Math.random() * (FRUITS.length - 1))],
   };
+
+
+
 }

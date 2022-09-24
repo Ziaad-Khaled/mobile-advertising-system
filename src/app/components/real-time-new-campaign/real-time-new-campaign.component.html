@@ -4,14 +4,9 @@
   
 </head>
 <body>
-    <mat-toolbar>
-        <div class="logo" [routerLink]="'/home'">
-        <img class="orange-logo" src= "../../../../assets/icons/orange_logo.svg">
-    </div>
-        <label style="color :white;">Mobile Advertising System - New Real-time Campaign </label>
-        <span class="example-spacer"></span>
-    </mat-toolbar>
+    <app-header [title] = "'Mobile Advertising System - New Real-time Campaign'"></app-header>
     
+
     <div class= "cards-container"  fxLayoutGap="10px" fxLayoutGap.xs="0" >
         <mat-card fxFlexAlign="center"  [fxFlex] class="card">
             <mat-card-title>Sender Data</mat-card-title>
@@ -44,7 +39,7 @@
                     </mat-select>
                 </mat-form-field>
 
-                <button matTooltip="Add new locations" class="action-button" style="flex: 1 0 5%" mat-button> <mat-icon class="mat-icon" >add_circle</mat-icon> </button>
+                <button matTooltip="edit campaign locations" class="action-button" style="flex: 1 0 5%" [routerLink]="'/real-time-locations'" mat-button> <mat-icon class="mat-icon" >edit</mat-icon> </button>
 
                 <div style="flex: 1 0 50%" class = "date-picker">  
                     <label for="SMS">Campagin Starts At:</label>

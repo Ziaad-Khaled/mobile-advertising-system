@@ -1,3 +1,4 @@
+import { RealTimeLocationsComponent } from './components/real-time-locations/real-time-locations.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
@@ -5,7 +6,7 @@ import { HomeComponent } from './components/home/home.component';
 import { NewBulkCampaignComponent } from './components/bulk-new-campaign/bulk-new-campaign.component';
 import { BulkCampaignSubmissionComponent } from './components/bulk-campaign-submission/bulk-campaign-submission.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
-import { BulkReportComponent } from './components/report/report.component';
+import { ReportComponent } from './components/report/report.component';
 import { RealTimeNewCampaignComponent } from './components/real-time-new-campaign/real-time-new-campaign.component';
 const routes: Routes = [
   {
@@ -26,7 +27,7 @@ const routes: Routes = [
   },
   {
     path: 'Report',
-    component: BulkReportComponent
+    component: ReportComponent
   },
   {
     path: 'sidenav',
@@ -36,6 +37,11 @@ const routes: Routes = [
   {
     path: 'real-time-newcampaign',
     component: RealTimeNewCampaignComponent
+  },
+
+  {
+    path: 'real-time-locations',
+    component: RealTimeLocationsComponent
   }
 ];
 

@@ -7,6 +7,10 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderHomeComponent } from './components/home/header/header.component';
 import { LoginComponent } from './components/login/login.component';
+import { ReportComponent } from './components/report/report.component';
+import { NewBulkCampaignComponent } from './components/bulk-new-campaign/bulk-new-campaign.component';
+import { RealTimeNewCampaignComponent } from './components/real-time-new-campaign/real-time-new-campaign.component';
+import { BulkCampaignSubmissionComponent } from './components/bulk-campaign-submission/bulk-campaign-submission.component';
 
 
 
@@ -31,7 +35,6 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSelectModule} from '@angular/material/select'; 
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { BulkCampaignSubmissionComponent } from './components/bulk-campaign-submission/bulk-campaign-submission.component';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
@@ -39,10 +42,10 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSortModule } from '@angular/material/sort';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import {MatTabsModule} from '@angular/material/tabs';
+import { RealTimeLocationsComponent } from './components/real-time-locations/real-time-locations.component';
+import { HeaderComponent } from './components/header/header.component';
 
-import { BulkReportComponent } from './components/report/report.component';
-import { NewBulkCampaignComponent } from './components/bulk-new-campaign/bulk-new-campaign.component';
-import { RealTimeNewCampaignComponent } from './components/real-time-new-campaign/real-time-new-campaign.component';
+
 
 
 
@@ -56,9 +59,11 @@ import { RealTimeNewCampaignComponent } from './components/real-time-new-campaig
     SidenavComponent,
 
     
-    BulkReportComponent,
+    ReportComponent,
    NewBulkCampaignComponent,
    RealTimeNewCampaignComponent,
+   RealTimeLocationsComponent,
+   HeaderComponent,
 
   ],
   imports: [
