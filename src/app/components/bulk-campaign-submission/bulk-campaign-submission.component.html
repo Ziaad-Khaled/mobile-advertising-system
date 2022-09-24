@@ -1,1 +1,46 @@
-<p> it works</p>
+<app-header [title]="'Mobile Advertising System - Bulk Campaign Submission'"></app-header>
+
+<div class="cards-container">    
+    <mat-card fxFlexAlign="center" [fxFlex] class="card" >
+        <mat-card-title>SMS Message Details</mat-card-title>
+        <mat-card-content fxLayout="column" fxFlexAlign="center">
+            <mat-form-field  fxFlexAlign="stretch" appearance="fill">
+                <mat-label>Campagin SMS Body</mat-label>
+                    <textarea  matInput
+                    style="margin: 0px;"
+                            cdkTextareaAutosize
+                            #autosize="cdkTextareaAutosize"
+                            cdkAutosizeMinRows="10"
+                            cdkAutosizeMaxRows="40"></textarea>
+            </mat-form-field>
+            
+            <mat-form-field  fxFlexAlign="stretch" appearance="fill">
+                <mat-label>Campagin Description</mat-label>
+                <textarea  matInput
+                            fxFlexAlign="stretch"
+                            cdkTextareaAutosize
+                            #autosize="cdkTextareaAutosize"
+                            cdkAutosizeMinRows="2"
+                            cdkAutosizeMaxRows="10"></textarea>
+                </mat-form-field>
+
+            <div fxLayout="row">
+                <mat-form-field style="flex: 1 0 70%" class="col-lg-5" class ="form-field-one-third" appearance="fill">
+                    <mat-label>Test Dial</mat-label>
+                    <span matPrefix>+20 &nbsp;</span>
+                    <input type="tel" matInput placeholder="1234567890">
+                </mat-form-field>
+
+                <button mat-button style="flex: 1 0 8%;height: 54px;">Test Dial</button>    
+            </div>
+            
+        </mat-card-content> 
+
+        <mat-card-actions class="sms-message-criteria" fxLayout="row" fxfxFlexAllign="center" style="text-align: center;">
+            <h4 class="sms-message-criteria-font" fxfxFlexAllign="center" >SMS Enconding: ASCII(160/SMS)</h4>
+            <h4 class="sms-message-criteria-font" fxfxFlexAllign="center" >Characters Count: 0/160</h4>
+            <h4 class="sms-message-criteria-font" fxfxFlexAllign="center" >Messages Count: 1</h4>
+            
+        </mat-card-actions>
+    </mat-card>   
+</div>
