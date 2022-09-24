@@ -78,7 +78,6 @@ import { HeaderComponent } from './components/header/header.component';
     MatButtonModule,
     ReactiveFormsModule,
     MatExpansionModule,
-    MatIconModule,
     MatFormFieldModule,
     MatDatepickerModule,
     MatNativeDateModule,
@@ -93,7 +92,8 @@ import { HeaderComponent } from './components/header/header.component';
     MatTableModule,
     MatSidenavModule,
     MatSortModule,
-    MatTabsModule
+    MatTabsModule,
+    MatIconModule
 
   ],
   providers: [AuthenticationService],
