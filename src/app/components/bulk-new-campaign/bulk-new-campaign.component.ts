@@ -21,7 +21,7 @@ export interface Task {
   templateUrl: './bulk-new-campaign.component.html',
   styleUrls: ['./bulk-new-campaign.component.scss']
 })
-export class NewBulkCampaignComponent implements OnInit {
+export class BulkNewCampaignComponent implements OnInit {
   
   @ViewChild(MatAccordion) accordion!: MatAccordion;
   

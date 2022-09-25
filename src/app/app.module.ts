@@ -8,7 +8,7 @@ import { HomeComponent } from './components/home/home.component';
 import { HeaderHomeComponent } from './components/home/header/header.component';
 import { LoginComponent } from './components/login/login.component';
 import { ReportComponent } from './components/report/report.component';
-import { NewBulkCampaignComponent } from './components/bulk-new-campaign/bulk-new-campaign.component';
+import { BulkNewCampaignComponent } from './components/bulk-new-campaign/bulk-new-campaign.component';
 import { RealTimeNewCampaignComponent } from './components/real-time-new-campaign/real-time-new-campaign.component';
 import { BulkCampaignSubmissionComponent } from './components/bulk-campaign-submission/bulk-campaign-submission.component';
 
@@ -51,6 +51,7 @@ import {
   NgxMatNativeDateModule,
   NgxMatTimepickerModule
 } from '@angular-material-components/datetime-picker';
+import { CellsTableComponent } from './components/real-time-locations/cells-table/cells-table.component';
 
 @NgModule({
   declarations: [
@@ -64,10 +65,11 @@ import {
 
     
     ReportComponent,
-   NewBulkCampaignComponent,
+   BulkNewCampaignComponent,
    RealTimeNewCampaignComponent,
    RealTimeLocationsComponent,
    HeaderComponent,
+   CellsTableComponent,
 
   ],
   imports: [

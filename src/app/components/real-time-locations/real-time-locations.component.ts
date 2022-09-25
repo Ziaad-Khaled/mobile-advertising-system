@@ -51,19 +51,6 @@ export interface PeriodicElement {
   position: number;
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, },
-  {position: 2,},
-  {position: 3, },
-  {position: 4, },
-  {position: 5, },
-  {position: 6, },
-  {position: 7, },
-  {position: 8, },
-  {position: 9, },
-  {position: 10, },
-];
-
 @Component({
   selector: 'app-real-time-locations',
   templateUrl: './real-time-locations.component.html',
@@ -104,9 +91,6 @@ export class RealTimeLocationsComponent implements OnInit {
   }
   
   ////////////////////////////////////////////////////////////////////////////////
-  ///CELLS
-  displayedColumns2: string[] = ['position'];
-  dataSource2 = ELEMENT_DATA;
 }
 
 /** Builds and returns a new User. */
