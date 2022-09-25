@@ -44,10 +44,13 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { RealTimeLocationsComponent } from './components/real-time-locations/real-time-locations.component';
 import { HeaderComponent } from './components/header/header.component';
-
-
-
-
+import { NgxMatDatetimePicker } from '@angular-material-components/datetime-picker/public-api';
+import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
+import {
+  NgxMatDatetimePickerModule,
+  NgxMatNativeDateModule,
+  NgxMatTimepickerModule
+} from '@angular-material-components/datetime-picker';
 
 @NgModule({
   declarations: [
@@ -57,6 +60,7 @@ import { HeaderComponent } from './components/header/header.component';
     HeaderHomeComponent,
     BulkCampaignSubmissionComponent,
     SidenavComponent,
+   
 
     
     ReportComponent,
@@ -93,7 +97,11 @@ import { HeaderComponent } from './components/header/header.component';
     MatSidenavModule,
     MatSortModule,
     MatTabsModule,
-    MatIconModule
+    MatIconModule,
+    NgxMatDatetimePickerModule,
+    NgxMatTimepickerModule,
+    NgxMatNativeDateModule,
+    NgxMaterialTimepickerModule
 
   ],
   providers: [AuthenticationService],

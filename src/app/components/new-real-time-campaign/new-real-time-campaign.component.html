@@ -4,9 +4,14 @@
   
 </head>
 <body>
-    <app-header [title] = "'Mobile Advertising System - New Real-time Campaign'"></app-header>
+    <mat-toolbar>
+        <div  [routerLink]="'/home'">
+        <img class="orange-logo" src= "../../../../assets/icons/orange_logo.svg">
+    </div>
+        <label style="color :white;">Mobile Advertising System - New Real-time Campaign </label>
+        <span class="example-spacer"></span>
+    </mat-toolbar>
     
-
     <div class= "cards-container"  fxLayoutGap="10px" fxLayoutGap.xs="0" >
         <mat-card fxFlexAlign="center"  [fxFlex] class="card">
             <mat-card-title>Sender Data</mat-card-title>
@@ -39,7 +44,7 @@
                     </mat-select>
                 </mat-form-field>
 
-                <button matTooltip="edit campaign locations" class="action-button" style="flex: 1 0 5%" [routerLink]="'/real-time-locations'" mat-button> <mat-icon class="mat-icon" >edit</mat-icon> </button>
+                <button matTooltip="Add new locations" class="action-button" style="flex: 1 0 5%" mat-button> <mat-icon class="mat-icon" >add_circle</mat-icon> </button>
 
                 <div style="flex: 1 0 50%" class = "date-picker">  
                     <label for="SMS">Campagin Starts At:</label>
@@ -47,9 +52,7 @@
                     <mat-hint>MM/DD/YYYY</mat-hint>
                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
-                   <input mdc-datetime-picker="" date="false" time="true" placeholder="Time" minutes="true"
-                   min-date="minDate" type="text" id="time"  short-time="true" ng-model="time" [ngxTimepicker]="picker3">
-                   <ngx-material-timepicker #picker3></ngx-material-timepicker>
+                    
                 </div>
 
 
@@ -58,11 +61,7 @@
                     <input matInput [matDatepicker]="picker1">
                     <mat-hint>MM/DD/YYYY</mat-hint>
                     <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
-                    <ngx-mat-datetime-picker #picker2></ngx-mat-datetime-picker>
                     <mat-datepicker #picker1></mat-datepicker>
-                    <input mdc-datetime-picker="" date="false" time="true" placeholder="Time" minutes="true"
-                   min-date="minDate" type="text" id="time"  short-time="true" ng-model="time" [ngxTimepicker]="picker4">
-                   <ngx-material-timepicker #picker4></ngx-material-timepicker>
                 </div>
 
                 <mat-form-field style="flex: 1 0 45%" class="col-lg-5" class ="form-field-half" appearance="fill">
