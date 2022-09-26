@@ -6,8 +6,42 @@ body{
     padding: 0;
     margin: 0;
     font-family: Roboto, sans-serif;
+    
 }
 
 p{
     margin: 0 0;
+}
+.timepicker-dial__container[_ngcontent-jvl-c269] {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    -webkit-tap-highlight-color: transparent;
+    
+  }
+
+
+  
+element.style {
+    [_nghost-jvl-c257] {
+        --body-background-color: #fff;
+        --primary-font-family: 'Roboto',sans-serif;
+        --button-color: orange;
+        --dial-active-color: #fff;
+        --dial-inactive-color: rgba(255, 255, 255, .5);
+        --dial-background-color: orange;
+        --dial-editable-active-color: orange;
+        --dial-editable-background-color: #fff;
+        --clock-face-time-active-color: #fff;
+        --clock-face-time-inactive-color: #6c6c6c;
+        --clock-face-inner-time-inactive-color: #929292;
+        --clock-face-time-disabled-color: #c5c5c5;
+        --clock-face-background-color: #f0f0f0;
+        --clock-hand-color: orange;
+    }
+}
+
+
+timepicker__header[_ngcontent-ifm-c257] {
+  background-color: orange;
 }
