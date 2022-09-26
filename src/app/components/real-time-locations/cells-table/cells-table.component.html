@@ -1,4 +1,4 @@
-<app-header [title]="'LAC-Cell for location ID: {{id}}'" ></app-header>
+<app-header [title]= "'LAC-Cell for location with id: '" ></app-header>
     <body>
       <div class= "header"  fxLayout="row" style= "display: flex;flex-direction: row;flex-wrap: wrap;">
         <mat-form-field appearance="standard" style= "flex: 1 0 85%;margin-right: 10px;">
@@ -47,6 +47,10 @@
       <mat-paginator  [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users">
       </mat-paginator>
     </div>
+
+    <div style="margin-top: 20px;text-align: center;" > 
+      <button fxfxFlexAllign="center" mat-button [routerLink]="'/real-time-locations'">Confirm</button>
+  </div>
 
   </body>
   
