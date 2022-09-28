@@ -51,6 +51,7 @@ import {
   NgxMatNativeDateModule,
   NgxMatTimepickerModule
 } from '@angular-material-components/datetime-picker';
+
 import { CellsTableComponent } from './components/real-time-locations/cells-table/cells-table.component';
 
 @NgModule({
