@@ -5,21 +5,23 @@ import { HomeComponent } from './components/home/home.component';
 import { BulkNewCampaignComponent } from './components/bulk-new-campaign/bulk-new-campaign.component';
 import { BulkCampaignSubmissionComponent } from './components/bulk-campaign-submission/bulk-campaign-submission.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
-import { ReportComponent } from './components/report/report.component';
 import { RealTimeNewCampaignComponent } from './components/real-time-new-campaign/real-time-new-campaign.component';
 import { CellsTableComponent } from './components/real-time-locations/cells-table/cells-table.component';
 import { RealTimeLocationsComponent } from './components/real-time-locations/real-time-locations.component';
-
+import { BulkReportComponent } from './components/bulk-report/bulk-report.component';
+import { RealTimeReportComponent } from './components/real-time-report/real-time-report.component';
 const routes: Routes = [
   { path: '', component: LoginComponent },
+  {path:'Login', component:LoginComponent},
   { path:'home', component: HomeComponent },
   { path:'new-bulk-campaign', component: BulkNewCampaignComponent },
   { path:'bulk-campaign-submission', component: BulkCampaignSubmissionComponent },
-  { path: 'Report', component: ReportComponent },
+  { path: 'BulkReport', component: BulkReportComponent },
   { path: 'sidenav', component: SidenavComponent },
   { path: 'real-time-newcampaign',  component: RealTimeNewCampaignComponent },
   { path: 'real-time-locations', component: RealTimeLocationsComponent },
-  { path: 'real-time-locations/:id', component: CellsTableComponent }
+  { path: 'real-time-locations/:id', component: CellsTableComponent },
+  {path:'real-time-report',component:RealTimeReportComponent}
 ];
 
 @NgModule({

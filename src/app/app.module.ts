@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderHomeComponent } from './components/home/header/header.component';
 import { LoginComponent } from './components/login/login.component';
-import { ReportComponent } from './components/report/report.component';
+
 import { BulkNewCampaignComponent } from './components/bulk-new-campaign/bulk-new-campaign.component';
 import { RealTimeNewCampaignComponent } from './components/real-time-new-campaign/real-time-new-campaign.component';
 import { BulkCampaignSubmissionComponent } from './components/bulk-campaign-submission/bulk-campaign-submission.component';
@@ -55,6 +55,8 @@ import { CommonModule } from '@angular/common';
 
 import { CellsTableComponent } from './components/real-time-locations/cells-table/cells-table.component';
 import { MultiSmsComponent } from './components/bulk-campaign-submission/multi-sms/multi-sms.component';
+import { BulkReportComponent } from './components/bulk-report/bulk-report.component';
+import { RealTimeReportComponent } from './components/real-time-report/real-time-report.component';
 
 @NgModule({
   declarations: [
@@ -64,16 +66,14 @@ import { MultiSmsComponent } from './components/bulk-campaign-submission/multi-s
     HeaderHomeComponent,
     BulkCampaignSubmissionComponent,
     SidenavComponent,
-   
-
-    
-    ReportComponent,
    BulkNewCampaignComponent,
    RealTimeNewCampaignComponent,
    RealTimeLocationsComponent,
    HeaderComponent,
    CellsTableComponent,
    MultiSmsComponent,
+   BulkReportComponent,
+   RealTimeReportComponent,
 
   ],
   imports: [
