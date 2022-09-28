@@ -43,17 +43,12 @@ const NAMES: string[] = [
   'Thomas',
   'Elizabeth',
 ];
-
-
-
 @Component({
   selector: 'app-bulk-report',
-  templateUrl: './Report.component.html',
-  styleUrls: ['./Report.component.scss']
+  templateUrl: './bulk-report.component.html',
+  styleUrls: ['./bulk-report.component.scss']
 })
-
-export class ReportComponent implements OnInit {
-
+export class BulkReportComponent implements OnInit {
   displayedColumns: string[] = ['id', 'name', 'progress', 'fruit', 'action'];
   dataSource: MatTableDataSource<UserData>;
 
@@ -61,18 +56,15 @@ export class ReportComponent implements OnInit {
   @ViewChild(MatSort) sort!: MatSort;
 
   constructor() {
-    // Create 100 users
-    const users = Array.from({length: 100}, (_, k) => createNewUser(k + 1));
+      // Create 100 users
+      const users = Array.from({length: 100}, (_, k) => createNewUser(k + 1));
 
-    // Assign the data to the data source for the table to render
-    this.dataSource = new MatTableDataSource(users);
-  }
-
+      // Assign the data to the data source for the table to render
+      this.dataSource = new MatTableDataSource(users);
+   }
 
   ngOnInit(): void {
   }
-
-
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
@@ -102,4 +94,5 @@ function createNewUser(id: number): UserData {
     progress: Math.round(Math.random() * 100).toString(),
     fruit: FRUITS[Math.round(Math.random() * (FRUITS.length - 1))],
   };
+
 }
