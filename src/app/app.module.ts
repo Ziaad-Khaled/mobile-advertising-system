@@ -51,8 +51,10 @@ import {
   NgxMatNativeDateModule,
   NgxMatTimepickerModule
 } from '@angular-material-components/datetime-picker';
+import { CommonModule } from '@angular/common';  
 
 import { CellsTableComponent } from './components/real-time-locations/cells-table/cells-table.component';
+import { MultiSmsComponent } from './components/bulk-campaign-submission/multi-sms/multi-sms.component';
 
 @NgModule({
   declarations: [
@@ -71,6 +73,7 @@ import { CellsTableComponent } from './components/real-time-locations/cells-tabl
    RealTimeLocationsComponent,
    HeaderComponent,
    CellsTableComponent,
+   MultiSmsComponent,
 
   ],
   imports: [
@@ -104,7 +107,8 @@ import { CellsTableComponent } from './components/real-time-locations/cells-tabl
     NgxMatDatetimePickerModule,
     NgxMatTimepickerModule,
     NgxMatNativeDateModule,
-    NgxMaterialTimepickerModule
+    NgxMaterialTimepickerModule,
+    CommonModule
 
   ],
   providers: [AuthenticationService],

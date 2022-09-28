@@ -1,0 +1,50 @@
+
+  .cards-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 50px;
+  }
+
+  .card {
+    max-width: 800px;
+    min-width: 800px;
+    margin-bottom: 50px;
+  }
+  
+  .form-field-one-third{
+    margin-right: 10px;
+  }
+
+.sms-message-criteria{
+  background-color: black;
+  margin-left:-16px;
+  margin-right:-16px;
+  height:60px;
+  flex: "row";
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.sms-message-criteria-font{
+  color: white;
+  }
+
+h4{
+margin:0;
+margin-bottom:5px;
+padding: 0;
+}
+
+
+
+:host ::ng-deep .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle, .mat-radio-outer-circle {
+    border-color: black !important;
+    /* Sets outer circle & click effect color */
+}
+
+:host ::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle {
+    background-color: #ff6600 !important;
+    /* Sets inner circle color */
+}
