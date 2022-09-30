@@ -47,12 +47,12 @@ export class MultiSmsComponent implements OnInit {
     if(this.smsCard == false)
       this.smsCard = true;
 
+    // in order to clear the array on each button click
     this.dataSource = [];
+
     /// else it should check which criteria was changed and then change the sms card
     for (let i = 0; i < this.numberOfSMSCampaigns; i++) {
       this.dataSource.push({smsID: i+1, senderName: this.singleSMSsenderName, date: new Date(), body: this.singleSMSBody});
     }
-    console.log(this.dataSource.length);
-
   }
 }
