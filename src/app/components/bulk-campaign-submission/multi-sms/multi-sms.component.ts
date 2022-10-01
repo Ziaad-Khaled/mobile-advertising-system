@@ -9,6 +9,11 @@ export interface smsDetails {
   senderName: string;
 }
 
+interface INumber {
+  parseInt: Function
+}
+declare var Number: INumber;
+
 var ELEMENT_DATA!: smsDetails[];
 /* = [
   {smsID: 1, senderName: 'Orange', date: new Date(2018, 0O5, 0O5), body: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.'},
@@ -55,4 +60,6 @@ export class MultiSmsComponent implements OnInit {
       this.dataSource.push({smsID: i+1, senderName: this.singleSMSsenderName, date: new Date(), body: this.singleSMSBody});
     }
   }
+
+ 
 }
