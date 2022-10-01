@@ -57,6 +57,7 @@ import { CellsTableComponent } from './components/real-time-locations/cells-tabl
 import { MultiSmsComponent } from './components/bulk-campaign-submission/multi-sms/multi-sms.component';
 import { BulkReportComponent } from './components/bulk-report/bulk-report.component';
 import { RealTimeReportComponent } from './components/real-time-report/real-time-report.component';
+import { SmsFooterComponent } from './components/sms-footer/sms-footer.component';
 
 @NgModule({
   declarations: [
@@ -74,6 +75,7 @@ import { RealTimeReportComponent } from './components/real-time-report/real-time
    MultiSmsComponent,
    BulkReportComponent,
    RealTimeReportComponent,
+   SmsFooterComponent,
 
   ],
   imports: [

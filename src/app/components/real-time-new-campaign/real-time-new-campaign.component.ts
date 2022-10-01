@@ -11,6 +11,8 @@ export class RealTimeNewCampaignComponent implements OnInit {
   from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was
   originally bred for hunting.`;
 
+  smsBody!: string;
+
   constructor() { }
   public selectedMoment = new Date();
 

@@ -166,4 +166,9 @@ export class BulkNewCampaignComponent implements OnInit {
   }
   ////////////////////////////////////////////////////////////////////////
 
+  ceil(number: any)
+  {
+    return Math.ceil(number);
+  }
+
 }

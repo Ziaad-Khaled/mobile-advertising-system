@@ -52,7 +52,7 @@
 
                     <mat-form-field  fxFlexAlign="stretch" appearance="fill">
                         <mat-label>Campagin SMS Body</mat-label>
-                            <textarea  matInput
+                            <textarea  matInput [(ngModel)] = "smsBody"
                             style="margin: 0px;"
                                     cdkTextareaAutosize
                                     #autosize="cdkTextareaAutosize"
@@ -72,12 +72,10 @@
                     
                 </mat-card-content> 
 
-                <mat-card-actions class="sms-message-criteria" fxLayout="row" fxfxFlexAllign="center" style="text-align: center;">
-                    <h4 class="sms-message-criteria-font" fxfxFlexAllign="center" >SMS Enconding: ASCII(160/SMS)</h4>
-                    <h4 class="sms-message-criteria-font" fxfxFlexAllign="center" >Characters Count: 0/160</h4>
-                    <h4 class="sms-message-criteria-font" fxfxFlexAllign="center" >Messages Count: 1</h4>
-                    
+                <mat-card-actions>
+                    <app-sms-footer [smsBody]="smsBody"></app-sms-footer>
                 </mat-card-actions>
+
             </mat-card> 
             
             <div style="margin-bottom: 20px;" fxLayout="row" fxLayoutAlign="space-evenly center"> 

@@ -105,11 +105,7 @@
                                     cdkAutosizeMaxRows="40"
                                     fxFlexAlign="stretch"></textarea>
 
-                                    <div class="sms-message-criteria" fxLayout="row" fxfxFlexAllign="center" style="text-align: center;">
-                                        <h4 class="sms-message-criteria-font" fxfxFlexAllign="center" >SMS Enconding: ASCII(160/SMS)</h4>
-                                        <h4 class="sms-message-criteria-font" fxfxFlexAllign="center" >Characters Count: 0/160</h4>
-                                        <h4 class="sms-message-criteria-font" fxfxFlexAllign="center" >Messages Count: 1</h4>
-                                    </div>
+                                    <app-sms-footer [smsBody]="element.body"></app-sms-footer>
                             
                     </mat-form-field>
                     

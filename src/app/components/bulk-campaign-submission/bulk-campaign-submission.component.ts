@@ -7,7 +7,7 @@ import { Component, OnInit,NgZone, ViewChild } from '@angular/core';
 })
 export class BulkCampaignSubmissionComponent implements OnInit {
 
-  
+  smsBody!: string;
   
   constructor() { }
 
