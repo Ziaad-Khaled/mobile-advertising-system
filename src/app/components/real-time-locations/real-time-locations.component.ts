@@ -77,7 +77,9 @@ export class RealTimeLocationsComponent implements OnInit {
       width:'350px',
       data:"right click"
     })
+    
   }
+  
 
   ngOnInit(): void {
   }

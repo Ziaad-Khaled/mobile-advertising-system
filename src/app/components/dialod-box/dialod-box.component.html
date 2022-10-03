@@ -8,6 +8,6 @@
 
 </div>
 <div  style="margin-bottom: 20px;" fxLayout="row" fxLayoutAlign="space-evenly center"> 
-    <button class="save" mat-button [routerLink]="'/new-bulk-campaign'">Save</button>
-    <button calss="cancel" mat-button [routerLink]="'/home'">Cancel</button>
+    <button  class="save" mat-button (click)="onNoClick()" [routerLink]="'/real-time-locations'">Save</button>
+    <button calss="cancel" mat-button (click)="onNoClick()" [routerLink]="'/real-time-locations'">Cancel</button>
 </div>
