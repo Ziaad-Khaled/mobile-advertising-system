@@ -8,9 +8,9 @@ import { HomeComponent } from './components/home/home.component';
 import { HeaderHomeComponent } from './components/home/header/header.component';
 import { LoginComponent } from './components/login/login.component';
 
-import { BulkNewCampaignComponent } from './components/bulk-new-campaign/bulk-new-campaign.component';
+import { BulkNewCampaignComponent } from './components/bulk/bulk-new-campaign/bulk-new-campaign.component';
 import { RealTimeNewCampaignComponent } from './components/real-time-new-campaign/real-time-new-campaign.component';
-import { BulkCampaignSubmissionComponent } from './components/bulk-campaign-submission/bulk-campaign-submission.component';
+import { BulkCampaignSubmissionComponent } from './components/bulk/bulk-campaign-submission/bulk-campaign-submission.component';
 
 
 
@@ -54,10 +54,12 @@ import {
 import { CommonModule } from '@angular/common';  
 
 import { CellsTableComponent } from './components/real-time-locations/cells-table/cells-table.component';
-import { MultiSmsComponent } from './components/bulk-campaign-submission/multi-sms/multi-sms.component';
-import { BulkReportComponent } from './components/bulk-report/bulk-report.component';
+import { MultiSmsComponent } from './components/bulk/bulk-campaign-submission/multi-sms/multi-sms.component';
+import { BulkReportComponent } from './components/bulk/bulk-report/bulk-report.component';
 import { RealTimeReportComponent } from './components/real-time-report/real-time-report.component';
 import { SmsFooterComponent } from './components/sms-footer/sms-footer.component';
+import { LocationComponent } from './components/bulk/bulk-new-campaign/location/location.component';
+import { LocationSearchPipe } from './components/bulk/bulk-new-campaign/location/pipes/location-search.pipe';
 
 @NgModule({
   declarations: [
@@ -76,6 +78,8 @@ import { SmsFooterComponent } from './components/sms-footer/sms-footer.component
    BulkReportComponent,
    RealTimeReportComponent,
    SmsFooterComponent,
+   LocationComponent,
+   LocationSearchPipe,
 
   ],
   imports: [

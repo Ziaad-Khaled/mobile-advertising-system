@@ -2,13 +2,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
-import { BulkNewCampaignComponent } from './components/bulk-new-campaign/bulk-new-campaign.component';
-import { BulkCampaignSubmissionComponent } from './components/bulk-campaign-submission/bulk-campaign-submission.component';
+import { BulkNewCampaignComponent } from './components/bulk/bulk-new-campaign/bulk-new-campaign.component';
+import { BulkCampaignSubmissionComponent } from './components/bulk/bulk-campaign-submission/bulk-campaign-submission.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { RealTimeNewCampaignComponent } from './components/real-time-new-campaign/real-time-new-campaign.component';
 import { CellsTableComponent } from './components/real-time-locations/cells-table/cells-table.component';
 import { RealTimeLocationsComponent } from './components/real-time-locations/real-time-locations.component';
-import { BulkReportComponent } from './components/bulk-report/bulk-report.component';
+import { BulkReportComponent } from './components/bulk/bulk-report/bulk-report.component';
 import { RealTimeReportComponent } from './components/real-time-report/real-time-report.component';
 const routes: Routes = [
   { path: '', component: LoginComponent },

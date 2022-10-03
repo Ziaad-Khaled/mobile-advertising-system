@@ -49,17 +49,20 @@
                 <mat-radio-button  name="fieldName" ngDefaultControl value="2" [(ngModel)]="isSingleSMSSenderName">No</mat-radio-button>
             </mat-radio-group> 
 
-            <mat-form-field  *ngIf="isSingleSMSSenderName === '1'"  fxFlexAlign="stretch" appearance="fill">
-                <mat-label>Sender Name</mat-label>
-                <mat-select [(ngModel)]="singleSMSsenderName" style = "width: 100%;" disableRipple>
-                  <mat-option value="CPA">CPA</mat-option>
-                  <mat-option value="saad">Saad</mat-option>
-                  <mat-option value="fiat">Fiat</mat-option>
-                  <mat-option value="audi">Audi</mat-option>
+            <div style= "display: flex;flex-direction: row;flex-wrap: wrap; justify-content: center;align-items: center;" *ngIf="isSingleSMSSenderName === '1'"  fxFlexAlign="stretch" appearance="fill">
+              <mat-form-field style="flex: 1 0 90%; margin-right: 10px;"  class="col-lg-5" class ="form-field-full" appearance="fill">
+                  <mat-label>Sender Name</mat-label>
+                  <mat-select style = "width: 100%;" disableRipple>
+                    <mat-option value="CPA">CPA</mat-option>
+                    <mat-option value="saad">Saad</mat-option>
+                    <mat-option value="fiat">Fiat</mat-option>
+                    <mat-option value="audi">Audi</mat-option>
 
-                </mat-select>
-            </mat-form-field>
-
+                  </mat-select>
+              </mat-form-field>
+              
+              <button matTooltip="Add new sender name" class="action-button" style="flex: 1 0 2%; margin-bottom: 15px;max-width: 20px;" mat-button> <mat-icon class="mat-icon" >add_circle</mat-icon> </button>    
+          </div>
 
             <button mat-button style="flex: 1 0 8%;height: 54px;max-width: 50px;" fxFlexAlign="center" (click)="onCriteriaSaved($event)">Save</button> 
         </mat-card-content> 
