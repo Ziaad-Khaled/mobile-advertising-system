@@ -37,10 +37,8 @@
           <mat-icon> location_on</mat-icon>
         </mat-panel-description>
       </mat-expansion-panel-header>
-
-           
-      <app-bulk-location></app-bulk-location>
-      
+       <!-- Location Component -->       
+      <app-bulk-location></app-bulk-location>    
     </mat-expansion-panel>
   
     <mat-expansion-panel>
@@ -53,61 +51,12 @@
           <mat-icon>mobile_friendly</mat-icon>
         </mat-panel-description>
       </mat-expansion-panel-header>
-  
-      <form class="example-form">
-        <mat-form-field class="example-full-width" appearance="fill" style="margin-left: 10px;">
-          <mat-label>Manufacturer</mat-label>
-          <input type="text" matInput [formControl]="myControl" [matAutocomplete]="auto">
-          <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
-            <mat-option *ngFor="let option of manufacturer_FilteredOptions | async" [value]="option">
-              {{option.name}}
-            </mat-option>
-          </mat-autocomplete>
-        </mat-form-field>
-
-        <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>Model</mat-label>
-          <input type="text" matInput [formControl]="myControl" [matAutocomplete]="auto">
-          <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
-            <mat-option *ngFor="let option of model_FilteredOptions | async" [value]="option">
-              {{option.name}}
-            </mat-option>
-          </mat-autocomplete>
-        </mat-form-field>
-
-        <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>Operating System</mat-label>
-          <input type="text" matInput [formControl]="myControl" [matAutocomplete]="auto">
-          <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
-            <mat-option *ngFor="let option of operatingSystem_FilteredOptions | async" [value]="option">
-              {{option.name}}
-            </mat-option>
-          </mat-autocomplete>
-        </mat-form-field>
-
-        <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>Device Type</mat-label>
-          <input type="text" matInput [formControl]="myControl" [matAutocomplete]="auto">
-          <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
-            <mat-option *ngFor="let option of deviceType_FilteredOptions | async" [value]="option">
-              {{option.name}}
-            </mat-option>
-          </mat-autocomplete>
-        </mat-form-field>
-
-
-        <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>Network Technology</mat-label>
-          <input type="text" matInput [formControl]="myControl" [matAutocomplete]="auto">
-          <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
-            <mat-option *ngFor="let option of networkTechnology_FilteredOptions | async" [value]="option">
-              {{option.name}}
-            </mat-option>
-          </mat-autocomplete>
-        </mat-form-field>
-      </form>
-      
+      <!-- Handset Component --> 
+      <app-bulk-handset></app-bulk-handset>
     </mat-expansion-panel>
+
+
+
     <div style="display: flex;">
       <mat-expansion-panel style="flex: 1 1 0px;">
         <mat-expansion-panel-header>

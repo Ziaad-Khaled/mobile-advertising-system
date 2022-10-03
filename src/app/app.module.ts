@@ -60,6 +60,7 @@ import { RealTimeReportComponent } from './components/real-time-report/real-time
 import { SmsFooterComponent } from './components/sms-footer/sms-footer.component';
 import { LocationComponent } from './components/bulk/bulk-new-campaign/location/location.component';
 import { LocationSearchPipe } from './components/bulk/bulk-new-campaign/location/pipes/location-search.pipe';
+import { HandsetComponent } from './components/bulk/bulk-new-campaign/handset/handset.component';
 
 @NgModule({
   declarations: [
@@ -80,6 +81,7 @@ import { LocationSearchPipe } from './components/bulk/bulk-new-campaign/location
    SmsFooterComponent,
    LocationComponent,
    LocationSearchPipe,
+   HandsetComponent,
 
   ],
   imports: [
