@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import * as _moment from 'moment';
-import { Moment } from 'moment';
+
 @Component({
   selector: 'app-real-time-new-campaign',
   templateUrl: './real-time-new-campaign.component.html',
