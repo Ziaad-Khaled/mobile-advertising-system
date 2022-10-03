@@ -10,8 +10,8 @@
     <div class= "cards-container"  fxLayoutGap="10px" fxLayoutGap.xs="0" >
         <mat-card fxFlexAlign="center"  [fxFlex] class="card">
             <mat-card-title>Sender Data</mat-card-title>
-            <mat-card-content>
-                <mat-form-field  class="col-lg-5" class ="form-field-full" appearance="fill">
+            <mat-card-content style= "display: flex;flex-direction: row;flex-wrap: wrap; justify-content: center;align-items: center;">
+                <mat-form-field style="flex: 1 0 92%; margin-right: 10px;" class="col-lg-5" class ="form-field-full" appearance="fill">
                     <mat-label>Campagin SMS Sender Name:</mat-label>
                     <mat-select style = "width: 100%;" disableRipple>
                       <mat-option value="CPA">CPA</mat-option>
@@ -21,6 +21,8 @@
 
                     </mat-select>
                 </mat-form-field>
+
+                <button matTooltip="Add new sender name" class="action-button" style="flex: 1 0 5%; margin-bottom: 15px;" mat-button> <mat-icon class="mat-icon" >add_circle</mat-icon> </button>
                   
             </mat-card-content> 
         </mat-card>
@@ -30,7 +32,7 @@
         <mat-card fxFlexAlign="center" class="card">
             <mat-card-title>Campagin Details</mat-card-title>
             <mat-card-content style= "display: flex;flex-direction: row;flex-wrap: wrap; justify-content: center;align-items: center;">
-                <mat-form-field style="flex: 1 0 92%" class="col-lg-5" class ="form-field-full" appearance="fill">
+                <mat-form-field style="flex: 1 0 92%; margin-right: 10px;" class="col-lg-5" class ="form-field-full" appearance="fill">
                     <mat-label>Campagin Location:</mat-label>
                     <mat-select style = "width: 100%;" disableRipple>
                       <mat-option value="cairo"> Cairo</mat-option>
@@ -39,7 +41,7 @@
                     </mat-select>
                 </mat-form-field>
 
-                <button matTooltip="edit campaign locations" class="action-button" style="flex: 1 0 5%" [routerLink]="'/real-time-locations'" mat-button> <mat-icon class="mat-icon" >edit</mat-icon> </button>
+                <button matTooltip="Edit campaign locations" class="action-button" style="flex: 1 0 5%" [routerLink]="'/real-time-locations'" mat-button> <mat-icon class="mat-icon" >edit</mat-icon> </button>
 
                 <div style="flex: 1 0 50%" class = "date-picker">  
                     <label for="SMS">Campagin Starts At:</label>

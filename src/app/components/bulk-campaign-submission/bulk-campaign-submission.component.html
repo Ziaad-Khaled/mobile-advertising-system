@@ -9,20 +9,21 @@
 
 
                 <mat-card-content fxLayout="column" fxFlexAlign="center">
-
-                    <mat-form-field  class="col-lg-5" class ="form-field-full" appearance="fill">
-                        <mat-label>Sender Name</mat-label>
-                        <mat-select style = "width: 100%;" disableRipple>
-                          <mat-option value="CPA">CPA</mat-option>
-                          <mat-option value="saad">Saad</mat-option>
-                          <mat-option value="fiat">Fiat</mat-option>
-                          <mat-option value="audi">Audi</mat-option>
-    
-                        </mat-select>
-                    </mat-form-field>
+                    <div style= "display: flex;flex-direction: row;flex-wrap: wrap; justify-content: center;align-items: center;">
+                        <mat-form-field style="flex: 1 0 90%; margin-right: 10px;"  class="col-lg-5" class ="form-field-full" appearance="fill">
+                            <mat-label>Sender Name</mat-label>
+                            <mat-select style = "width: 100%;" disableRipple>
+                              <mat-option value="CPA">CPA</mat-option>
+                              <mat-option value="saad">Saad</mat-option>
+                              <mat-option value="fiat">Fiat</mat-option>
+                              <mat-option value="audi">Audi</mat-option>
+        
+                            </mat-select>
+                        </mat-form-field>
+                        
+                        <button matTooltip="Add new sender name" class="action-button" style="flex: 1 0 5%; margin-bottom: 15px;max-width: 20px;" mat-button> <mat-icon class="mat-icon" >add_circle</mat-icon> </button>    
+                    </div>
                     
-
-
                     <div style= "display: flex;flex-direction: row;flex-wrap: wrap; justify-content: center;align-items: center;" >
 
                         <mat-form-field style="flex: 1 0 45%;margin-right: 20px;" appearance="fill" class="example-form-field">
