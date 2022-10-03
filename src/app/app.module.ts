@@ -61,6 +61,7 @@ import { SmsFooterComponent } from './components/sms-footer/sms-footer.component
 import { LocationComponent } from './components/bulk/bulk-new-campaign/location/location.component';
 import { LocationSearchPipe } from './components/bulk/bulk-new-campaign/location/pipes/location-search.pipe';
 import { HandsetComponent } from './components/bulk/bulk-new-campaign/handset/handset.component';
+import { DialodBoxComponent } from './components/dialod-box/dialod-box.component';
 
 @NgModule({
   declarations: [
@@ -82,6 +83,7 @@ import { HandsetComponent } from './components/bulk/bulk-new-campaign/handset/ha
    LocationComponent,
    LocationSearchPipe,
    HandsetComponent,
+   DialodBoxComponent,
 
   ],
   imports: [

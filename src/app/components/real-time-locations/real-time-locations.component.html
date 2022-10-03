@@ -7,7 +7,9 @@
           <input matInput (keyup)="applyFilter($event)"  #input>
         </mat-form-field>
 
-        <button mat-button style= "flex: 1 0 10%;height:40px;margin-top: 20px;" >Add new location</button>
+        <button mat-button style= "flex: 1 0 10%;height:40px;margin-top: 20px;" (click)="openDialog()" >Add new location  </button>
+        
+        
       </div>
       <div class = "tables-container" style= "display: flex;flex-direction: row;flex-wrap: wrap;">
 
@@ -16,25 +18,25 @@
     
               <!-- ID Column -->
               <ng-container matColumnDef="id">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> location Name </th>
                 <td mat-cell *matCellDef="let row"> {{row.id}} </td>
               </ng-container>
     
               <!-- Progress Column -->
               <ng-container matColumnDef="progress">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Progress </th>
-                <td mat-cell *matCellDef="let row"> {{row.progress}}% </td>
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Created </th>
+                <td mat-cell *matCellDef="let row"> {{row.progress}} </td>
               </ng-container>
     
               <!-- Name Column -->
               <ng-container matColumnDef="name">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Cells Count </th>
                 <td mat-cell *matCellDef="let row"> {{row.name}} </td>
               </ng-container>
     
               <!-- Fruit Column -->
               <ng-container matColumnDef="fruit">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Fruit </th>
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Last Updated At </th>
                 <td mat-cell *matCellDef="let row"> {{row.fruit}} </td>
               </ng-container>
     
