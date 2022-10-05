@@ -59,8 +59,14 @@ import {
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';  
 import { MatDialogModule } from '@angular/material/dialog';
+<<<<<<< HEAD
 import { BulkDialogueBoxComponent } from './components/bulk/bulk-campaign-submission/bulk-dialogue-box/bulk-dialogue-box.component';
 
+=======
+import { UserActivityComponent } from './components/bulk/bulk-new-campaign/user-activity/user-activity.component';
+import { UserPlanComponent } from './components/bulk/bulk-new-campaign/user-plan/user-plan.component';
+import { ArpuComponent } from './components/bulk/bulk-new-campaign/arpu/arpu.component';
+>>>>>>> 5adad380eb3253ab7b54728c8e02d5339b5201fe
 
 
 @NgModule({
@@ -84,8 +90,14 @@ import { BulkDialogueBoxComponent } from './components/bulk/bulk-campaign-submis
    LocationSearchPipe,
    HandsetComponent,
    DialogueBoxComponent,
+<<<<<<< HEAD
    BulkDialogueBoxComponent,
   
+=======
+   UserActivityComponent,
+   UserPlanComponent,
+   ArpuComponent,
+>>>>>>> 5adad380eb3253ab7b54728c8e02d5339b5201fe
 
   ],
   imports: [

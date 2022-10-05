@@ -37,8 +37,10 @@
           <mat-icon> location_on</mat-icon>
         </mat-panel-description>
       </mat-expansion-panel-header>
+
        <!-- Location Component -->       
       <app-bulk-location></app-bulk-location>    
+
     </mat-expansion-panel>
   
     <mat-expansion-panel>
@@ -51,8 +53,10 @@
           <mat-icon>mobile_friendly</mat-icon>
         </mat-panel-description>
       </mat-expansion-panel-header>
+
       <!-- Handset Component --> 
       <app-bulk-handset></app-bulk-handset>
+
     </mat-expansion-panel>
 
 
@@ -68,27 +72,10 @@
             <mat-icon>mobile_friendly</mat-icon>
           </mat-panel-description>
         </mat-expansion-panel-header>
-    
-        <section class="example-section">
-          <span class="example-list-section">
-            <mat-checkbox class="example-margin"
-                          [checked]="allComplete"
-                          [indeterminate]="someComplete()"
-                          (change)="setAll($event.checked)">
-              {{task.name}}
-            </mat-checkbox>
-          </span>
-          <span class="example-list-section">
-            <ul>
-              <li *ngFor="let subtask of task.subtasks">
-                <mat-checkbox [(ngModel)]="subtask.completed"
-                              (ngModelChange)="updateAllComplete()">
-                  {{subtask.name}}
-                </mat-checkbox>
-              </li>
-            </ul>
-          </span>
-        </section>
+
+        <!-- User Activity Component --> 
+        <app-bulk-user-activity></app-bulk-user-activity>
+       
       </mat-expansion-panel>
 
       <mat-expansion-panel style="flex: 1 1 0px;">

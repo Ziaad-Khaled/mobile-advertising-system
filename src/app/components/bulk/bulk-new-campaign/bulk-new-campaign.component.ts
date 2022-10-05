@@ -6,11 +6,7 @@ import {map, startWith} from 'rxjs/operators';
 
 
 
-export interface Task {
-  name: string;
-  completed: boolean;
-  subtasks?: Task[];
-}
+
 
 
 @Component({
@@ -26,19 +22,7 @@ export class BulkNewCampaignComponent{
  
   /////////////////////////////////////////////////////////
 
-  //user activity
-  task: Task = {
-    name: 'Select All',
-    completed: false,
-    subtasks: [
-      {name: 'Using Data', completed: false},
-      {name: 'Was Roaming', completed: false},
-      {name: 'First Class', completed: false},
-      {name: 'USIM', completed: false},
-      {name: 'Orange Cash', completed: false},
-    ],
-  };
-  allComplete: boolean = false;
+  
   ////////////////////////////////////////////////////////////////////////////////////
   //user plan
 
@@ -63,32 +47,8 @@ export class BulkNewCampaignComponent{
 
   constructor() { }
 
-  
-
-  //user activity methods
-  updateAllComplete() {
-    this.allComplete = this.task.subtasks != null && this.task.subtasks.every(t => t.completed);
-  }
-
-  someComplete(): boolean {
-    if (this.task.subtasks == null) {
-      return false;
-    }
-    return this.task.subtasks.filter(t => t.completed).length > 0 && !this.allComplete;
-  }
-
-  setAll(completed: boolean) {
-    this.allComplete = completed;
-    if (this.task.subtasks == null) {
-      return;
-    }
-    this.task.subtasks.forEach(t => (t.completed = completed));
-  }
   ////////////////////////////////////////////////////////////////////////
 
-  ceil(number: any)
-  {
-    return Math.ceil(number);
-  }
+ 
 
 }
