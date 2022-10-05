@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class LocationService {
   governorateList: string[] = ['Cairo', 'Giza', 'Alex'];
-  adminSectionList: string[] = ['الحوامدية', 'الساحل الشمالي', 'ظهير صحراوي البحيرة'];
+  adminSectionList: string[] = ['CStlll', 'الساحل الشمالي', 'ظهير صحراوي البحيرة'];
   sheiakhaList: string[] = ['مركز الخانكة', 'مركز المناصرة - شياخة المناصرة', 'مركز ابشواي - مدينة ابشواي'];
 
   constructor() { }
