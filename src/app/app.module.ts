@@ -60,6 +60,9 @@ import {
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';  
 import { MatDialogModule } from '@angular/material/dialog';
+import { UserActivityComponent } from './components/bulk/bulk-new-campaign/user-activity/user-activity.component';
+import { UserPlanComponent } from './components/bulk/bulk-new-campaign/user-plan/user-plan.component';
+import { ArpuComponent } from './components/bulk/bulk-new-campaign/arpu/arpu.component';
 
 
 @NgModule({
@@ -83,6 +86,9 @@ import { MatDialogModule } from '@angular/material/dialog';
    LocationSearchPipe,
    HandsetComponent,
    DialogueBoxComponent,
+   UserActivityComponent,
+   UserPlanComponent,
+   ArpuComponent,
 
   ],
   imports: [
