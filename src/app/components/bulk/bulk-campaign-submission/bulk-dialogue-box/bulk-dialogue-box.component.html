@@ -1,0 +1,15 @@
+<div>
+    
+    <table class="example-full-width" cellspacing="0"><tr>
+      <td><mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput>
+      </mat-form-field></td>
+      </tr>
+    </table>
+  
+  </div>
+  <div  style="margin-bottom: 20px;" fxLayout="row" fxLayoutAlign="space-evenly center"> 
+      <button  class="save" mat-button (click)="onNoClick()" [routerLink]="'/bulk-campaign-submission'">Save</button>
+      <button calss="cancel" mat-button (click)="onNoClick()" [routerLink]="'/bulk-campaign-submission'">Cancel</button>
+  </div>
