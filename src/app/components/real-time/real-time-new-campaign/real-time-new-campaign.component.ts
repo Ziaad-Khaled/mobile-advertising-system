@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./real-time-new-campaign.component.scss']
 })
 export class RealTimeNewCampaignComponent implements OnInit {
+
   minDate: Date;
   title = 'test-time';
   currentDate:any = new Date();
@@ -22,5 +23,5 @@ export class RealTimeNewCampaignComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  
+
 }

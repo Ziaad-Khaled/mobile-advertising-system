@@ -1,7 +1,8 @@
-import {AfterViewInit, Component, ViewChild} from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
+
 
 export interface UserData {
   id: string;
@@ -18,6 +19,7 @@ const lac_cells: string[] = [
   '1233-1232',
   '2345-5672'
 ];
+
 @Component({
   selector: 'app-cells-table',
   templateUrl: './cells-table.component.html',

@@ -29,7 +29,9 @@ var ELEMENT_DATA!: smsDetails[];
 export class MultiSmsComponent implements OnInit {
   campaignAccountFormControl = new FormControl('', [Validators.required]);
   numberOfSMSCampaigns!:number;
-
+  minDate: Date;
+  title = 'test-time';
+  currentDate:any = new Date();
   isSingleSMSBody!: string;
   singleSMSBody!: string;
 
@@ -41,7 +43,10 @@ export class MultiSmsComponent implements OnInit {
   displayedColumns: string[] = ['smsID', 'senderName', 'body', 'date'];
   dataSource: smsDetails[] = [];
 
-  constructor() { }
+  constructor() {
+    const currentYear = new Date().getFullYear();
+    this.minDate = new Date(currentYear - 0, 0, 1);
+   }
 
   ngOnInit(): void {
   }
