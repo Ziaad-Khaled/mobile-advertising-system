@@ -21,6 +21,7 @@ import { HandsetComponent } from './components/bulk/bulk-new-campaign/handset/ha
 import { RealTimeLocationsComponent } from './components/real-time-locations/real-time-locations.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { DialogueBoxComponent } from './components/real-time-locations/dialogue-box/dialogue-box.component';
 
 
 import { FormsModule } from '@angular/forms';
@@ -58,7 +59,7 @@ import {
 } from '@angular-material-components/datetime-picker';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';  
-
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -81,7 +82,7 @@ import { HttpClientModule } from '@angular/common/http';
    LocationComponent,
    LocationSearchPipe,
    HandsetComponent,
-   DialodBoxComponent,
+   DialogueBoxComponent,
 
   ],
   imports: [
@@ -117,7 +118,8 @@ import { HttpClientModule } from '@angular/common/http';
     NgxMatNativeDateModule,
     NgxMaterialTimepickerModule,
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule
 
   ],
   providers: [AuthenticationService],

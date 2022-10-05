@@ -3,7 +3,7 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { DialodBoxComponent } from '../dialod-box/dialod-box.component';
+import { DialogueBoxComponent } from './dialogue-box/dialogue-box.component';
 
 export interface UserData {
   id: string;
@@ -73,7 +73,7 @@ export class RealTimeLocationsComponent implements OnInit {
   }
 
   openDialog(): void {
-    this.dialog.open(DialodBoxComponent,{
+    this.dialog.open(DialogueBoxComponent,{
       width:'350px',
       data:"right click"
     })
