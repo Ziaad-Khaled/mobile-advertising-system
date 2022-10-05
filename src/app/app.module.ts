@@ -20,9 +20,9 @@ import { HandsetComponent } from './components/bulk/bulk-new-campaign/handset/ha
 import { RealTimeLocationsComponent } from './components/real-time/real-time-locations/real-time-locations.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
-import { DialogueBoxComponent } from './components/real-time/real-time-locations/dialogue-box/dialogue-box.component';
+import { DialogueBoxComponent } from './components/dialogue-box/dialogue-box.component';
 import { RealTimeNewCampaignComponent } from './components/real-time/real-time-new-campaign/real-time-new-campaign.component';
-
+import { RealTimeDialogueBoxComponent } from './components/real-time/real-time-locations/real-time-dialogue-box/real-time-dialogue-box.component';
 import { FormsModule } from '@angular/forms';
 import 'hammerjs';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -59,7 +59,6 @@ import {
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';  
 import { MatDialogModule } from '@angular/material/dialog';
-import { BulkDialogueBoxComponent } from './components/bulk/bulk-campaign-submission/bulk-dialogue-box/bulk-dialogue-box.component';
 
 import { UserActivityComponent } from './components/bulk/bulk-new-campaign/user-activity/user-activity.component';
 import { UserPlanComponent } from './components/bulk/bulk-new-campaign/user-plan/user-plan.component';
@@ -87,7 +86,7 @@ import { ArpuComponent } from './components/bulk/bulk-new-campaign/arpu/arpu.com
    LocationSearchPipe,
    HandsetComponent,
    DialogueBoxComponent,
-   BulkDialogueBoxComponent,
+   RealTimeDialogueBoxComponent,
   
    UserActivityComponent,
    UserPlanComponent,

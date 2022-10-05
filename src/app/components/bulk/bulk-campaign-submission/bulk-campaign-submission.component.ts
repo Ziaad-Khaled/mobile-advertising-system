@@ -1,6 +1,7 @@
 import { Component, OnInit,NgZone, ViewChild } from '@angular/core';
-import { BulkDialogueBoxComponent } from './bulk-dialogue-box/bulk-dialogue-box.component';
+
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { DialogueBoxComponent } from '../../dialogue-box/dialogue-box.component';
 @Component({
   selector: 'app-bulk-campaign-submission',
   templateUrl: './bulk-campaign-submission.component.html',
@@ -21,7 +22,7 @@ export class BulkCampaignSubmissionComponent implements OnInit {
   ngOnInit(): void {
   }
   openDialog(): void {
-    this.dialog.open(BulkDialogueBoxComponent,{
+    this.dialog.open(DialogueBoxComponent,{
       width:'350px',
       data:"right click"
     })

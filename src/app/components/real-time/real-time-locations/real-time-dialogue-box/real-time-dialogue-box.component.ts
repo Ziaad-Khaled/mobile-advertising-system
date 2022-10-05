@@ -1,14 +1,15 @@
 import { Component, OnInit , Inject} from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+
 @Component({
-  selector: 'app-bulk-dialogue-box',
-  templateUrl: './bulk-dialogue-box.component.html',
-  styleUrls: ['./bulk-dialogue-box.component.scss']
+  selector: 'app-real-time-dialogue-box',
+  templateUrl: './real-time-dialogue-box.component.html',
+  styleUrls: ['./real-time-dialogue-box.component.scss']
 })
-export class BulkDialogueBoxComponent implements OnInit {
+export class RealTimeDialogueBoxComponent implements OnInit {
 
   constructor(
-    public dialogRef: MatDialogRef<BulkDialogueBoxComponent>,
+    public dialogRef: MatDialogRef<RealTimeDialogueBoxComponent>,
     @Inject(MAT_DIALOG_DATA) public data:any,
   ) {}
 
@@ -19,5 +20,4 @@ export class BulkDialogueBoxComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

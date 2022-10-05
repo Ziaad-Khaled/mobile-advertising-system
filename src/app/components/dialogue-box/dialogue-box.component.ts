@@ -1,5 +1,6 @@
 import { Component, OnInit , Inject} from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+
 @Component({
   selector: 'app-dialogue-box',
   templateUrl: './dialogue-box.component.html',
@@ -7,6 +8,7 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
 })
 export class DialogueBoxComponent implements OnInit {
 
+  
   constructor(
     public dialogRef: MatDialogRef<DialogueBoxComponent>,
     @Inject(MAT_DIALOG_DATA) public data:any,
@@ -19,5 +21,5 @@ export class DialogueBoxComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  
+
 }
