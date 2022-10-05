@@ -1,7 +1,8 @@
 <mat-card-content fxLayout="column" fxFlexAlign="center">
     <mat-form-field  fxFlexAlign="stretch" appearance="fill">
         <mat-label>Campagin SMS Body</mat-label>
-            <textarea  matInput
+            <textarea  matInput 
+            [(ngModel)] = "smsBody"
             style="margin: 0px;"
                       cdkTextareaAutosize
                       #autosize="cdkTextareaAutosize"
@@ -28,5 +29,9 @@
 
         <button mat-button style="flex: 1 0 8%;height: 54px;">Test Dial</button>    
     </div>
-    
+
+    <mat-card-actions>
+        <app-sms-footer [smsBody]="smsBody"></app-sms-footer>
+    </mat-card-actions>
+
 </mat-card-content> 

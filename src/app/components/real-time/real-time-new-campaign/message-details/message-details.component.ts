@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MessageDetailsComponent implements OnInit {
 
+  smsBody!: string;
   constructor() { }
 
   ngOnInit(): void {
