@@ -81,6 +81,7 @@ import { HttpClientModule } from '@angular/common/http';
    LocationComponent,
    LocationSearchPipe,
    HandsetComponent,
+   DialodBoxComponent,
 
   ],
   imports: [

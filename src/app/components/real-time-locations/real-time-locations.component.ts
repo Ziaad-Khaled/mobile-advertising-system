@@ -2,7 +2,8 @@ import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
-
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { DialodBoxComponent } from '../dialod-box/dialod-box.component';
 
 export interface UserData {
   id: string;
@@ -63,7 +64,7 @@ export class RealTimeLocationsComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor() {
+  constructor(public dialog: MatDialog) {
     // Create 100 users
     const users = Array.from({length: 100}, (_, k) => createNewUser(k + 1));
 
@@ -71,6 +72,14 @@ export class RealTimeLocationsComponent implements OnInit {
     this.dataSource = new MatTableDataSource(users);
   }
 
+  openDialog(): void {
+    this.dialog.open(DialodBoxComponent,{
+      width:'350px',
+      data:"right click"
+    })
+    
+  }
+  
 
   ngOnInit(): void {
   }
@@ -94,18 +103,28 @@ export class RealTimeLocationsComponent implements OnInit {
 }
 
 /** Builds and returns a new User. */
-function createNewUser(id: number): UserData {
-  const name =
+function createNewUser(name: number): UserData {
+  const process =
     NAMES[Math.round(Math.random() * (NAMES.length - 1))] +
     ' ' +
     NAMES[Math.round(Math.random() * (NAMES.length - 1))].charAt(0) +
     '.';
-
+     const fruit
+     =NAMES[Math.round(Math.random() * (NAMES.length - 1))] +
+     ' ' +
+     NAMES[Math.round(Math.random() * (NAMES.length - 1))].charAt(0) +
+     '.';
+     const id
+     =NAMES[Math.round(Math.random() * (NAMES.length - 1))] +
+     ' ' +
+     NAMES[Math.round(Math.random() * (NAMES.length - 1))].charAt(0) +
+     '.';
   return {
-    id: id.toString(),
-    name: name,
-    progress: Math.round(Math.random() * 100).toString(),
-    fruit: FRUITS[Math.round(Math.random() * (FRUITS.length - 1))],
+    id: id,
+   
+    name: name.toString(),
+    progress:process,
+    fruit:fruit ,
   };
 
 
