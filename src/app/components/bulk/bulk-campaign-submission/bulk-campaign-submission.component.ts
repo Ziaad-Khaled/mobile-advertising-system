@@ -9,8 +9,14 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
 export class BulkCampaignSubmissionComponent implements OnInit {
 
   smsBody!: string;
+
+  minDate: Date;
+  currentDate:any = new Date();
   
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog) {
+    const currentYear = new Date().getFullYear();
+    this.minDate = new Date(currentYear - 0, 0, 1);
+   }
 
   ngOnInit(): void {
   }
