@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, Validators} from '@angular/forms';
-
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { DialogueBoxComponent } from 'src/app/components/dialogue-box/dialogue-box.component';
 
 export interface smsDetails {
   smsID: number;
@@ -43,11 +44,17 @@ export class MultiSmsComponent implements OnInit {
   displayedColumns: string[] = ['smsID', 'senderName', 'body', 'date'];
   dataSource: smsDetails[] = [];
 
-  constructor() {
+  constructor(public dialog: MatDialog) {
     const currentYear = new Date().getFullYear();
     this.minDate = new Date(currentYear - 0, 0, 1);
    }
-
+   openDialog(): void {
+    this.dialog.open(DialogueBoxComponent,{
+      width:'350px',
+      data:"right click"
+    })
+    
+  }
   ngOnInit(): void {
   }
 
