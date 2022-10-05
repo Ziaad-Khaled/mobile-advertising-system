@@ -64,7 +64,7 @@
               <button matTooltip="Add new sender name" class="action-button" style="flex: 1 0 2%; margin-bottom: 15px;max-width: 20px;" mat-button> <mat-icon class="mat-icon"  (click)="openDialog()" >add_circle</mat-icon> </button>    
           </div>
 
-            <button mat-button style="flex: 1 0 8%;height: 54px;max-width: 50px;" fxFlexAlign="center" (click)="onCriteriaSaved($event)">Save</button> 
+            <button mat-stroked-button class="primary-button" style="flex: 1 0 8%;height: 54px;max-width: 50px;" fxFlexAlign="center" (click)="onCriteriaSaved($event)">Save</button> 
         </mat-card-content> 
 
     </mat-card> 
@@ -152,7 +152,7 @@
     </mat-card>
     
     <div style="margin-bottom: 20px;" fxLayout="row" fxLayoutAlign="space-evenly center"> 
-        <button class="back-button" mat-button [routerLink]="'/new-bulk-campaign'">Back</button>
-        <button *ngIf="smsCard"  mat-button [routerLink]="'/home'">Create</button>
+        <button class="back-button" mat-stroked-button [routerLink]="'/new-bulk-campaign'">Back</button>
+        <button *ngIf="smsCard" mat-stroked-button class="primary-button"  [routerLink]="'/home'">Create</button>
     </div>
 </div>

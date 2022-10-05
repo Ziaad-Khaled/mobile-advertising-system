@@ -67,7 +67,7 @@
                             <input type="tel" matInput placeholder="1234567890">
                         </mat-form-field>
 
-                        <button mat-button style="flex: 1 0 8%;height: 54px;">Test Dial</button>    
+                        <button mat-stroked-button class="primary-button" style="flex: 1 0 8%;height: 54px;">Test Dial</button>    
                     </div>
                     
                 </mat-card-content> 
@@ -79,8 +79,8 @@
             </mat-card> 
             
             <div style="margin-bottom: 20px;" fxLayout="row" fxLayoutAlign="space-evenly center"> 
-                <button class="back-button" mat-button [routerLink]="'/new-bulk-campaign'">Back</button>
-                <button  mat-button [routerLink]="'/home'">Create</button>
+                <button  mat-stroked-button  [routerLink]="'/new-bulk-campaign'">Back</button>
+                <button  mat-stroked-button class="primary-button" [routerLink]="'/home'">Create</button>
             </div>
         </div>
     </mat-tab> 
