@@ -1,1 +1,19 @@
-<p>arpu works!</p>
+<div class = "input-container">
+    <mat-form-field class="half-width" appearance="fill">
+      <mat-label>Min ARPU</mat-label>
+      <input matInput type="number" [(ngModel)]="selectedMinARPU">
+      <button *ngIf="selectedMinARPU" matSuffix mat-icon-button aria-label="Clear" (click)="selectedMinARPU=''">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+    
+  
+    <mat-form-field class="half-width" appearance="fill">
+      <mat-label>Max ARPU</mat-label>
+      <input matInput type="number" [(ngModel)]="selectedMaxARPU">
+      <button *ngIf="selectedMaxARPU" matSuffix mat-icon-button aria-label="Clear" (click)="selectedMaxARPU=''">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+    

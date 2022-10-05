@@ -1,1 +1,14 @@
-<p>user-plan works!</p>
+<section class="user-plan-section">
+    <span> Subscriber Type: </span>
+    <mat-checkbox class="margin" [(ngModel)]="corporate">Corporate</mat-checkbox>
+    <mat-checkbox class="margin" [(ngModel)]="personal">Personal</mat-checkbox>
+  </section>
+
+ 
+  <section class="user-plan-section">
+    <span> Service Type: </span>
+    <mat-checkbox class="margin" [(ngModel)]="hybrid">Hybird</mat-checkbox>
+    <mat-checkbox class="margin" [(ngModel)]="prePaid">Pre-paid</mat-checkbox>
+    <mat-checkbox class="margin" [(ngModel)]="postPaid">Post-paid</mat-checkbox>
+    <mat-checkbox class="margin" [(ngModel)]="others">Others</mat-checkbox>
+  </section>  

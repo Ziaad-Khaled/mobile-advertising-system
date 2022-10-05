@@ -10,6 +10,7 @@ import { CellsTableComponent } from './components/real-time-locations/cells-tabl
 import { RealTimeLocationsComponent } from './components/real-time-locations/real-time-locations.component';
 import { BulkReportComponent } from './components/bulk/bulk-report/bulk-report.component';
 import { RealTimeReportComponent } from './components/real-time-report/real-time-report.component';
+
 const routes: Routes = [
   { path: '', component: LoginComponent },
   {path:'Login', component:LoginComponent},

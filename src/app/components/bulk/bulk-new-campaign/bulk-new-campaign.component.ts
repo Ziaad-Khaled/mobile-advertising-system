@@ -17,38 +17,11 @@ import {map, startWith} from 'rxjs/operators';
 export class BulkNewCampaignComponent{
   
   @ViewChild(MatAccordion) accordion!: MatAccordion;
-  
 
- 
-  /////////////////////////////////////////////////////////
-
-  
-  ////////////////////////////////////////////////////////////////////////////////////
-  //user plan
-
-  corporate = false;
-  personal = false;
-  hybrid = false;
-  prePaid = false;
-  postPaid = false;
-  others = false;
-
-  toppings = new FormControl('');
-  toppingList: string[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
-
-
-  ////////////////////////////////////////////////////////////////////////////////////
-  //ARPU
   minARPU = 0;
   maxARPU = 5000;
-  selectedMinARPU = 'Clear me';
-  selectedMaxARPU = 'Clear me';
-////////////////////////////////////////////////////////////////////////////////////////////
-
+  
   constructor() { }
-
-  ////////////////////////////////////////////////////////////////////////
-
  
 
 }

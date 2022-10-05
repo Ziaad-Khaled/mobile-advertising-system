@@ -52,11 +52,11 @@
             <div style= "display: flex;flex-direction: row;flex-wrap: wrap; justify-content: center;align-items: center;" *ngIf="isSingleSMSSenderName === '1'"  fxFlexAlign="stretch" appearance="fill">
               <mat-form-field style="flex: 1 0 90%; margin-right: 10px;"  class="col-lg-5" class ="form-field-full" appearance="fill">
                   <mat-label>Sender Name</mat-label>
-                  <mat-select style = "width: 100%;" disableRipple>
+                  <mat-select [(ngModel)]="singleSMSsenderName" style = "width: 100%;" disableRipple>
                     <mat-option value="CPA">CPA</mat-option>
-                    <mat-option value="saad">Saad</mat-option>
-                    <mat-option value="fiat">Fiat</mat-option>
-                    <mat-option value="audi">Audi</mat-option>
+                    <mat-option value="Saad">Saad</mat-option>
+                    <mat-option value="Fiat">Fiat</mat-option>
+                    <mat-option value="Audi">Audi</mat-option>
 
                   </mat-select>
               </mat-form-field>

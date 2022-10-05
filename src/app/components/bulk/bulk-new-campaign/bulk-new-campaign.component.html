@@ -27,7 +27,7 @@
   </div>
   
   <mat-accordion class="example-headers-align" multi>
-    <mat-expansion-panel>
+    <mat-expansion-panel [expanded]="true"> 
       <mat-expansion-panel-header>
         <mat-panel-title>
           Location
@@ -43,7 +43,7 @@
 
     </mat-expansion-panel>
   
-    <mat-expansion-panel>
+    <mat-expansion-panel [expanded]="true">
       <mat-expansion-panel-header>
         <mat-panel-title>
           Handset
@@ -62,7 +62,7 @@
 
 
     <div style="display: flex;">
-      <mat-expansion-panel style="flex: 1 1 0px;">
+      <mat-expansion-panel style="flex: 1 1 0px;margin-right: 10px;" [expanded]="true">
         <mat-expansion-panel-header>
           <mat-panel-title>
             User Activity
@@ -78,7 +78,7 @@
        
       </mat-expansion-panel>
 
-      <mat-expansion-panel style="flex: 1 1 0px;">
+      <mat-expansion-panel style="flex: 1 1 0px;" [expanded]="true">
         <mat-expansion-panel-header>
           <mat-panel-title>
             User Plan
@@ -88,26 +88,16 @@
             <mat-icon>mobile_friendly</mat-icon>
           </mat-panel-description>
         </mat-expansion-panel-header>
-    
-        <section class="user-plan-section">
-          <span> Subscriber Type: </span>
-          <mat-checkbox class="example-margin" [(ngModel)]="corporate">Corporate</mat-checkbox>
-          <mat-checkbox class="example-margin" [(ngModel)]="personal">Personal</mat-checkbox>
-        </section>
 
 
-        <section class="user-plan-section">
-          <span> Service Type: </span>
-          <mat-checkbox class="example-margin" [(ngModel)]="hybrid">Hybird</mat-checkbox>
-          <mat-checkbox class="example-margin" [(ngModel)]="prePaid">Pre-paid</mat-checkbox>
-          <mat-checkbox class="example-margin" [(ngModel)]="postPaid">Post-paid</mat-checkbox>
-          <mat-checkbox class="example-margin" [(ngModel)]="others">Others</mat-checkbox>
-        </section>        
+         <!-- User Plan Component --> 
+         <app-bulk-user-plan></app-bulk-user-plan>
+               
       </mat-expansion-panel>
     </div>
     
 
-      <mat-expansion-panel>
+      <mat-expansion-panel [expanded]="true">
         <mat-expansion-panel-header>
           <mat-panel-title>
             ARPU (EGP)
@@ -117,25 +107,12 @@
             <mat-icon> attach_money</mat-icon>
           </mat-panel-description>
         </mat-expansion-panel-header>
-      <div class = "input-container">
-        <mat-form-field class="example-form-field" appearance="fill">
-          <mat-label>Min ARPU</mat-label>
-          <input matInput type="number" [(ngModel)]="selectedMinARPU">
-          <button *ngIf="selectedMinARPU" matSuffix mat-icon-button aria-label="Clear" (click)="selectedMinARPU=''">
-            <mat-icon>close</mat-icon>
-          </button>
-        </mat-form-field>
-        
-      
-        <mat-form-field class="example-form-field" appearance="fill">
-          <mat-label>Max ARPU</mat-label>
-          <input matInput type="number" [(ngModel)]="selectedMaxARPU">
-          <button *ngIf="selectedMaxARPU" matSuffix mat-icon-button aria-label="Clear" (click)="selectedMaxARPU=''">
-            <mat-icon>close</mat-icon>
-          </button>
-        </mat-form-field>
-      </div>
-        
+
+
+        <!-- ARPU Component --> 
+        <app-bulk-arpu></app-bulk-arpu>
+
+     
       </mat-expansion-panel>
   </mat-accordion>
 </div>
