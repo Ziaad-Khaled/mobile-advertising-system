@@ -63,6 +63,9 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { UserActivityComponent } from './components/bulk/bulk-new-campaign/user-activity/user-activity.component';
 import { UserPlanComponent } from './components/bulk/bulk-new-campaign/user-plan/user-plan.component';
 import { ArpuComponent } from './components/bulk/bulk-new-campaign/arpu/arpu.component';
+import { SenderDataComponent } from './components/real-time/real-time-new-campaign/sender-data/sender-data.component';
+import { CampaginDetailsComponent } from './components/real-time/real-time-new-campaign/campagin-details/campagin-details.component';
+import { MessageDetailsComponent } from './components/real-time/real-time-new-campaign/message-details/message-details.component';
 
 
 @NgModule({
@@ -91,6 +94,9 @@ import { ArpuComponent } from './components/bulk/bulk-new-campaign/arpu/arpu.com
    UserActivityComponent,
    UserPlanComponent,
    ArpuComponent,
+   SenderDataComponent,
+   CampaginDetailsComponent,
+   MessageDetailsComponent,
 
   ],
   imports: [
