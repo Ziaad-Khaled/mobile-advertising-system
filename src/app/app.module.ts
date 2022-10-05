@@ -7,15 +7,23 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderHomeComponent } from './components/home/header/header.component';
 import { LoginComponent } from './components/login/login.component';
-
 import { BulkNewCampaignComponent } from './components/bulk/bulk-new-campaign/bulk-new-campaign.component';
 import { RealTimeNewCampaignComponent } from './components/real-time-new-campaign/real-time-new-campaign.component';
 import { BulkCampaignSubmissionComponent } from './components/bulk/bulk-campaign-submission/bulk-campaign-submission.component';
-
+import { CellsTableComponent } from './components/real-time-locations/cells-table/cells-table.component';
+import { MultiSmsComponent } from './components/bulk/bulk-campaign-submission/multi-sms/multi-sms.component';
+import { BulkReportComponent } from './components/bulk/bulk-report/bulk-report.component';
+import { RealTimeReportComponent } from './components/real-time-report/real-time-report.component';
+import { SmsFooterComponent } from './components/sms-footer/sms-footer.component';
+import { LocationComponent } from './components/bulk/bulk-new-campaign/location/location.component';
+import { LocationSearchPipe } from './components/bulk/bulk-new-campaign/location/pipes/location-search.pipe';
+import { HandsetComponent } from './components/bulk/bulk-new-campaign/handset/handset.component';
+import { RealTimeLocationsComponent } from './components/real-time-locations/real-time-locations.component';
+import { HeaderComponent } from './components/header/header.component';
+import { SidenavComponent } from './components/sidenav/sidenav.component';
 
 
 import { FormsModule } from '@angular/forms';
-
 import 'hammerjs';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -40,10 +48,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import { MatSidenavModule } from '@angular/material/sidenav'; 
 import { MatSortModule } from '@angular/material/sort';
-import { SidenavComponent } from './components/sidenav/sidenav.component';
 import {MatTabsModule} from '@angular/material/tabs';
-import { RealTimeLocationsComponent } from './components/real-time-locations/real-time-locations.component';
-import { HeaderComponent } from './components/header/header.component';
 import { NgxMatDatetimePicker } from '@angular-material-components/datetime-picker/public-api';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import {
@@ -51,16 +56,10 @@ import {
   NgxMatNativeDateModule,
   NgxMatTimepickerModule
 } from '@angular-material-components/datetime-picker';
-import { CommonModule } from '@angular/common';  
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';  
 
-import { CellsTableComponent } from './components/real-time-locations/cells-table/cells-table.component';
-import { MultiSmsComponent } from './components/bulk/bulk-campaign-submission/multi-sms/multi-sms.component';
-import { BulkReportComponent } from './components/bulk/bulk-report/bulk-report.component';
-import { RealTimeReportComponent } from './components/real-time-report/real-time-report.component';
-import { SmsFooterComponent } from './components/sms-footer/sms-footer.component';
-import { LocationComponent } from './components/bulk/bulk-new-campaign/location/location.component';
-import { LocationSearchPipe } from './components/bulk/bulk-new-campaign/location/pipes/location-search.pipe';
-import { HandsetComponent } from './components/bulk/bulk-new-campaign/handset/handset.component';
+
 
 @NgModule({
   declarations: [
@@ -116,7 +115,8 @@ import { HandsetComponent } from './components/bulk/bulk-new-campaign/handset/ha
     NgxMatTimepickerModule,
     NgxMatNativeDateModule,
     NgxMaterialTimepickerModule,
-    CommonModule
+    CommonModule,
+    HttpClientModule
 
   ],
   providers: [AuthenticationService],
