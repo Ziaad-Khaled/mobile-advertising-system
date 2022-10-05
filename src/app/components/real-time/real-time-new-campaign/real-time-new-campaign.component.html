@@ -10,124 +10,22 @@
     <div class= "cards-container"  fxLayoutGap="10px" fxLayoutGap.xs="0" >
         <mat-card fxFlexAlign="center"  [fxFlex] class="card">
             <mat-card-title>Sender Data</mat-card-title>
-            <mat-card-content style= "display: flex;flex-direction: row;flex-wrap: wrap; justify-content: center;align-items: center;">
-                <mat-form-field style="flex: 1 0 92%; margin-right: 10px;" class="col-lg-5" class ="form-field-full" appearance="fill">
-                    <mat-label>Campagin SMS Sender Name:</mat-label>
-                    <mat-select style = "width: 100%;" disableRipple>
-                      <mat-option value="CPA">CPA</mat-option>
-                      <mat-option value="saad">Saad</mat-option>
-                      <mat-option value="fiat">Fiat</mat-option>
-                      <mat-option value="audi">Audi</mat-option>
-
-                    </mat-select>
-                </mat-form-field>
-
-                <button matTooltip="Add new sender name" class="action-button" style="flex: 1 0 5%; margin-bottom: 15px;" mat-button   (click)="openDialog()"> <mat-icon class="mat-icon" >add_circle</mat-icon> </button>
-                  
-            </mat-card-content> 
+            <app-sender-data>
+            </app-sender-data>
         </mat-card>
 
 
 
         <mat-card fxFlexAlign="center" class="card">
             <mat-card-title>Campagin Details</mat-card-title>
-            <mat-card-content style= "display: flex;flex-direction: row;flex-wrap: wrap; justify-content: center;align-items: center;">
-                <mat-form-field style="flex: 1 0 92%; margin-right: 10px;" class="col-lg-5" class ="form-field-full" appearance="fill">
-                    <mat-label>Campagin Location:</mat-label>
-                    <mat-select style = "width: 100%;" disableRipple>
-                      <mat-option value="cairo"> Cairo</mat-option>
-                      <mat-option value="giza">Giza</mat-option>
-                      <mat-option value="alex">Alex</mat-option>
-                    </mat-select>
-                </mat-form-field>
-
-                <button matTooltip="Edit campaign locations" class="action-button" style="flex: 1 0 5%" [routerLink]="'/real-time-locations'" mat-button> <mat-icon class="mat-icon" >edit</mat-icon> </button>
-
-                <div style="flex: 1 0 50%" class = "date-picker">  
-                    <label for="SMS">Campagin Starts At:</label>
-                    <input  matInput [matDatepicker]="picker"  min="{{currentDate | date:'yyyy-MM-dd'}}">
-                    <mat-hint>MM/DD/YYYY</mat-hint>
-                    <mat-datepicker-toggle  matSuffix [for]="picker"></mat-datepicker-toggle>
-                    <mat-datepicker #picker></mat-datepicker>
-                   <input mdc-datetime-picker="" date="false" time="true" placeholder="Time" minutes="true"
-                   min-date="minDate" type="text" id="time"  short-time="true" ng-model="time" [ngxTimepicker]="picker3">
-                   <ngx-material-timepicker class="Time" #picker3></ngx-material-timepicker>
-                </div>
-
-
-                <div style="flex:1 0 50%" class= "date-picker">  
-                    <label for="SMS">Campagin Ends At:</label>
-                    <input  min="{{currentDate | date:'yyyy-MM-dd'}}" matInput [matDatepicker]="picker1">
-                    <mat-hint>MM/DD/YYYY</mat-hint>
-                    <mat-datepicker-toggle matSuffix [for]="picker1" ></mat-datepicker-toggle>
-                    <ngx-mat-datetime-picker #picker2></ngx-mat-datetime-picker>
-                    <mat-datepicker #picker1></mat-datepicker>
-                    <input class="Time" mdc-datetime-picker="" date="false" time="true" placeholder="Time" minutes="true"
-                   min-date="minDate" type="text" id="time"  short-time="true" ng-model="time" [ngxTimepicker]="picker4">
-                   <ngx-material-timepicker #picker4></ngx-material-timepicker>
-                </div>
-
-                <mat-form-field style="flex: 1 0 45%" class="col-lg-5" class ="form-field-half" appearance="fill">
-                    <mat-label>Campagin Includes:</mat-label>
-                    <mat-select style = "width: 100%;" disableRipple>
-                      <mat-option value="cairo"> Cairo</mat-option>
-                      <mat-option value="giza">Giza</mat-option>
-                      <mat-option value="alex">Alex</mat-option>
-                    </mat-select>
-                </mat-form-field>
-
-                <mat-form-field style="flex: 1 0 40%" class="col-lg-5" class ="form-field-half" appearance="fill">
-                    <mat-label>Campagin Excludes:</mat-label>
-                    <mat-select style = "width: 100%;" disableRipple>
-                      <mat-option value="cairo"> Cairo</mat-option>
-                      <mat-option value="giza">Giza</mat-option>
-                      <mat-option value="alex">Alex</mat-option>
-                    </mat-select>
-                </mat-form-field>
-
-                <button matTooltip="Add new options" class="action-button" style="flex: 1 0 5%" mat-button> <mat-icon class="mat-icon"  (click)="openDialog()" >add_circle</mat-icon> </button>
-
-                <mat-form-field style="flex: 1 0 45%" class="col-lg-5" class ="form-field-one-third" appearance="fill">
-                    <mat-label>Quota</mat-label>
-                    <textarea matInput
-                              cdkTextareaAutosize
-                              #autosize="cdkTextareaAutosize"
-                              cdkAutosizeMinRows="1"
-                              cdkAutosizeMaxRows="5"></textarea>
-                </mat-form-field>
-
-                <mat-form-field style="flex: 1 0 45%" class="col-lg-5" class ="form-field-one-third" appearance="fill">
-                    <mat-label>Daily Limit</mat-label>
-                    <textarea matInput
-                              cdkTextareaAutosize
-                              #autosize="cdkTextareaAutosize"
-                              cdkAutosizeMinRows="1"
-                              cdkAutosizeMaxRows="5"></textarea>
-                </mat-form-field>
-
-
-                <mat-form-field style="flex: 1 0 45%" class="col-lg-5" class ="form-field-one-third" appearance="fill">
-                    <mat-label>Frequency</mat-label>
-                    <textarea matInput
-                              cdkTextareaAutosize
-                              #autosize="cdkTextareaAutosize"
-                              cdkAutosizeMinRows="1"
-                              cdkAutosizeMaxRows="5"></textarea>
-                </mat-form-field>
-
-                <div style="flex: 1 0 45%" class="col-lg-5" class ="form-field-one-third">
-                    <mat-label>Exclude Commuters: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</mat-label>
-                    <mat-radio-group aria-label="Select an option">
-                        <mat-radio-button style="margin-right:30px;" value="1">Yes</mat-radio-button>
-                        <mat-radio-button value="2">No</mat-radio-button>
-                    </mat-radio-group>
-                </div>
-            </mat-card-content>
+           <app-campagin-details>
+           </app-campagin-details>
         </mat-card>
 
 
         <mat-card fxFlexAlign="center" [fxFlex] class="card" >
             <mat-card-title>SMS Message Details</mat-card-title>
+<<<<<<< HEAD
             <mat-card-content fxLayout="column" fxFlexAlign="center">
                 <mat-form-field  fxFlexAlign="stretch" appearance="fill">
                     <mat-label>Campagin SMS Body</mat-label>
@@ -160,6 +58,9 @@
                 </div>
                 
             </mat-card-content> 
+=======
+            <app-message-details></app-message-details>
+>>>>>>> 692f2f816d43d651626d311b9deb0c5ae09cc645
 
             <mat-card-actions class="sms-message-criteria" fxLayout="row" fxfxFlexAllign="center" style="text-align: center;">
                 <h4 class="sms-message-criteria-font" fxfxFlexAllign="center" >SMS Enconding: ASCII(160/SMS)</h4>
