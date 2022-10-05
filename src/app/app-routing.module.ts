@@ -9,12 +9,7 @@ import { RealTimeNewCampaignComponent } from './components/real-time/real-time-n
 import { CellsTableComponent } from './components/real-time/real-time-locations/cells-table/cells-table.component';
 import { RealTimeLocationsComponent } from './components/real-time/real-time-locations/real-time-locations.component';
 import { BulkReportComponent } from './components/bulk/bulk-report/bulk-report.component';
-<<<<<<< HEAD
-import { RealTimeReportComponent } from './components/real-time-report/real-time-report.component';
-
-=======
 import { RealTimeReportComponent } from './components/real-time/real-time-report/real-time-report.component';
->>>>>>> 7d5f497b5c917acb1e63c08d3f9dcb0ecd7b36f8
 const routes: Routes = [
   { path: '', component: LoginComponent },
   {path:'Login', component:LoginComponent},
