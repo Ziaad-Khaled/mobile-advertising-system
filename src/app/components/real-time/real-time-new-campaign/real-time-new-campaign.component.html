@@ -22,7 +22,7 @@
                     </mat-select>
                 </mat-form-field>
 
-                <button matTooltip="Add new sender name" class="action-button" style="flex: 1 0 5%; margin-bottom: 15px;" mat-button> <mat-icon class="mat-icon" >add_circle</mat-icon> </button>
+                <button matTooltip="Add new sender name" class="action-button" style="flex: 1 0 5%; margin-bottom: 15px;" mat-button   (click)="openDialog()"> <mat-icon class="mat-icon" >add_circle</mat-icon> </button>
                   
             </mat-card-content> 
         </mat-card>
@@ -85,7 +85,7 @@
                     </mat-select>
                 </mat-form-field>
 
-                <button matTooltip="Add new options" class="action-button" style="flex: 1 0 5%" mat-button> <mat-icon class="mat-icon" >add_circle</mat-icon> </button>
+                <button matTooltip="Add new options" class="action-button" style="flex: 1 0 5%" mat-button> <mat-icon class="mat-icon"  (click)="openDialog()" >add_circle</mat-icon> </button>
 
                 <mat-form-field style="flex: 1 0 45%" class="col-lg-5" class ="form-field-one-third" appearance="fill">
                     <mat-label>Quota</mat-label>
