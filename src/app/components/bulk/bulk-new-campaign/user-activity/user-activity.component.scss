@@ -12,29 +12,3 @@
   }
 
 
-  ::ng-deep .mat-checkbox-checked.mat-accent {
-    .mat-checkbox-ripple .mat-ripple-element {
-        background-color: #ff6600 !important;
-    }
-
-    .mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
-        background-color: #ff6600;
-     }
-}
-
-::ng-deep .mat-checkbox.mat-accent.mat-checkbox-indeterminate.mat-accent {
-  .mat-checkbox-ripple .mat-ripple-element {
-      background-color: #ff6600 !important;
-  }
-
-  .mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
-      background-color: #ff6600;
-   }
-}
-
-
-::ng-deep .mat-checkbox.mat-accent {
-    .mat-checkbox-ripple .mat-ripple-element  {
-        background-color: #ff6600 !important;
-    }
-}

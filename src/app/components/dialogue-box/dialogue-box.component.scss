@@ -1,13 +1,18 @@
 
-.example-full-width {
-    width: 200px;
-
-  }
   .cancel{
-    margin-left: 150px ;
+    margin-left: 20px ;
     
   }
   .save{
-    margin-right: 150px ;
+    margin-right: 20px ;
     
   }
+  
+
+.full-width{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; 
+  justify-content: center;
+  align-items: center;
+}
