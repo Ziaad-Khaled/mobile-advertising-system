@@ -10,6 +10,7 @@ import { CellsTableComponent } from './components/real-time/real-time-locations/
 import { RealTimeLocationsComponent } from './components/real-time/real-time-locations/real-time-locations.component';
 import { BulkReportComponent } from './components/bulk/bulk-report/bulk-report.component';
 import { RealTimeReportComponent } from './components/real-time/real-time-report/real-time-report.component';
+
 const routes: Routes = [
   { path: '', component: LoginComponent },
   {path:'Login', component:LoginComponent},
@@ -21,7 +22,8 @@ const routes: Routes = [
   { path: 'real-time-newcampaign',  component: RealTimeNewCampaignComponent },
   { path: 'real-time-locations', component: RealTimeLocationsComponent },
   { path: 'real-time-locations/:id', component: CellsTableComponent },
-  {path:'real-time-report',component:RealTimeReportComponent}
+  {path:'real-time-report',component:RealTimeReportComponent},
+  
 ];
 
 @NgModule({

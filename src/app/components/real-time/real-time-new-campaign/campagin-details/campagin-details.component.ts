@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { DialogueBoxComponent } from 'src/app/components/dialogue-box/dialogue-box.component';
+import { RealTimeDialogueBoxComponent } from '../../real-time-locations/real-time-dialogue-box/real-time-dialogue-box.component';
 @Component({
   selector: 'app-campagin-details',
   templateUrl: './campagin-details.component.html',
@@ -22,7 +22,7 @@ export class CampaginDetailsComponent implements OnInit {
   ngOnInit(): void {
   }
   openDialog(): void {
-    this.dialog.open(DialogueBoxComponent,{
+    this.dialog.open(RealTimeDialogueBoxComponent,{
       width:'350px',
       data:"right click"
     })
