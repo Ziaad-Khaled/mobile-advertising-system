@@ -16,6 +16,8 @@ import {map, startWith} from 'rxjs/operators';
 })
 export class BulkNewCampaignComponent{
   
+
+  
   @ViewChild(MatAccordion) accordion!: MatAccordion;
 
   minARPU = 0;

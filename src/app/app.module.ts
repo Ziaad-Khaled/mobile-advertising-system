@@ -99,6 +99,8 @@ import { MessageDetailsComponent } from './components/real-time/real-time-new-ca
    MessageDetailsComponent,
 
   ],
+
+  
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -133,7 +135,8 @@ import { MessageDetailsComponent } from './components/real-time/real-time-new-ca
     NgxMaterialTimepickerModule,
     CommonModule,
     HttpClientModule,
-    MatDialogModule
+    MatDialogModule,
+     
 
   ],
   providers: [AuthenticationService,
