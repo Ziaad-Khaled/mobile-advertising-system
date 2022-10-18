@@ -66,6 +66,7 @@ import { ArpuComponent } from './components/bulk/bulk-new-campaign/arpu/arpu.com
 import { SenderDataComponent } from './components/real-time/real-time-new-campaign/sender-data/sender-data.component';
 import { CampaginDetailsComponent } from './components/real-time/real-time-new-campaign/campagin-details/campagin-details.component';
 import { MessageDetailsComponent } from './components/real-time/real-time-new-campaign/message-details/message-details.component';
+import { SenderNameService } from './components/shared/services/sender-name.service';
 
 
 @NgModule({
@@ -140,7 +141,8 @@ import { MessageDetailsComponent } from './components/real-time/real-time-new-ca
 
   ],
   providers: [AuthenticationService,
-    { provide: MAT_DATE_LOCALE, useValue: 'en-GB' }
+    { provide: MAT_DATE_LOCALE, useValue: 'en-GB' },
+    SenderNameService
   ],
   bootstrap: [AppComponent]
 })
