@@ -6,22 +6,23 @@ import {MatTableDataSource} from '@angular/material/table';
 
 export interface UserData {
   id: string;
+  loction:string;
   name: string;
   progress: string;
   fruit: string;
+  start:string;
+  End:string;
+  Frequency:string;
+  Quota:string;
+  DailyTime:string;
+  inclusionList:string;
+  ExclusionList:string;
+smsBody:string;
+ Description:string;
 }
 
 /** Constants used to fill up our data base. */
-const FRUITS: string[] = [
-  'blueberry',
-  'lychee',
-  'kiwi',
-  'mango',
-  'peach',
-  'lime',
-  'pomegranate',
-  'pineapple',
-];
+
 const NAMES: string[] = [
   'Maia',
   'Asher',
@@ -43,6 +44,28 @@ const NAMES: string[] = [
   'Thomas',
   'Elizabeth',
 ];
+const Location: string[] = [
+  'Maia',
+  'Asher',
+  'Olivia',
+  'Atticus',
+  'Amelia',
+  'Jack',
+  'Charlotte',
+  'Theodore',
+  'Isla',
+  'Oliver',
+  'Isabella',
+  'Jasper',
+  'Cora',
+  'Levi',
+  'Violet',
+  'Arthur',
+  'Mia',
+  'Thomas',
+  'Elizabeth',
+];
+
 
 @Component({
   selector: 'app-real-time-report',
@@ -52,7 +75,7 @@ const NAMES: string[] = [
 export class RealTimeReportComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
-  displayedColumns: string[] = ['id', 'name', 'progress', 'fruit', 'action'];
+  displayedColumns: string[] = ['id','location' ,'first', 'start','End','Frequency','Quota','DailyTime', 'progress','Exclude','inclusionList','ExclusionList','smsBody','Description','action'];
   dataSource: MatTableDataSource<UserData>;
 
   constructor() { 
@@ -87,11 +110,25 @@ function createNewUser(progress: number): UserData {
     ' ' +
     NAMES[Math.round(Math.random() * (NAMES.length - 1))].charAt(0) +
     '.';
-
+const x=Location[Math.round(Math.random() * (Location.length - 1))] +
+' ' +
+Location[Math.round(Math.random() * (Location.length - 1))].charAt(0) +
+'.';
   return {
-    progress: new Date("1998-01-31").toDateString(),
+    
     id: name,
     name: Math.round(Math.random() * 100).toString(),
     fruit: new Date("1998-01-31").toDateString(),
+    loction:x,
+    progress:Math.round(Math.random() * 100).toString(),
+    start: new Date("1998-01-31").toDateString(),
+    End: new Date("1998-01-31").toDateString(),
+    Frequency: Math.round(Math.random() * 100).toString(),
+    Quota: Math.round(Math.random() * 100).toString(),
+    DailyTime: Math.round(Math.random() * 100).toString(),
+  inclusionList:x,
+  ExclusionList:x,
+  smsBody:x,
+  Description:x,
   };
 }
