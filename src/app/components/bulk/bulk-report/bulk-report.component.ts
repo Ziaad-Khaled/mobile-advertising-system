@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { MatDatepicker } from '@angular/material/datepicker';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
@@ -7,7 +8,7 @@ import {MatTableDataSource} from '@angular/material/table';
 export interface UserData {
   id: string;
   name: string;
-  progress: string;
+  progress:string;
   fruit: string;
 }
 
@@ -56,6 +57,7 @@ export class BulkReportComponent implements OnInit {
   @ViewChild(MatSort) sort!: MatSort;
 
   constructor() {
+   
       // Create 100 users
       const users = Array.from({length: 100}, (_, k) => createNewUser(k + 1));
 
@@ -64,6 +66,8 @@ export class BulkReportComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    console.log(new Date("1998-01-31").toDateString());
+    this.dataSource.paginator = this.paginator;
   }
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
@@ -81,7 +85,7 @@ export class BulkReportComponent implements OnInit {
 }
 
 /** Builds and returns a new User. */
-function createNewUser(progress: number): UserData {
+function createNewUser(id:number): UserData {
   const name =
     NAMES[Math.round(Math.random() * (NAMES.length - 1))] +
     ' ' +
@@ -89,9 +93,9 @@ function createNewUser(progress: number): UserData {
     '.';
 
   return {
-    progress: progress.toString(),
+    progress: new Date("1998-01-31").toDateString(),
     id: name,
     name: Math.round(Math.random() * 100).toString(),
-    fruit: FRUITS[Math.round(Math.random() * (FRUITS.length - 1))],
+    fruit: new Date("1998-01-31").toDateString(),
   };
 }

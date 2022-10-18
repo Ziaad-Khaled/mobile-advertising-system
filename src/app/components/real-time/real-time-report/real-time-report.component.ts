@@ -89,9 +89,9 @@ function createNewUser(progress: number): UserData {
     '.';
 
   return {
-    progress: progress.toString(),
+    progress: new Date("1998-01-31").toDateString(),
     id: name,
     name: Math.round(Math.random() * 100).toString(),
-    fruit: FRUITS[Math.round(Math.random() * (FRUITS.length - 1))],
+    fruit: new Date("1998-01-31").toDateString(),
   };
 }
