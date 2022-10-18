@@ -90,8 +90,8 @@ function createNewUser(progress: number): UserData {
 
   return {
     progress: progress.toString(),
-    name: name,
-    id: Math.round(Math.random() * 100).toString(),
+    id: name,
+    name: Math.round(Math.random() * 100).toString(),
     fruit: FRUITS[Math.round(Math.random() * (FRUITS.length - 1))],
   };
 }
