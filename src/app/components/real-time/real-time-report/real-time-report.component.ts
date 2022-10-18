@@ -81,7 +81,7 @@ export class RealTimeReportComponent implements OnInit {
 }
 
 /** Builds and returns a new User. */
-function createNewUser(id: number): UserData {
+function createNewUser(progress: number): UserData {
   const name =
     NAMES[Math.round(Math.random() * (NAMES.length - 1))] +
     ' ' +
@@ -89,9 +89,9 @@ function createNewUser(id: number): UserData {
     '.';
 
   return {
-    id: id.toString(),
+    progress: progress.toString(),
     name: name,
-    progress: Math.round(Math.random() * 100).toString(),
+    id: Math.round(Math.random() * 100).toString(),
     fruit: FRUITS[Math.round(Math.random() * (FRUITS.length - 1))],
   };
 }
