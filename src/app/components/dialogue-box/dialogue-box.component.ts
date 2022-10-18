@@ -1,5 +1,6 @@
 import { Component, OnInit , Inject} from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { SenderNameService } from '../shared/services/sender-name.service';
 
 @Component({
   selector: 'app-dialogue-box',
@@ -8,15 +9,21 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
 })
 export class DialogueBoxComponent implements OnInit {
 
+  senderName!: string;
   
   constructor(
     public dialogRef: MatDialogRef<DialogueBoxComponent>,
     @Inject(MAT_DIALOG_DATA) public data:any,
+    private senderNameService: SenderNameService
   ) {}
 
-  onNoClick(): void {
+  onCancel(): void {
     this.dialogRef.close();
-    console.log(this.data)
+  }
+
+  onSave(): void{
+    this.senderNameService.addSenderName({name: this.senderName })
+    this.dialogRef.close();
   }
 
   ngOnInit(): void {
