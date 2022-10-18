@@ -1,6 +1,6 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import {MatAccordion} from '@angular/material/expansion';
-import {FormControl} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
 
@@ -14,16 +14,38 @@ import {map, startWith} from 'rxjs/operators';
   templateUrl: './bulk-new-campaign.component.html',
   styleUrls: ['./bulk-new-campaign.component.scss']
 })
-export class BulkNewCampaignComponent{
+export class BulkNewCampaignComponent implements OnInit{
   
-
+  bulkForm! : FormGroup;
   
   @ViewChild(MatAccordion) accordion!: MatAccordion;
 
   minARPU = 0;
   maxARPU = 5000;
   
-  constructor() { }
+  constructor(private fb: FormBuilder) { }
+  
+  
+
+  ngOnInit(): void {
+    this.bulkForm = this.fb.group({
+      userPlan : this.fb.group({
+        subscriberType: this.fb.array([]),
+        serviceType: this.fb.array([]),
+      })
+    });
+
+    this.onChanges();
+  }
+
+  onChanges(): void {
+    this.bulkForm.valueChanges.subscribe(val => {
+      console.log(val);
+    });
+  }
+  
+
+
  
 
 }

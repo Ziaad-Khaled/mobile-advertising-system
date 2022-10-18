@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { Component, Input, OnInit } from '@angular/core';
+import { AbstractControl, FormArray, FormControl, FormGroup, FormGroupDirective } from '@angular/forms';
 
 @Component({
   selector: 'app-bulk-user-plan',
@@ -8,21 +8,45 @@ import { FormControl } from '@angular/forms';
 })
 export class UserPlanComponent implements OnInit {
 
+  subscriberTypes: Array<any> = [
+    { name: 'Corporate', value: 'corporate' },
+    { name: 'Personal', value: 'personal' }
+  ];
+
+  serviceTypes : Array<any> = [
+    { name: 'Hybrid', value: 'hybrid' },
+    { name: 'PrePaid', value: 'prePaid' },
+    { name: 'PostPaid', value: 'postPaid' },
+    { name: 'Others', value: 'others' }
+  ];
   
-  corporate = false;
-  personal = false;
-  hybrid = false;
-  prePaid = false;
-  postPaid = false;
-  others = false;
-
-  toppings = new FormControl('');
-  toppingList: string[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
 
 
-  constructor() { }
+  @Input() formGroupName!: string
+  bulkForm!: FormGroup
+  
+  constructor(private rootFormGroup: FormGroupDirective) { }
 
   ngOnInit(): void {
+    this.bulkForm = this.rootFormGroup.control.get(this.formGroupName) as FormGroup
+  }
+
+
+  onCheckboxChange(e, formArrayName:string) {
+    console.log(e);
+    const checkArray: FormArray = this.bulkForm.get(formArrayName) as FormArray;
+    if (e.checked) {
+      checkArray.push(new FormControl(e.source.value));
+    } else {
+      let i: number = 0;
+      checkArray.controls.forEach((item: AbstractControl)  => {
+        if (item.value == e.source.value) {
+          checkArray.removeAt(i);
+          return;
+        }
+        i++;
+      });
+    }
   }
 
 }
