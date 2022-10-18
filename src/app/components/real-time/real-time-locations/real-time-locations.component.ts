@@ -123,8 +123,8 @@ function createNewUser(name: number): UserData {
     id: id,
    
     name: name.toString(),
-    progress:process,
-    fruit:fruit ,
+    progress:new Date("1998-01-31").toDateString(),
+    fruit:new Date("1998-01-31").toDateString(),
   };
 
 
