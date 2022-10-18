@@ -67,6 +67,7 @@ import { SenderDataComponent } from './components/real-time/real-time-new-campai
 import { CampaginDetailsComponent } from './components/real-time/real-time-new-campaign/campagin-details/campagin-details.component';
 import { MessageDetailsComponent } from './components/real-time/real-time-new-campaign/message-details/message-details.component';
 import { SenderNameService } from './components/shared/services/sender-name.service';
+import { SenderNameComponent } from './components/shared/components/sender-name/sender-name.component';
 
 
 @NgModule({
@@ -98,6 +99,7 @@ import { SenderNameService } from './components/shared/services/sender-name.serv
    SenderDataComponent,
    CampaginDetailsComponent,
    MessageDetailsComponent,
+   SenderNameComponent,
 
   ],
 
