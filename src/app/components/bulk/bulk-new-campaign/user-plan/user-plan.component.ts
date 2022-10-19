@@ -20,8 +20,6 @@ export class UserPlanComponent implements OnInit {
     { name: 'Others', value: 'others' }
   ];
   
-
-
   @Input() formGroupName!: string
   bulkForm!: FormGroup
   
@@ -33,7 +31,7 @@ export class UserPlanComponent implements OnInit {
 
 
   onCheckboxChange(e, formArrayName:string) {
-    console.log(e);
+    
     const checkArray: FormArray = this.bulkForm.get(formArrayName) as FormArray;
     if (e.checked) {
       checkArray.push(new FormControl(e.source.value));

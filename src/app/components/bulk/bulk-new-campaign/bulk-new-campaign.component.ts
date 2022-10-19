@@ -29,6 +29,16 @@ export class BulkNewCampaignComponent implements OnInit{
 
   ngOnInit(): void {
     this.bulkForm = this.fb.group({
+      handSet : this.fb.group({
+        manufacturer: [''],
+        model: [''],
+        operatingSystem: [''],
+        deviceType: [''],
+        networkTechnology: ['']
+      }),
+      userActivity : this.fb.group({
+        userActivity: this.fb.array([])
+      }),
       userPlan : this.fb.group({
         subscriberType: this.fb.array([]),
         serviceType: this.fb.array([]),
@@ -40,7 +50,10 @@ export class BulkNewCampaignComponent implements OnInit{
 
   onChanges(): void {
     this.bulkForm.valueChanges.subscribe(val => {
+      console.log("parent bulk form: ")
       console.log(val);
+
+      //on change go to the backend and retrieve the total number of customers
     });
   }
   
