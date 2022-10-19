@@ -31,6 +31,13 @@ export class BulkNewCampaignComponent implements OnInit, OnDestroy{
 
   ngOnInit(): void {
     this.bulkForm = this.fb.group({
+      
+      location: this.fb.group({
+        selectedGovernorates: new FormControl(''),
+        selectedAdminSections: new FormControl(''),
+        selectedSheiakhas: new FormControl('')
+      }),
+
       handSet : this.fb.group({
         manufacturer: [],
         model: [],

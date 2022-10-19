@@ -1,6 +1,7 @@
 import { LocationService } from './services/location.service';
-import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, FormGroupDirective } from '@angular/forms';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-bulk-location',
@@ -8,33 +9,65 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./location.component.scss'],
   providers: [LocationService]
 })
-export class LocationComponent implements OnInit, OnChanges {
+export class LocationComponent implements OnInit, OnChanges, OnDestroy {
 
+
+  private subscriptions = new Subscription();
+
+
+  @Input() formGroupName!: string
+  bulkForm!: FormGroup
 
    //Location
 
   value = '';
 
-  governorates = new FormControl('');
+  selectedGovernorates = new FormControl('');
   governorateList!: string[];
 
-  adminSections = new FormControl('');
+  selectedAdminSections = new FormControl('');
   adminSectionList!: string[];
 
-  sheiakhas = new FormControl('');
+  selectedSheiakhas =  new FormControl('');
   sheiakhaList!: string[];
 
-
-  constructor(private locationService: LocationService) { }
+  
+  
+  constructor(private locationService: LocationService, private rootFormGroup: FormGroupDirective, private fb: FormBuilder) { }
+  
 
   ngOnInit(): void {
+
+    this.bulkForm = this.rootFormGroup.control.get(this.formGroupName) as FormGroup;
+
+    //subscribe to form values
+    this.subscriptions.add(this.bulkForm.get("selectedGovernorates")?.valueChanges.subscribe(value => {
+      this.selectedGovernorates = value;
+    })); 
+
+    this.subscriptions.add(this.bulkForm.get("selectedAdminSections")?.valueChanges.subscribe(value => {
+      this.selectedGovernorates = value;
+    })); 
+
+    this.subscriptions.add(this.bulkForm.get("selectedSheiakhas")?.valueChanges.subscribe(value => {
+      this.selectedGovernorates = value;
+    })); 
+
+
+
+    //subscribe to location lists
     this.governorateList = this.locationService.getGovernorateList();
     this.adminSectionList = this.locationService.getAdminSectionList();
     this.sheiakhaList = this.locationService.getSheiakhaList();
+
+    console.log(this.selectedGovernorates.value);
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-      console.log("governorate list" + this.governorateList);
+      
   }
 
+  ngOnDestroy(): void {
+    this.subscriptions.unsubscribe();
+  }
 }

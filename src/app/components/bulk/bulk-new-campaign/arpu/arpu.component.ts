@@ -25,7 +25,7 @@ export class ArpuComponent implements OnInit, OnDestroy {
 
 
   ngOnInit(): void {
-    this.bulkForm = this.rootFormGroup.control.get(this.formGroupName) as FormGroup
+    this.bulkForm = this.rootFormGroup.control.get(this.formGroupName) as FormGroup;
 
     this.subscriptions.add(this.bulkForm.get("selectedMinARPU")?.valueChanges.subscribe(value => {
       this.selectedMinARPU = value;
