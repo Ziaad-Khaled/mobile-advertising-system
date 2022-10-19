@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { Subscription } from 'rxjs';
 import { DialogueBoxComponent } from '../../dialogue-box/dialogue-box.component';
 @Component({
   selector: 'app-real-time-new-campaign',
@@ -15,7 +17,10 @@ export class RealTimeNewCampaignComponent implements OnInit {
   from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was
   originally bred for hunting.`;
 
-  constructor(public dialog:MatDialog) {
+  realTimeForm! : FormGroup;
+  private subscriptions = new Subscription();
+
+  constructor(public dialog:MatDialog, private fb: FormBuilder) {
     const currentYear = new Date().getFullYear();
     this.minDate = new Date(currentYear - 0, 0, 1);
     
@@ -29,6 +34,19 @@ export class RealTimeNewCampaignComponent implements OnInit {
     
   }
   ngOnInit(): void {
+    this.realTimeForm = this.fb.group({
+      smsDetails : this.fb.group({
+        smsBody : [],
+        smsDescription : []
+      })
+    });
+    this.onChanges();
   }
 
+  onChanges(): void {
+    this.subscriptions.add(this.realTimeForm.valueChanges.subscribe(val => {
+      console.log("parent Real-time form: ")
+      console.log(val);
+    }));
+  }
 }

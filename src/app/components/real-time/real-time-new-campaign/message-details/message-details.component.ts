@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormGroup, FormGroupDirective } from '@angular/forms';
 
 @Component({
   selector: 'app-message-details',
@@ -7,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MessageDetailsComponent implements OnInit {
 
-  smsBody!: string;
-  constructor() { }
+   
+  @Input() formGroupName!: string
+  realTimeForm!: FormGroup
+  smsBody! : string
+  
+  constructor(private rootFormGroup: FormGroupDirective) { }
 
   ngOnInit(): void {
+    this.realTimeForm = this.rootFormGroup.control.get(this.formGroupName) as FormGroup
   }
+
 
 }
