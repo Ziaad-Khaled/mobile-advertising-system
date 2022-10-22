@@ -11,7 +11,7 @@
     <ng-container [formGroup] = "bulkForm">
         <mat-form-field appearance="fill" class="one-third">
             <mat-label>Governorate</mat-label>
-            <mat-select formControlName="selectedGovernorates" multiple>
+            <mat-select [formControl]="selectedGovernorates" multiple>
             <mat-select-trigger>
                 {{selectedGovernorates.value?.[0] || ''}}
                 <span *ngIf="(selectedGovernorates.value?.length || 0) > 1" class="additional-selection">
@@ -24,7 +24,7 @@
     
         <mat-form-field appearance="fill" class="one-third">
             <mat-label>Admin Section</mat-label>
-            <mat-select formControlName="selectedAdminSections" multiple>
+            <mat-select [formControl]="selectedAdminSections" multiple>
             <mat-select-trigger>
                 {{selectedAdminSections.value?.[0] || ''}}
                 <span *ngIf="(selectedAdminSections.value?.length || 0) > 1" class="additional-selection">

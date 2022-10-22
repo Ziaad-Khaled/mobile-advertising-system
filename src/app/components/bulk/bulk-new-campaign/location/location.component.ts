@@ -40,18 +40,23 @@ export class LocationComponent implements OnInit, OnChanges, OnDestroy {
 
     this.bulkForm = this.rootFormGroup.control.get(this.formGroupName) as FormGroup;
 
+   // this.selectedGovernorates = this.bulkForm.get("selectedGovernorates")?.value();
+
+   
     //subscribe to form values
-    this.subscriptions.add(this.bulkForm.get("selectedGovernorates")?.valueChanges.subscribe(value => {
-      this.selectedGovernorates = value;
+    this.subscriptions.add(this.selectedGovernorates.valueChanges.subscribe( value => {
+      this.bulkForm.get("selectedGovernorates")?.setValue(value);
+    }));
+
+
+    this.subscriptions.add(this.selectedAdminSections.valueChanges.subscribe(value => {
+      this.bulkForm.get("selectedAdminSections")?.setValue(value);
     })); 
 
-    this.subscriptions.add(this.bulkForm.get("selectedAdminSections")?.valueChanges.subscribe(value => {
-      this.selectedGovernorates = value;
+    this.subscriptions.add(this.selectedSheiakhas.valueChanges.subscribe(value => {
+      this.bulkForm.get("selectedSheiakhas")?.setValue(value);
     })); 
-
-    this.subscriptions.add(this.bulkForm.get("selectedSheiakhas")?.valueChanges.subscribe(value => {
-      this.selectedGovernorates = value;
-    })); 
+    
 
 
 
