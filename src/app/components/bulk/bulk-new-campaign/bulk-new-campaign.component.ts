@@ -39,11 +39,11 @@ export class BulkNewCampaignComponent implements OnInit, OnDestroy{
       }),
 
       handSet : this.fb.group({
-        manufacturer: [],
-        model: [],
-        operatingSystem: [],
-        deviceType: [],
-        networkTechnology: []
+        manufacturer: new FormControl<string>(''),
+        model: new FormControl<string>(''),
+        operatingSystem: new FormControl<string>(''),
+        deviceType: new FormControl<string>(''),
+        networkTechnology: new FormControl<string>('')
       }),
 
       userActivity : this.fb.group({

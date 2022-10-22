@@ -39,9 +39,6 @@ export class LocationComponent implements OnInit, OnChanges, OnDestroy {
   ngOnInit(): void {
 
     this.bulkForm = this.rootFormGroup.control.get(this.formGroupName) as FormGroup;
-
-   // this.selectedGovernorates = this.bulkForm.get("selectedGovernorates")?.value();
-
    
     //subscribe to form values
     this.subscriptions.add(this.selectedGovernorates.valueChanges.subscribe( value => {
