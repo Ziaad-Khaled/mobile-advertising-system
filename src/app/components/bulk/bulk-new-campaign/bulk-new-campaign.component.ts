@@ -58,8 +58,18 @@ export class BulkNewCampaignComponent implements OnInit, OnDestroy{
       arpu : this.fb.group({
         selectedMinARPU : [],
         selectedMaxARPU : []
-      })
+      }),
+
+    //   singleSmS : this.fb.group({
+    //     SenderName : new FormControl<string>(''),
+    //     smsBody : [],
+    //      date : new FormControl<string>(''),
+    //     time : new FormControl<string>(''),
+    // }),
+
+
     });
+
 
     this.onChanges();
   }

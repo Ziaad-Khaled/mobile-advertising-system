@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { RealTimeDialogueBoxComponent } from '../../real-time-locations/real-time-dialogue-box/real-time-dialogue-box.component';
-import { FormControl } from '@angular/forms';
-import { Observable } from 'rxjs';
+import { AbstractControl, FormArray, FormBuilder, FormControl, FormGroup, FormGroupDirective } from '@angular/forms';
+import { Observable, Subscription } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 
 
@@ -26,77 +26,131 @@ export class CampaginDetailsComponent implements OnInit {
   longText = `The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog
   from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was
   originally bred for hunting.`;
+  value = '';
+  private subscriptions = new Subscription();
+  @Input() formGroupName!: string
+  realTimeForm!: FormGroup
+
+  subscriberTypes: Array<any> = [
+    { name: 'Yes', value: 'Yes' },
+    { name: 'No', value: 'No' }
+  ];
 
   myControl = new FormControl<string | User>('');
-  options: User[] = [{name: 'Mary'}, {name: 'Shelley'}, {name: 'Igor'}];
+  options: User[] = [{name: 'Cairo'}, {name: 'Giza'}, {name: 'Alex'}];
+ 
+  campaignLocation=new FormControl<string>('');
+  campaignIncludes= new FormControl<string>('');
+  campaignExcludes= new FormControl<string>('');
+  ExcludeComuters= new FormControl<string>('');
+  Dailylimit= new FormControl<string>('');
+  Frequency= new FormControl<string>('');
+  startDate = new FormControl<string>('');
+  endDate = new FormControl<string>('');
+  starttime = new FormControl<string>('');
+  endtime = new FormControl<string>('');
 
-  //handset objects to get them from the backend
-  manufacturer_FilteredOptions!: Observable<User[]>;
-  model_FilteredOptions!: Observable<User[]>;
-  operatingSystem_FilteredOptions!: Observable<User[]>;
-  deviceType_FilteredOptions!: Observable<User[]>;
-  networkTechnology_FilteredOptions!: Observable<User[]>;
 
-  constructor(public dialog:MatDialog) {
+
+
+  CampaginLocation_FilteredOptions!: Observable<string[]>;
+  CampaginIncludes_FilteredOptions!: Observable<string[]>;
+  CampaginExcludes_FilteredOptions!: Observable<string[]>;
+
+
+  CampaginLocation_options: string[] = ['Cairo', 'Giza', 'Alex'];
+  CampaginIncludes_options: string[] = ['Cairo', 'Giza', 'Alex'];
+  CampaginExcludes_options: string[] =  ['Cairo', 'Giza', 'Alex'];
+  
+  
+  
+
+  constructor(public dialog:MatDialog,private fb: FormBuilder,private rootFormGroup: FormGroupDirective) {
     const currentYear = new Date().getFullYear();
     this.minDate = new Date(currentYear - 0, 0, 1);
     
    }
 
   ngOnInit(): void {
+    this.realTimeForm = this.rootFormGroup.control.get(this.formGroupName) as FormGroup
+
+
+    this.subscriptions.add(this.campaignLocation.valueChanges.subscribe( value => {
+      if(this.isOneOfTheOptions(<string> value , this.CampaginLocation_options))
+        this.realTimeForm.get("campaignLocation")?.setValue(value);
+      else
+        this.realTimeForm.get("campaignLocation")?.value != '' ? this.realTimeForm.get("campaignLocation")?.setValue(''): null;
+    }));
+
+
+    this.subscriptions.add(this.campaignIncludes.valueChanges.subscribe(value => {
+      if(this.isOneOfTheOptions(<string> value , this.CampaginIncludes_options))
+        this.realTimeForm.get("campaignIncludes")?.setValue(value);
+      else
+      this.realTimeForm.get("campaignIncludes")?.value != '' ? this.realTimeForm.get("campaignIncludes")?.setValue(''): null;
+    })); 
+
+    this.subscriptions.add(this.campaignExcludes.valueChanges.subscribe(value => {
+      if(this.isOneOfTheOptions(<string> value , this.CampaginExcludes_options))
+        this.realTimeForm.get("campaignExcludes")?.setValue(value);
+      else
+        this.realTimeForm.get("campaignExcludes")?.value != '' ? this.realTimeForm.get("campaignExcludes")?.setValue(''): null;
+    })); 
+
 
     //iterating over handset options
-    this.manufacturer_FilteredOptions = this.myControl.valueChanges.pipe(
+   
+    this.CampaginLocation_FilteredOptions = this.campaignLocation.valueChanges.pipe(
       startWith(''),
       map(value => {
-        const name = typeof value === 'string' ? value : value?.name;
-        return name ? this._filter(name as string) : this.options.slice();
+        const name = value;
+        return name ? this._filter(name as string, this.CampaginLocation_options) : this.CampaginLocation_options.slice();
       }),
     );
 
-    this.model_FilteredOptions = this.myControl.valueChanges.pipe(
+    this.CampaginIncludes_FilteredOptions = this.campaignIncludes.valueChanges.pipe(
       startWith(''),
       map(value => {
-        const name = typeof value === 'string' ? value : value?.name;
-        return name ? this._filter(name as string) : this.options.slice();
+        console.log(value);
+        const name = value;
+        return name ? this._filter(name as string, this.CampaginIncludes_options) : this.CampaginIncludes_options.slice();
       }),
     );
 
-    this.operatingSystem_FilteredOptions = this.myControl.valueChanges.pipe(
+    
+
+    this.CampaginExcludes_FilteredOptions = this.campaignExcludes.valueChanges.pipe(
       startWith(''),
       map(value => {
-        const name = typeof value === 'string' ? value : value?.name;
-        return name ? this._filter(name as string) : this.options.slice();
+        const name = value;
+        return name ? this._filter(name as string, this.CampaginExcludes_options) : this.CampaginExcludes_options.slice();
       }),
     );
 
-    this.deviceType_FilteredOptions = this.myControl.valueChanges.pipe(
-      startWith(''),
-      map(value => {
-        const name = typeof value === 'string' ? value : value?.name;
-        return name ? this._filter(name as string) : this.options.slice();
-      }),
-    );
 
-    this.networkTechnology_FilteredOptions = this.myControl.valueChanges.pipe(
-      startWith(''),
-      map(value => {
-        const name = typeof value === 'string' ? value : value?.name;
-        return name ? this._filter(name as string) : this.options.slice();
-      }),
-    );
   }
 
+ 
 
-  displayFn(user: User): string {
-    return user && user.name ? user.name : '';
+
+  isOneOfTheOptions(option: string, options: string[]) : boolean {
+    if(options.includes(option))
+      return true;
+    else
+      return false;
   }
 
-  private _filter(name: string): User[] {
+  
+  displayFn(user: string): string {
+    return user;
+  }
+
+  private _filter(name: string, options : string []): string[] {
     const filterValue = name.toLowerCase();
-
-    return this.options.filter(option => option.name.toLowerCase().includes(filterValue));
+    return options.filter(option => option.toLowerCase().includes(filterValue));
   }
+
+  
 
   openDialog(): void {
     this.dialog.open(RealTimeDialogueBoxComponent,{
@@ -104,5 +158,27 @@ export class CampaginDetailsComponent implements OnInit {
       data:"right click"
     })
     
+  }
+  ngOnChanges(changes: SimpleChanges): void {
+      
+  }
+  onCheckboxChange(e, formArrayName:string) {
+    
+    const checkArray: FormArray = this.realTimeForm.get(formArrayName) as FormArray;
+    if (e.checked) {
+      checkArray.push(new FormControl(e.source.value));
+    } else {
+      let i: number = 0;
+      checkArray.controls.forEach((item: AbstractControl)  => {
+        if (item.value == e.source.value) {
+          checkArray.removeAt(i);
+          return;
+        }
+        i++;
+      });
+    }
+  }
+  ngOnDestroy(): void {
+    this.subscriptions.unsubscribe();
   }
 }

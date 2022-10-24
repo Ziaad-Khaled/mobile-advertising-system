@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup,FormControl } from '@angular/forms';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { Subscription } from 'rxjs';
 import { DialogueBoxComponent } from '../../dialogue-box/dialogue-box.component';
@@ -38,7 +38,16 @@ export class RealTimeNewCampaignComponent implements OnInit {
       smsDetails : this.fb.group({
         smsBody : [],
         smsDescription : []
-      })
+      }),
+      campaignDetails : this.fb.group({
+        campaignLocation: new FormControl<string>(''),
+        campaignIncludes: new FormControl<string>(''),
+        campaignExcludes: new FormControl<string>(''),
+        Quota : [],
+        Dailylimit : new FormControl<string>(''),
+        Frequency : new FormControl<string>(''),
+        ExcludeComuters: new FormControl<string>(''),
+      }),
     });
     this.onChanges();
   }
@@ -49,4 +58,8 @@ export class RealTimeNewCampaignComponent implements OnInit {
       console.log(val);
     }));
   }
+  ngOnDestroy(): void {
+    this.subscriptions.unsubscribe();
+  }
+  
 }
