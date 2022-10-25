@@ -85,3 +85,25 @@
  ::ng-deep .mat-datepicker-toggle{
     color:grey;
  }
+
+
+
+ ::ng-deep .mat-calendar {
+    border-radius: 5px;
+}
+
+::ng-deep .mat-calendar-body-selected {
+    background: black;
+}
+
+::ng-deep .mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical) {
+    background-color: grey;
+  }
+
+::ng-deep .mat-calendar-body-cell-content .mat-focus-indicator .mat-calendar-body-today{
+    background-color: red;
+}
+
+::ng-deep  .mat-calendar-body-today.mat-calendar-body-selected, .mat-calendar-body-today.mat-calendar-body-selected {
+    box-shadow: unset;
+}
