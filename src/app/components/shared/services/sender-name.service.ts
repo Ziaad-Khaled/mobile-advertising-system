@@ -1,9 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 
-export interface Sender_Name {
-  name: string;
-}
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +8,8 @@ export interface Sender_Name {
 
 export class SenderNameService {
 
-  senderNames : Sender_Name[] = [{name: 'Orange'}, {name: 'My Orange'}, {name: 'Orange Cash'}];
-  senderNamesEmitter = new Subject<Sender_Name[]>();
+  senderNames : string[] = ['Orange', 'My Orange', 'Orange Cash'];
+  senderNamesEmitter = new Subject<string[]>();
 
   constructor() { }
 
@@ -21,7 +18,7 @@ export class SenderNameService {
     return this.senderNames.slice();
   }
 
-  addSenderName(newSenderName: Sender_Name)
+  addSenderName(newSenderName: string)
   {
     this.senderNames.push(newSenderName)
     this.senderNamesEmitter.next(this.senderNames);

@@ -9,7 +9,7 @@ import { DialogueBoxComponent } from '../../dialogue-box/dialogue-box.component'
 @Component({
   selector: 'app-bulk-campaign-submission',
   templateUrl: './bulk-campaign-submission.component.html',
-  styleUrls: ['./bulk-campaign-submission.component.scss']
+  styleUrls: ['./bulk-campaign-submission.component.scss'],
 })
 export class BulkCampaignSubmissionComponent implements OnInit, OnDestroy {
 
@@ -30,7 +30,7 @@ export class BulkCampaignSubmissionComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.singleSMSForm = this.fb.group({
-      senderName: new FormControl<string>('', Validators.required),
+     // senderName: new FormControl<string>('asd', Validators.required),
       date: new FormControl('', Validators.required),
       time: new FormControl('', Validators.required),
       smsBody: new FormControl('', Validators.required),

@@ -22,7 +22,7 @@ export class DialogueBoxComponent implements OnInit {
   }
 
   onSave(): void{
-    this.senderNameService.addSenderName({name: this.senderName })
+    this.senderNameService.addSenderName(this.senderName)
     this.dialogRef.close();
   }
 
