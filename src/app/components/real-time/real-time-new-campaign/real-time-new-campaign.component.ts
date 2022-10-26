@@ -41,9 +41,9 @@ export class RealTimeNewCampaignComponent implements OnInit {
         smsDescription :  new FormControl('', Validators.required),
       }),
        campaignDetails : this.fb.group({
-       campaignLocation: new FormControl<string>(''),
-         campaignIncludes: new FormControl<string>(''),
-         campaignExcludes: new FormControl<string>(''),
+       campaignLocation: new FormControl('', Validators.required),
+         campaignIncludes: new FormControl('',Validators.required),
+         campaignExcludes: new FormControl<string>('',Validators.required),
           Quota : new FormControl(''),
           Dailylimit : new FormControl(''),
           Frequency : new FormControl(''),
