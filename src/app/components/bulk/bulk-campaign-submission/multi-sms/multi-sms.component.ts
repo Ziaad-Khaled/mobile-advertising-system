@@ -30,6 +30,8 @@ var ELEMENT_DATA!: smsDetails[];
 export class MultiSmsComponent implements OnInit {
   campaignAccountFormControl = new FormControl('', [Validators.required]);
   smsBody= new FormControl('', [Validators.required]);
+  Date = new FormControl('', Validators.required);
+  time =new FormControl('', Validators.required);
   numberOfSMSCampaigns!:number;
   minDate: Date;
   title = 'test-time';
