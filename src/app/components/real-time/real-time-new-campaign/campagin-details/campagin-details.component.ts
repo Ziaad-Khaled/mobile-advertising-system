@@ -26,7 +26,7 @@ export class CampaginDetailsComponent implements OnInit {
   longText = `The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog
   from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was
   originally bred for hunting.`;
-  value = '';
+
   private subscriptions = new Subscription();
   @Input() formGroupName!: string
   realTimeForm!: FormGroup
@@ -42,13 +42,7 @@ export class CampaginDetailsComponent implements OnInit {
   campaignLocation=new FormControl<string>('');
   campaignIncludes= new FormControl<string>('');
   campaignExcludes= new FormControl<string>('');
-  ExcludeComuters= new FormControl<string>('');
-  Dailylimit= new FormControl<string>('');
-  Frequency= new FormControl<string>('');
-  startDate = new FormControl<string>('');
-  endDate = new FormControl<string>('');
-  starttime = new FormControl<string>('');
-  endtime = new FormControl<string>('');
+  
 
 
 
@@ -73,6 +67,9 @@ export class CampaginDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.realTimeForm = this.rootFormGroup.control.get(this.formGroupName) as FormGroup
+
+    console.log(this.realTimeForm);
+    console.log(this.realTimeForm.get("test")?.value);
 
 
     this.subscriptions.add(this.campaignLocation.valueChanges.subscribe( value => {
@@ -128,19 +125,7 @@ export class CampaginDetailsComponent implements OnInit {
     );
 
 
-  }
-
- 
-
-
-  isOneOfTheOptions(option: string, options: string[]) : boolean {
-    if(options.includes(option))
-      return true;
-    else
-      return false;
-  }
-
-  
+  }  
   displayFn(user: string): string {
     return user;
   }
@@ -178,6 +163,13 @@ export class CampaginDetailsComponent implements OnInit {
       });
     }
   }
+  isOneOfTheOptions(option: string, options: string[]) : boolean {
+    if(options.includes(option))
+      return true;
+    else
+      return false;
+  }
+
   ngOnDestroy(): void {
     this.subscriptions.unsubscribe();
   }

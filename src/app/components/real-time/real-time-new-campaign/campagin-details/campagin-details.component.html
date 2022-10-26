@@ -1,113 +1,114 @@
-<ng-container [formGroup] = "realTimeForm">
-<mat-card-content style= "display: flex;flex-direction: row;flex-wrap: wrap; justify-content: center;align-items: center;">
-    <mat-form-field style="flex: 1 0 92%; margin-right: 10px;" class="col-lg-5" class ="form-field-full" appearance="fill">
-  
-            
-                <mat-label>Campaign Location</mat-label>
-                <input type="text" matInput [formControl]="campaignLocation" [matAutocomplete]="auto_CampaginLocation">
-      <mat-autocomplete #auto_CampaginLocation="matAutocomplete" [displayWith]="displayFn">
-        <mat-option *ngFor="let option of CampaginLocation_FilteredOptions | async" [value]="option">
-          {{option}}
-        </mat-option>
-      </mat-autocomplete>
-             
-    </mat-form-field>
-
-
-
+<ng-container >
+  <mat-card-content style= "display: flex;flex-direction: row;flex-wrap: wrap; justify-content: center;align-items: center;">
+      <mat-form-field style="flex: 1 0 92%; margin-right: 10px;" class="col-lg-5" class ="form-field-full" appearance="fill"  >
     
-    <button matTooltip="Edit campaign locations" class="action-button" style="flex: 1 0 5%" [routerLink]="'/real-time-locations'" mat-button> <mat-icon class="mat-icon" >edit</mat-icon> </button>
-
-    <div style="flex: 1 0 50%" class = "date-picker">  
-        <label for="SMS">Campagin Starts At:</label>
-        
-        <input  matInput [matDatepicker]="picker" [formControl]="starttime"  min="{{currentDate | date:'yyyy-MM-dd'}}">
-        <mat-hint>MM/DD/YYYY</mat-hint>
-        <mat-datepicker-toggle  matSuffix [for]="picker"    ></mat-datepicker-toggle>
-        <mat-datepicker #picker ></mat-datepicker>
-       <input mdc-datetime-picker="" date="false" time="true" placeholder="Time" minutes="true"
-       min-date="minDate" type="text" id="time"  short-time="true" ng-model="time" [ngxTimepicker]="picker3"    [formControl]="startDate">
-       <ngx-material-timepicker class="Time" #picker3></ngx-material-timepicker>
-    </div>
-
-    
-
-
-    <div style="flex:1 0 50%" class= "date-picker">  
-        <label for="SMS">Campagin Ends At:</label>
-        <input  min="{{currentDate | date:'yyyy-MM-dd'}}" matInput [matDatepicker]="picker1" [formControl]="endtime">
-        <mat-hint>MM/DD/YYYY</mat-hint>
-        <mat-datepicker-toggle matSuffix [for]="picker1"  ></mat-datepicker-toggle>
-        
-        <ngx-mat-datetime-picker #picker2></ngx-mat-datetime-picker>
-        <mat-datepicker #picker1 ></mat-datepicker>
-        <input class="Time" mdc-datetime-picker="" date="false" time="true" placeholder="Time" minutes="true"
-       min-date="minDate" type="text" id="time"  short-time="true" ng-model="time" [ngxTimepicker]="picker4"  [formControl]="endDate">
-       <ngx-material-timepicker #picker4></ngx-material-timepicker>
-    </div>
-
-    <mat-form-field style="flex: 1 0 45%" class="col-lg-5" class ="form-field-half" appearance="fill">
-        <mat-label>Campagin Includes:</mat-label>
-        <input type="text" matInput [formControl]=" campaignIncludes" [matAutocomplete]="auto_campaignIncludes">
-                <mat-autocomplete #auto_campaignIncludes="matAutocomplete" [displayWith]="displayFn">
-                  <mat-option *ngFor="let option of CampaginIncludes_FilteredOptions | async" [value]="option">
-                    {{option}}
-                  </mat-option>
-                </mat-autocomplete>
-    </mat-form-field>
-
-    <mat-form-field style="flex: 1 0 40%" class="col-lg-5" class ="form-field-half" appearance="fill">
-        <mat-label>Campagin Excludes:</mat-label>
-        <input type="text" matInput [formControl]=" campaignExcludes" [matAutocomplete]="auto_campaignExcludes">
-        <mat-autocomplete #auto_campaignExcludes="matAutocomplete" [displayWith]="displayFn">
-          <mat-option *ngFor="let option of CampaginExcludes_FilteredOptions | async" [value]="option">
+              
+                  <mat-label>Campaign Location</mat-label>
+                  <input type="text" matInput [formControl]="campaignLocation" [matAutocomplete]="auto_CampaginLocation">
+        <mat-autocomplete #auto_CampaginLocation="matAutocomplete" [displayWith]="displayFn">
+          <mat-option *ngFor="let option of CampaginLocation_FilteredOptions | async" [value]="option">
             {{option}}
           </mat-option>
         </mat-autocomplete>
-    </mat-form-field>
-
-    <button matTooltip="Add new options" class="action-button" style="flex: 1 0 5%" mat-button> <mat-icon class="mat-icon"  (click)="openDialog()" >add_circle</mat-icon> </button>
-
-    <mat-form-field style="flex: 1 0 45%" class="col-lg-5" class ="form-field-one-third" appearance="fill">
-        <mat-label>Quota</mat-label>
-        <textarea matInput
-                  cdkTextareaAutosize
-                  formControlName="Quota"
-                  #autosize="cdkTextareaAutosize"
-                  cdkAutosizeMinRows="1"
-                  cdkAutosizeMaxRows="5"
-                  ></textarea>
-    </mat-form-field>
-
-    <mat-form-field style="flex: 1 0 45%" class="col-lg-5" class ="form-field-one-third" appearance="fill">
-        <mat-label>Daily Limit</mat-label>
-        <textarea matInput
-                  cdkTextareaAutosize
-                  [formControl]="Dailylimit"
-                  #autosize="cdkTextareaAutosize"
-                  cdkAutosizeMinRows="1"
-                  cdkAutosizeMaxRows="5"
-                  ></textarea>
-    </mat-form-field>
-
-
-    <mat-form-field style="flex: 1 0 45%" class="col-lg-5" class ="form-field-one-third" appearance="fill">
-        <mat-label>Frequency</mat-label>
-        <textarea matInput
-                  cdkTextareaAutosize
-                  [formControl]="Frequency"
-                  #autosize="cdkTextareaAutosize"
-                  cdkAutosizeMinRows="1"
-                  cdkAutosizeMaxRows="5"
-                  ></textarea>
-    </mat-form-field>
-
-    <div style="flex: 1 0 45%" class="col-lg-5" class ="form-field-one-third">
-        <mat-label>Exclude Commuters: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</mat-label>
-        <mat-radio-group aria-label="Select an option"  [formControl]="ExcludeComuters">
-            <mat-radio-button style="margin-right:30px;" value="1">Yes</mat-radio-button>
-            <mat-radio-button value="2">No</mat-radio-button>
-        </mat-radio-group>
-    </div>
-</mat-card-content>
-</ng-container>
+               
+      </mat-form-field>
+  
+  
+  
+      
+      <button matTooltip="Edit campaign locations" class="action-button" style="flex: 1 0 5%" [routerLink]="'/real-time-locations'" mat-button> <mat-icon class="mat-icon" >edit</mat-icon> </button>
+  
+      <div style="flex: 1 0 50%" class = "date-picker">  
+          <label for="SMS">Campagin Starts At:</label>
+          
+          <input  matInput [matDatepicker]="picker"   min="{{currentDate | date:'yyyy-MM-dd'}}">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle  matSuffix [for]="picker"    ></mat-datepicker-toggle>
+          <mat-datepicker #picker ></mat-datepicker>
+         <input mdc-datetime-picker="" date="false" time="true" placeholder="Time" minutes="true"
+         min-date="minDate" type="text" id="time"  short-time="true" ng-model="time" [ngxTimepicker]="picker3"    >
+         <ngx-material-timepicker class="Time" #picker3></ngx-material-timepicker>
+      </div>
+  
+      
+  
+  
+      <div style="flex:1 0 50%" class= "date-picker">  
+          <label for="SMS">Campagin Ends At:</label>
+          <input  min="{{currentDate | date:'yyyy-MM-dd'}}" matInput [matDatepicker]="picker1" >
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="picker1"  ></mat-datepicker-toggle>
+          
+          <ngx-mat-datetime-picker #picker2></ngx-mat-datetime-picker>
+          <mat-datepicker #picker1 ></mat-datepicker>
+          <input class="Time" mdc-datetime-picker="" date="false" time="true" placeholder="Time" minutes="true"
+         min-date="minDate" type="text" id="time"  short-time="true" ng-model="time" [ngxTimepicker]="picker4" >
+         <ngx-material-timepicker #picker4></ngx-material-timepicker>
+      </div>
+  
+      <mat-form-field style="flex: 1 0 45%" class="col-lg-5" class ="form-field-half" appearance="fill">
+          <mat-label>Campagin Includes:</mat-label>
+          <input type="text" matInput  [matAutocomplete]="auto_campaignIncludes" [formControl]="campaignIncludes">
+                  <mat-autocomplete #auto_campaignIncludes="matAutocomplete" [displayWith]="displayFn">
+                    <mat-option *ngFor="let option of CampaginIncludes_FilteredOptions | async" [value]="option">
+                      {{option}}
+                    </mat-option>
+                  </mat-autocomplete>
+      </mat-form-field>
+  
+      <mat-form-field style="flex: 1 0 40%" class="col-lg-5" class ="form-field-half" appearance="fill">
+          <mat-label>Campagin Excludes:</mat-label>
+          <input type="text" matInput  [matAutocomplete]="auto_campaignExcludes"[formControl]="campaignExcludes">
+          <mat-autocomplete #auto_campaignExcludes="matAutocomplete" [displayWith]="displayFn">
+            <mat-option *ngFor="let option of CampaginExcludes_FilteredOptions | async" [value]="option">
+              {{option}}
+            </mat-option>
+          </mat-autocomplete>
+      </mat-form-field>
+  
+      <button matTooltip="Add new options" class="action-button" style="flex: 1 0 5%" mat-button> <mat-icon class="mat-icon"  (click)="openDialog()" >add_circle</mat-icon> </button>
+  
+      <mat-form-field style="flex: 1 0 45%" class="col-lg-5" class ="form-field-one-third" appearance="fill">
+          <mat-label>Quota</mat-label>
+          <textarea matInput
+                    cdkTextareaAutosize
+                  
+                    #autosize="cdkTextareaAutosize"
+                    cdkAutosizeMinRows="1"
+                    cdkAutosizeMaxRows="5"
+                    ></textarea>
+      </mat-form-field>
+  
+      <mat-form-field style="flex: 1 0 45%" class="col-lg-5" class ="form-field-one-third" appearance="fill">
+          <mat-label>Daily Limit</mat-label>
+          <textarea matInput
+                    cdkTextareaAutosize
+                  
+                    #autosize="cdkTextareaAutosize"
+                    cdkAutosizeMinRows="1"
+                    cdkAutosizeMaxRows="5"
+                    ></textarea>
+      </mat-form-field>
+  
+  
+      <mat-form-field style="flex: 1 0 45%" class="col-lg-5" class ="form-field-one-third" appearance="fill">
+          <mat-label>Frequency</mat-label>
+          <textarea matInput
+                    cdkTextareaAutosize
+               
+                    #autosize="cdkTextareaAutosize"
+                    cdkAutosizeMinRows="1"
+                    cdkAutosizeMaxRows="5"
+                    ></textarea>
+      </mat-form-field>
+  
+      <div style="flex: 1 0 45%" class="col-lg-5" class ="form-field-one-third">
+          <mat-label>Exclude Commuters: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</mat-label>
+          <mat-radio-group aria-label="Select an option" >
+              <mat-radio-button style="margin-right:30px;" value="1">Yes</mat-radio-button>
+              <mat-radio-button value="2">No</mat-radio-button>
+          </mat-radio-group>
+      </div>
+  </mat-card-content>
+  </ng-container>
+  
