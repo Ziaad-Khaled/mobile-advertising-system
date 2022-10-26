@@ -1,7 +1,7 @@
 import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { RealTimeDialogueBoxComponent } from '../../real-time-locations/real-time-dialogue-box/real-time-dialogue-box.component';
-import { AbstractControl, FormArray, FormBuilder, FormControl, FormGroup, FormGroupDirective } from '@angular/forms';
+import { AbstractControl, FormArray, FormBuilder, FormControl, FormGroup, FormGroupDirective, Validators } from '@angular/forms';
 import { Observable, Subscription } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 
@@ -39,11 +39,14 @@ export class CampaginDetailsComponent implements OnInit {
   myControl = new FormControl<string | User>('');
   options: User[] = [{name: 'Cairo'}, {name: 'Giza'}, {name: 'Alex'}];
  
-  campaignLocation=new FormControl<string>('');
+  campaignLocation=new FormControl<string>('',Validators.required);
   campaignIncludes= new FormControl<string>('');
   campaignExcludes= new FormControl<string>('');
   
-
+  startDate =new FormControl('', Validators.required);
+  endDate = new FormControl('', Validators.required);
+  starttime =new FormControl('', Validators.required);
+ endtime = new FormControl('', Validators.required);
 
 
 

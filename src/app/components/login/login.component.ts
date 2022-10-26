@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { User } from '../shared/user';
 import { Router } from '@angular/router';
 import { AuthenticationService } from './services/authentication.service';
-
+import { FormControl, FormGroupDirective, NgForm, ValidatorFn } from '@angular/forms';
 
 
 
@@ -14,7 +14,8 @@ import { AuthenticationService } from './services/authentication.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
+  
+  
   userForm!: FormGroup;
   user!: User;
 
@@ -23,9 +24,10 @@ export class LoginComponent implements OnInit {
       'required':      'User Name is required.',
     }
   }
-
+ 
   constructor(private fb: FormBuilder, private router: Router, private authenticationService: AuthenticationService) {
     this.createForm();
+    
    }
 
   ngOnInit(): void {
@@ -35,10 +37,13 @@ export class LoginComponent implements OnInit {
   {
     this.userForm = this.fb.group(
       {
-        username: '',
-        password: ''
+        username: new FormControl('', Validators.required),
+        password: new FormControl('', Validators.required),
       }
     );
+
+
+    
   }
 
   onSubmit() {

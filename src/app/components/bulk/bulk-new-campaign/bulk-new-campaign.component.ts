@@ -1,6 +1,6 @@
 import { Component, OnChanges, OnDestroy, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import {MatAccordion} from '@angular/material/expansion';
-import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {Observable, Subscription} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
 
@@ -56,8 +56,8 @@ export class BulkNewCampaignComponent implements OnInit, OnDestroy{
       }),
 
       arpu : this.fb.group({
-        selectedMinARPU : [],
-        selectedMaxARPU : []
+        selectedMinARPU : new FormControl('', Validators.min(1)),
+        selectedMaxARPU : new FormControl('', Validators.min(100)),
       }),
 
     //   singleSmS : this.fb.group({

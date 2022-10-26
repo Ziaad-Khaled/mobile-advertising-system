@@ -35,8 +35,9 @@
 
             <mat-form-field *ngIf="isSingleSMSBody === '1'"  fxFlexAlign="stretch" appearance="fill">
                 <mat-label>Campagin SMS Body</mat-label>
-                    <textarea  matInput [(ngModel)]="singleSMSBody"
+                    <textarea  matInput value = {{singleSMSBody}}
                     style="margin: 0px;"
+                    [formControl]="smsBody"
                             cdkTextareaAutosize
                             #autosize="cdkTextareaAutosize"
                             cdkAutosizeMinRows="10"
@@ -120,7 +121,7 @@
 
                     <br>
 
-                    <mat-form-field style="width:80%;margin-left: 10px;"  class = "date-picker">  
+                    <mat-form-field style="width:80%;margin-left: 10px;" appearance="fill" class = "date-picker">  
                         <mat-label>Choose time</mat-label>
                         <input matInput  mdc-datetime-picker="" date="false" time="true" placeholder="Time" minutes="true"
                         min-date="minDate" type="text" id="time"  short-time="true" ng-model="time" [ngxTimepicker]="picker3">

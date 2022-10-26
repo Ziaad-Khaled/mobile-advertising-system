@@ -39,6 +39,7 @@ export class RealTimeNewCampaignComponent implements OnInit {
       smsDetails : this.fb.group({
         smsBody: new FormControl('', Validators.required),
         smsDescription :  new FormControl('', Validators.required),
+        testDial: new FormControl('', Validators.min(1111111111)),
       }),
        campaignDetails : this.fb.group({
        campaignLocation: new FormControl('', Validators.required),
