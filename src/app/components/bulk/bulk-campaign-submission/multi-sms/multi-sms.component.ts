@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormControl, Validators} from '@angular/forms';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { Subscription } from 'rxjs';
 import { DialogueBoxComponent } from 'src/app/components/dialogue-box/dialogue-box.component';
 
 export interface smsDetails {
@@ -34,7 +33,10 @@ export class MultiSmsComponent implements OnInit {
   minDate: Date;
   title = 'test-time';
   currentDate:any = new Date();
+  isSingleSMSBody!: string;
   singleSMSBody!: string;
+
+  isSingleSMSSenderName!: string;
   singleSMSsenderName!:string;
 
   ////// second card
@@ -42,7 +44,7 @@ export class MultiSmsComponent implements OnInit {
   displayedColumns: string[] = ['smsID', 'senderName', 'body', 'date'];
   dataSource: smsDetails[] = [];
 
-  constructor(public dialog: MatDialog, private fb: FormBuilder) {
+  constructor(public dialog: MatDialog) {
     const currentYear = new Date().getFullYear();
     this.minDate = new Date(currentYear - 0, 0, 1);
    }
@@ -54,25 +56,6 @@ export class MultiSmsComponent implements OnInit {
     
   }
   ngOnInit(): void {
-
-    this.multiSMSForm = this.fb.group({
-       campaignAccount: new FormControl('', Validators.required),
-       numberOfCampaigns: new FormControl('', Validators.required),
-       isSingleSMSBody: new FormControl('0'),
-       isSingleSMSSenderName: new FormControl('0'),
-       date: new FormArray([], Validators.required),
-       time: new FormArray([], Validators.required),
-       smsBody: new FormArray([], Validators.required),
-    });
-
-    this.subscriptions.add(this.multiSMSForm.valueChanges.subscribe(val => {
-      console.log("Multi SMS form: ")
-      console.log(val);
-      
-      //on valid send the sms to the dials 
-    }));
-
-    console.log(this.multiSMSForm.get('flags')?.get('isSingleSMSBody')?.value);
   }
 
 
@@ -85,7 +68,7 @@ export class MultiSmsComponent implements OnInit {
     this.dataSource = [];
     console.log(this.singleSMSsenderName);
     /// else it should check which criteria was changed and then change the sms card
-    for (let i = 0; i < this.multiSMSForm.get("numberOfCampaigns")?.value; i++) {
+    for (let i = 0; i < this.numberOfSMSCampaigns; i++) {
       this.dataSource.push({smsID: i+1, senderName: this.singleSMSsenderName, date: new Date(), body: this.singleSMSBody});
     }
   }
