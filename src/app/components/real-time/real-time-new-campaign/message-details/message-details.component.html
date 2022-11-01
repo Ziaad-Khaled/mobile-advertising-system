@@ -27,7 +27,8 @@
             <mat-form-field style="flex: 1 0 70%" class="col-lg-5" class ="form-field-one-third" appearance="fill">
                 <mat-label>Test Dial</mat-label>
                 <span matPrefix>+20 &nbsp;</span>
-                <input type="tel" matInput placeholder="1234567890">
+                <input type="tel" type="number" matInput placeholder="1234567890" [formControl] = "testDial" >
+                <mat-error *ngIf="testDial.invalid">Minimum mix is ​​100</mat-error>
             </mat-form-field>
     
             <button mat-stroked-button class="primary-button" style="flex: 1 0 8%;height: 54px;">Test Dial</button>    

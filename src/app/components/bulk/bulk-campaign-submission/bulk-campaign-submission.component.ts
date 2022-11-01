@@ -17,7 +17,7 @@ export class BulkCampaignSubmissionComponent implements OnInit, OnDestroy {
 
   singleSMSForm! : FormGroup;
   private subscriptions = new Subscription();
-
+  testDial = new FormControl('', Validators.min(1111111111));
   smsBody!: string;
   minDate: Date;
   currentDate:any = new Date();
@@ -34,7 +34,7 @@ export class BulkCampaignSubmissionComponent implements OnInit, OnDestroy {
       date: new FormControl('', Validators.required),
       time: new FormControl('', Validators.required),
       smsBody: new FormControl('', Validators.required),
-      testDial: new FormControl('')
+      testDial: new FormControl('', Validators.min(1111111111)),
     });
 
     this.subscriptions.add(this.singleSMSForm.valueChanges.subscribe(val => {

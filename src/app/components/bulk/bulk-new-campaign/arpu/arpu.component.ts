@@ -1,7 +1,7 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormGroupDirective } from '@angular/forms';
 import { Subscription } from 'rxjs';
-
+import{ FormControl, Validators} from '@angular/forms';
 @Component({
   selector: 'app-bulk-arpu',
   templateUrl: './arpu.component.html',
@@ -11,8 +11,8 @@ export class ArpuComponent implements OnInit, OnDestroy {
 
   minARPU = 0;
   maxARPU = 5000;
-  selectedMinARPU = 0;
-  selectedMaxARPU = 0;
+  
+
 
   private subscriptions = new Subscription();
 
@@ -20,6 +20,9 @@ export class ArpuComponent implements OnInit, OnDestroy {
   @Input() formGroupName!: string
   bulkForm!: FormGroup
   
+
+  selectedMinARPU = new FormControl('', Validators.min(1));
+  selectedMaxARPU = new FormControl('', Validators.min(100));
   constructor(private rootFormGroup: FormGroupDirective, private fb: FormBuilder) { }
   
 

@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup,FormControl } from '@angular/forms';
+import { FormBuilder, FormGroup,FormControl, Validators, ControlContainer, FormGroupDirective } from '@angular/forms';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { Subscription } from 'rxjs';
 import { DialogueBoxComponent } from '../../dialogue-box/dialogue-box.component';
 @Component({
   selector: 'app-real-time-new-campaign',
   templateUrl: './real-time-new-campaign.component.html',
-  styleUrls: ['./real-time-new-campaign.component.scss']
+  styleUrls: ['./real-time-new-campaign.component.scss'],
+  viewProviders:[{ provide: ControlContainer, useExisting: FormGroupDirective}]
 })
 export class RealTimeNewCampaignComponent implements OnInit {
 
@@ -36,19 +37,25 @@ export class RealTimeNewCampaignComponent implements OnInit {
   ngOnInit(): void {
     this.realTimeForm = this.fb.group({
       smsDetails : this.fb.group({
-        smsBody : [],
-        smsDescription : []
+        smsBody: new FormControl('', Validators.required),
+        smsDescription :  new FormControl('', Validators.required),
+        testDial: new FormControl('', Validators.min(1111111111)),
       }),
-      campaignDetails : this.fb.group({
-        campaignLocation: new FormControl<string>(''),
-        campaignIncludes: new FormControl<string>(''),
-        campaignExcludes: new FormControl<string>(''),
-        Quota : [],
-        Dailylimit : new FormControl<string>(''),
-        Frequency : new FormControl<string>(''),
-        ExcludeComuters: new FormControl<string>(''),
+       campaignDetails : this.fb.group({
+       campaignLocation: new FormControl('', Validators.required),
+         campaignIncludes: new FormControl('',Validators.required),
+         campaignExcludes: new FormControl<string>('',Validators.required),
+          Quota : new FormControl(''),
+          Dailylimit : new FormControl(''),
+          Frequency : new FormControl(''),
+          ExcludeComuters: new FormControl(''),
+          startDate :new FormControl('', Validators.required),
+          endDate : new FormControl('', Validators.required),
+          starttime :new FormControl('', Validators.required),
+         endtime : new FormControl('', Validators.required),
       }),
-    });
+      test : new FormControl('test')
+     });
     this.onChanges();
   }
 

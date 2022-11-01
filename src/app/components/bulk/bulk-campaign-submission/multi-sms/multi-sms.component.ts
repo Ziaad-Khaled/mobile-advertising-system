@@ -29,10 +29,8 @@ var ELEMENT_DATA!: smsDetails[];
   styleUrls: ['./multi-sms.component.scss']
 })
 export class MultiSmsComponent implements OnInit {
-
-  multiSMSForm! : FormGroup;
-  private subscriptions = new Subscription();
-
+  campaignAccountFormControl = new FormControl('', [Validators.required]);
+  numberOfSMSCampaigns!:number;
   minDate: Date;
   title = 'test-time';
   currentDate:any = new Date();
