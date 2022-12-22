@@ -1,18 +1,13 @@
 .logoo {
-
   align-items: center;
-
   flex-direction: row;
-
-
-
   height: 250px;
   width: 200px;
-
 }
 
 .primary-button {
   margin: 20px;
+  margin-top: 10px;
 }
 
 .photo {
@@ -26,22 +21,20 @@
 }
 
 .space {
-
   display: flex;
   align-items: center;
-  margin-right: -25%;
+}
 
+.price {
+  display: flex;
+  align-items: center;
 }
 
 .spaceee {
-
-
   cursor: pointer;
-
 }
 
 .example-full-width {
-  margin-top: 2px;
   display: flex;
   align-items: center;
 }

@@ -1,5 +1,4 @@
- 
- 
+
   div{
     color: white;
   }
@@ -11,7 +10,7 @@
   header{
     font-family: Roboto, Arial;
     margin: 0;
-    background-color: black;
+    background-color: #212529;
     height: 60px;
     display: flex;
     flex-direction: row;
@@ -30,12 +29,6 @@
     align-items: center;
   }
 
-  .orange-logo {
-    height: 40px;
-    margin-left: 10px;
-    cursor: pointer;
-  }
-
   .middle-section {
     display: flex;
     align-items: center;
@@ -43,15 +36,32 @@
   }
 
   .title{
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 25px;
+    font-weight: 500;
+    margin-right: 10px;
+    margin-left: 15px;
   }
 
   .logout{
-    margin-right: 10px;
-    background-color: black;
-    color:white;
+    margin-right: 7px;
+    background-color: #212529;
+    color:rgb(255, 255, 255);
     cursor: pointer;
+    margin-top: 10px;
   }
 
-  
+  .logoo{
+
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    border-radius: 8px;
+    margin-left: 10px;
+    height: 50px;
+  }
+  .right{
+    margin-left: 1000px;
+    margin-top: 2px;
+    cursor: pointer;
+  }
+ 

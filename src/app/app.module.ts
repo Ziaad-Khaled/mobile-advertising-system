@@ -7,22 +7,11 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderHomeComponent } from './components/home/header/header.component';
 import { LoginComponent } from './components/login/login.component';
-import { BulkNewCampaignComponent } from './components/bulk/bulk-new-campaign/bulk-new-campaign.component';
-import { BulkCampaignSubmissionComponent } from './components/bulk/bulk-campaign-submission/bulk-campaign-submission.component';
-import { CellsTableComponent } from './components/real-time/real-time-locations/cells-table/cells-table.component';
-import { MultiSmsComponent } from './components/bulk/bulk-campaign-submission/multi-sms/multi-sms.component';
-import { BulkReportComponent } from './components/bulk/bulk-report/bulk-report.component';
-import { RealTimeReportComponent } from './components/real-time/real-time-report/real-time-report.component';
-import { SmsFooterComponent } from './components/sms-footer/sms-footer.component';
-import { LocationComponent } from './components/bulk/bulk-new-campaign/location/location.component';
-import { LocationSearchPipe } from './components/bulk/bulk-new-campaign/location/pipes/location-search.pipe';
-import { HandsetComponent } from './components/bulk/bulk-new-campaign/handset/handset.component';
-import { RealTimeLocationsComponent } from './components/real-time/real-time-locations/real-time-locations.component';
+
 import { HeaderComponent } from './components/header/header.component';
-import { SidenavComponent } from './components/sidenav/sidenav.component';
-import { DialogueBoxComponent } from './components/dialogue-box/dialogue-box.component';
-import { RealTimeNewCampaignComponent } from './components/real-time/real-time-new-campaign/real-time-new-campaign.component';
-import { RealTimeDialogueBoxComponent } from './components/real-time/real-time-locations/real-time-dialogue-box/real-time-dialogue-box.component';
+
+
+
 import { FormsModule } from '@angular/forms';
 import 'hammerjs';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -59,16 +48,12 @@ import {
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';  
 import { MatDialogModule } from '@angular/material/dialog';
-
-import { UserActivityComponent } from './components/bulk/bulk-new-campaign/user-activity/user-activity.component';
-import { UserPlanComponent } from './components/bulk/bulk-new-campaign/user-plan/user-plan.component';
-import { ArpuComponent } from './components/bulk/bulk-new-campaign/arpu/arpu.component';
-import { SenderDataComponent } from './components/real-time/real-time-new-campaign/sender-data/sender-data.component';
-import { CampaginDetailsComponent } from './components/real-time/real-time-new-campaign/campagin-details/campagin-details.component';
-import { MessageDetailsComponent } from './components/real-time/real-time-new-campaign/message-details/message-details.component';
-import { SenderNameService } from './components/shared/services/sender-name.service';
-import { SenderNameComponent } from './components/shared/components/sender-name/sender-name.component';
-
+import { CurrencyPipe } from '@angular/common';
+import { ShoppingcartComponent } from './components/shoppingcart/shoppingcart.component';
+import { ShoppingDetailsComponent } from './components/shoppingcart/shopping-details/shopping-details.component';
+import { CartListComponent } from './components/shoppingcart/cart-list/cart-list.component';
+import { ProductListComponent } from './components/product/product-list/product-list.component';
+import { ProductItemComponent } from './components/product/product-item/product-item.component';
 
 @NgModule({
   declarations: [
@@ -76,31 +61,12 @@ import { SenderNameComponent } from './components/shared/components/sender-name/
     LoginComponent,
     HomeComponent,
     HeaderHomeComponent,
-    BulkCampaignSubmissionComponent,
-    SidenavComponent,
-   BulkNewCampaignComponent,
-   RealTimeNewCampaignComponent,
-   RealTimeLocationsComponent,
+    ShoppingcartComponent,
+    ProductListComponent,
    HeaderComponent,
-   CellsTableComponent,
-   MultiSmsComponent,
-   BulkReportComponent,
-   RealTimeReportComponent,
-   SmsFooterComponent,
-   LocationComponent,
-   LocationSearchPipe,
-   HandsetComponent,
-   DialogueBoxComponent,
-   RealTimeDialogueBoxComponent,
-  
-   UserActivityComponent,
-   UserPlanComponent,
-   ArpuComponent,
-   SenderDataComponent,
-   CampaginDetailsComponent,
-   MessageDetailsComponent,
-   SenderNameComponent,
-
+   ShoppingDetailsComponent,
+   CartListComponent,
+   ProductItemComponent,
   ],
 
   
@@ -139,12 +105,11 @@ import { SenderNameComponent } from './components/shared/components/sender-name/
     CommonModule,
     HttpClientModule,
     MatDialogModule,
-     
-
+    CurrencyPipe,
   ],
-  providers: [AuthenticationService,
+  providers: [AuthenticationService,CurrencyPipe,
     { provide: MAT_DATE_LOCALE, useValue: 'en-GB' },
-    SenderNameService
+   
   ],
   bootstrap: [AppComponent]
 })

@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { User } from '../shared/user';
 import { Router } from '@angular/router';
 import { AuthenticationService } from './services/authentication.service';
-import { FormControl, FormGroupDirective, NgForm, ValidatorFn } from '@angular/forms';
-
+import { FormControl, } from '@angular/forms';
 
 
 @Component({
@@ -14,17 +12,13 @@ import { FormControl, FormGroupDirective, NgForm, ValidatorFn } from '@angular/f
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  
-  
   userForm!: FormGroup;
   user!: User;
-
   validationMessages = {
     'Username': {
-      'required':      'User Name is required.',
+      'required':'User Name is required.',
     }
   }
- 
   constructor(private fb: FormBuilder, private router: Router, private authenticationService: AuthenticationService) {
     this.createForm();
     
@@ -41,11 +35,7 @@ export class LoginComponent implements OnInit {
         password: new FormControl('', Validators.required),
       }
     );
-
-
-    
   }
-
   onSubmit() {
     this.user = this.userForm.value;
     console.log(this.user);
@@ -57,7 +47,6 @@ export class LoginComponent implements OnInit {
 
     if(validUser)
       this.router.navigateByUrl('/home');
-
     this.userForm.reset();
   }
 };
